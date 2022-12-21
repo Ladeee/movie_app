@@ -1,0 +1,144 @@
+.movie_container {
+  box-sizing: border-box;
+  color: #000000;
+  width: 100%;
+}
+
+nav {
+  background-color: #292929;
+  display: flex;
+  align-items: center;
+  height: 8.75rem;
+
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
+
+  .logo {
+    width: 12.0625rem;
+    height: 3.75rem;
+    margin-left: 4.8125rem;
+
+    @media (max-width: 600px) {
+      margin-left: 0;
+    }
+  }
+}
+
+header {
+  background-image: url(../../public/images/moviebg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  height: 34.375rem;
+
+  br {
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  .watch {
+    margin-left: 4.8125rem;
+    font-weight: 700;
+    font-size: 4.5rem;
+    line-height: 5.8587rem;
+
+    @media (max-width: 600px) {
+      text-align: center;
+      width: 17.0625rem;
+      font-size: 1.75rem;
+      line-height: 2.2788rem;
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
+}
+
+.search_input {
+  margin-left: 4.8125rem;
+  margin-top: 3.9375rem;
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3.5rem;
+    margin-left: 0;
+  }
+
+  .search {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.9531rem;
+
+    @media (max-width: 600px) {
+      font-size: 1rem;
+      line-height: 1.3019rem;
+    }
+  }
+
+  .movie_input {
+    outline: none;
+    border: 1px solid #000000;
+    width: 81.625rem;
+    height: 3.375rem;
+    margin-top: 0.25rem;
+    padding-left: 0.3125rem;
+
+    @media (max-width: 600px) {
+      width: 16.5625rem;
+      margin-left: 0;
+    }
+  }
+}
+
+.display_movies {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8125rem;
+  margin-left: 4.1875rem;
+  margin-bottom: 4.1875rem;
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .poster {
+    width: 18.75rem;
+    height: 18.75rem;
+    border-radius: 0.75rem;
+    margin-top: 1.125rem;
+
+    @media (max-width: 600px) {
+      width: 12.5rem;
+      height: 12.5rem;
+      margin-top: 1.625rem;
+    }
+  }
+
+  .movie_name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    width: 17.4375rem;
+    font-size: 1.5rem;
+    line-height: 1.9531rem;
+    margin-top: 3rem;
+
+    @media (max-width: 600px) {
+      font-size: 1.125rem;
+      line-height: 1.465rem;
+    }
+  }
+}

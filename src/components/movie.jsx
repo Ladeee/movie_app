@@ -5,16 +5,18 @@ import './movie.scss'
 const Movie = () => {
   const [movies, setMovies] = useState([])
   const [searchMovies, setSearchMovies] = useState('')
-  // http://www.omdbapi.com/?&apikey=5fa06ba4
+  // http://www.omdbapi.com/?i=tt3896198&apikey=5fa06ba4
 
   const fetchMovies = async (searchMovies) => {
     const response = await fetch(
-      `http://www.omdbapi.com/?s=${searchMovies}&apikey=5fa06ba4`,
+      `https://www.omdbapi.com/?i=tt3896198&s=${searchMovies}&apikey=5fa06ba4`,
     )
     const data = await response.json()
 
     if (data.Search) {
       setMovies(data.Search)
+    } else {
+      setMovies([data])
     }
   }
 

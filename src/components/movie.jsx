@@ -9,15 +9,12 @@ const Movie = () => {
 
   const fetchMovies = async (searchMovies) => {
     const response = await fetch(
-      `http://www.omdbapi.com/?i=tt3896198&s=${searchMovies}&apikey=5fa06ba4`,
+      `http://www.omdbapi.com/?s=${searchMovies}&apikey=5fa06ba4`,
     )
     const data = await response.json()
 
     if (data.Search) {
       setMovies(data.Search)
-    } else{
-      setMovies([data])
-      console.log(data);
     }
   }
 

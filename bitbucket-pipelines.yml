@@ -1,0 +1,26 @@
+# This is a sample build configuration for JavaScript.
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:16
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Code linting
+          script:
+            - npm install
+            - npm run lint
+          caches:
+            - node
+      - step:
+          name: Deploy to staging backend server
+          script:
+            - echo "Deploying to staging backend environment"
+            - pipe: atlassian/ssh-run:0.2.2
+              variables:
+                SSH_USER: "root"
+                SERVER: "46.101.88.137"
+                COMMAND: "./deploy.sh"

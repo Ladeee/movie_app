@@ -11,7 +11,7 @@ pipelines:
       - step:
           name: Code linting
           script:
-            - npm install
+            - npm install eslint --legacy-peer-deps
             - npm run lint
           caches:
             - node
@@ -21,6 +21,6 @@ pipelines:
             - echo "Deploying to staging backend environment"
             - pipe: atlassian/ssh-run:0.2.2
               variables:
-                SSH_USER: "root"
-                SERVER: "46.101.88.137"
-                COMMAND: "./deploy.sh"
+                SSH_USER: 'root'
+                SERVER: '164.92.114.122'
+                COMMAND: 'sh ~/nester-verify-configs/deploy/frontend.sh'

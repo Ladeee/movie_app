@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import TopIcon from "../../../assets/images/auth/shapeOne.png";
-import BottomIcon from "../../../assets/images/auth/shapeTwo.png";
+import TopIcon from "../../../assets/images/authentification/shapeOne.png";
+import BottomIcon from "../../../assets/images/authentification/shapeTwo.png";
 
 // layout
 export const AuthContainer = styled.div`
@@ -95,7 +95,7 @@ export const SignupNavContainer = styled.div`
 
 export const Company = styled.div`
   cursor: pointer;
-  transition: ease-in-out 0.5s;
+  transition: ease-in 0.5s;
   border-bottom: 0.375rem solid transparent;
 
   &:hover {

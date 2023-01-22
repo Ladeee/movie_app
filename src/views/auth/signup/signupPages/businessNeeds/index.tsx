@@ -1,5 +1,5 @@
 import React from "react";
-import AuthLayout from "../../authLayout";
+import AuthLayout from "../../../authLayout";
 import {
   SignupContainer,
   Heading,
@@ -9,7 +9,7 @@ import {
   Icon,
   Button,
 } from "../pages.styled";
-import Square from "../../../../assets/images/auth/square.png";
+import Square from "../../../../../assets/images/authentification/square.png";
 import { Link } from "react-router-dom";
 
 export default function BusinessNeeds() {

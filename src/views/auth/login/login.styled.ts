@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { AuthButton } from "../../css/reuseableStyles/button.styled";
+import { AuthButton } from "../../../css/reuseableStyles/button.styled";
 
 // login / forget password
 

@@ -10,7 +10,7 @@ import {
   Logo,
   Clarity,
 } from "./signup.styled";
-import NesterLogo from "../../../assets/images/auth/nesterLogo.png";
+import NesterLogo from "../../../assets/images/authentification/nesterLogo.png";
 import SignupNav from "./signupNav";
 
 interface Props {

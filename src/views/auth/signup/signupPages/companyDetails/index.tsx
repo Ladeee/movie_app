@@ -1,5 +1,5 @@
 import React from "react";
-import AuthLayout from "../../authLayout";
+import AuthLayout from "../../../authLayout";
 import {
   SignupContainer,
   Industry,
@@ -9,7 +9,7 @@ import {
   FormContainer,
   Button,
 } from "../pages.styled";
-import Indust from "../../../../assets/images/auth/industry.png";
+import Indust from "../../../../../assets/images/authentification/industry.png";
 import { Link } from "react-router-dom";
 
 export default function CompanyDetails() {

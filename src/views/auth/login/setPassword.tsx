@@ -1,4 +1,4 @@
-import AuthLayout from "../signup/authLayout";
+import AuthLayout from "../authLayout";
 import {
   Container,
   Heading,

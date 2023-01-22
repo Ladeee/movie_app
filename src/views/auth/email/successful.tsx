@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import AuthLayout from "../signup/authLayout";
+import AuthLayout from "../authLayout";
 import {
   EmailContainer,
   ConfirmEmail,

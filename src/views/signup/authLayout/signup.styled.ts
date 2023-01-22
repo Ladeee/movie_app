@@ -3,11 +3,11 @@ import TopIcon from "../../../assets/images/auth/shapeOne.png";
 import BottomIcon from "../../../assets/images/auth/shapeTwo.png";
 
 // layout
-export const SignupContainer = styled.div`
+export const AuthContainer = styled.div`
   position: relative;
 `;
 
-export const SignupWrapper = styled.div`
+export const AuthWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 `;
@@ -25,6 +25,7 @@ export const Welcome = styled.div<{ color: string }>`
   width: 42.625rem;
   background-color: ${(props) => props.color};
   position: relative;
+  min-height: 100vh;
   &::before {
     content: "";
     background-image: url(${TopIcon});
@@ -76,7 +77,6 @@ export const Clarity = styled.div`
 `;
 
 export const Forms = styled.div`
-  margin-top: 9.3125rem;
   margin-right: 10.625rem;
   z-index: 99;
 `;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SignupLayout from "../../views/signup/signupLayout";
+import AuthLayout from "../signup/authLayout";
 import {
   Container,
   Heading,
@@ -16,7 +16,7 @@ import {
 
 export default function Login() {
   return (
-    <SignupLayout color="#007C23">
+    <AuthLayout color="#007C23">
       <Container>
         <Heading>Welcome Back!</Heading>
         <Addresses>
@@ -46,6 +46,6 @@ export default function Login() {
           <Account>Create Account</Account>
         </Link>
       </Container>
-    </SignupLayout>
+    </AuthLayout>
   );
 }

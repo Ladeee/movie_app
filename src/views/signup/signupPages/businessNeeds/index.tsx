@@ -1,7 +1,7 @@
 import React from "react";
-import SignupLayout from "../../signupLayout";
+import AuthLayout from "../../authLayout";
 import {
-  PageOneContainer,
+  SignupContainer,
   Heading,
   Addresses,
   FormTwoContainer,
@@ -12,10 +12,10 @@ import {
 import Square from "../../../../assets/images/auth/square.png";
 import { Link } from "react-router-dom";
 
-export default function SignupPageTwo() {
+export default function BusinessNeeds() {
   return (
-    <SignupLayout color="#A96644">
-      <PageOneContainer>
+    <AuthLayout color="#A96644">
+      <SignupContainer>
         <Heading>Select Your Business Needs</Heading>
         <Addresses>
           With Nester Verify, you are able to verify addresses <br />
@@ -57,10 +57,10 @@ export default function SignupPageTwo() {
             </Icon>
           </InputWrapper>
         </FormTwoContainer>
-        <Link to="/signupPageThree">
+        <Link to="/companyDetails">
           <Button>Continue</Button>
         </Link>
-      </PageOneContainer>
-    </SignupLayout>
+      </SignupContainer>
+    </AuthLayout>
   );
 }

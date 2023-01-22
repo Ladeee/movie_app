@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SignupLayout from "../../views/signup/signupLayout";
+import AuthLayout from "../signup/authLayout";
 import {
   Container,
   Heading,
@@ -12,7 +12,7 @@ import {
 
 export default function Forget() {
   return (
-    <SignupLayout>
+    <AuthLayout>
       <Container>
         <Heading>Recover your password easily!</Heading>
         <Addresses>
@@ -32,6 +32,6 @@ export default function Forget() {
         <Acc>Create Account</Acc>
         {/* </Link> */}
       </Container>
-    </SignupLayout>
+    </AuthLayout>
   );
 }

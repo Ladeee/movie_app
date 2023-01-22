@@ -1,4 +1,4 @@
-import SignupLayout from "../../views/signup/signupLayout";
+import AuthLayout from "../signup/authLayout";
 import {
   Container,
   Heading,
@@ -9,7 +9,7 @@ import {
 
 export default function SetPassword() {
   return (
-    <SignupLayout color="#007C23">
+    <AuthLayout color="#007C23">
       <Container>
         <Heading>Welcome Back!</Heading>
         <Addresses>
@@ -27,6 +27,6 @@ export default function SetPassword() {
         <Reset className="mt-107">Reset</Reset>
         {/* </Link> */}
       </Container>
-    </SignupLayout>
+    </AuthLayout>
   );
 }

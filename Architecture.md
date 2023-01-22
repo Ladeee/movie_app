@@ -14,7 +14,7 @@ routes - This is where our routs configuration is done - and PrivateRoute compon
 
 views - The screen folder contain the view folder for the applicatio. e.g (Dashboard, Profile-screen). This can contain it own sub-component folder (components, hooks). This are just component particular to a screen and hooks particular to a screen and not used within other screens.
 
-Shared - This contain the shared folder e.g (A11Y(Accessibility configuration), Seo(React-helmet config)) 
+Shared - This contain the shared folder e.g (A11Y(Accessibility configuration), Seo(React-helmet config))
 
 Utils - This contail of utility and helper functions for the general codebase.
 

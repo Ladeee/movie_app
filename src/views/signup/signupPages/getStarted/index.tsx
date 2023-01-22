@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
-import SignupLayout from "../../signupLayout";
+import AuthLayout from "../../authLayout";
 import {
-  PageOneContainer,
+  SignupContainer,
   Heading,
   Addresses,
   FormContainer,
   Button,
 } from "../pages.styled";
 
-function SignupPageOne() {
+export default function GetStarted() {
   return (
-    <SignupLayout color="#0D2AAB">
-      <PageOneContainer>
+    <AuthLayout color="#0D2AAB">
+      <SignupContainer>
         <Heading>Get Started</Heading>
         <Addresses>
           With Nester Verify, you are able to verify addresses <br />
@@ -29,12 +29,10 @@ function SignupPageOne() {
           <label>Confirm Password</label>
           <input type="text" required />
         </FormContainer>
-        <Link to="/signupPageTwo">
+        <Link to="/businessNeeds">
           <Button>Next</Button>
         </Link>
-      </PageOneContainer>
-    </SignupLayout>
+      </SignupContainer>
+    </AuthLayout>
   );
 }
-
-export default SignupPageOne;

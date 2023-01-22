@@ -1,12 +1,12 @@
 import React from "react";
-import SignupPageOne from "./signupPages/getStarted";
 import { Routes, Route, Outlet } from "react-router-dom";
+import GetStarted from "./signupPages/getStarted";
 
 export default function Signup() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<SignupPageOne />} />
+        <Route path="/" element={<GetStarted />} />
       </Routes>
       <main>
         <Outlet />

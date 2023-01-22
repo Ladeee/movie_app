@@ -1,8 +1,8 @@
 import React from "react";
 import {
   Forms,
-  SignupContainer,
-  SignupWrapper,
+  AuthContainer,
+  AuthWrapper,
   SignupNavbar,
   Welcome,
   Contents,
@@ -18,13 +18,13 @@ interface Props {
   color?: string;
 }
 
-function SignupLayout({ children, color = "#0D2AAB" }: Props) {
+export default function AuthLayout({ children, color = "#0D2AAB" }: Props) {
   return (
-    <SignupContainer>
+    <AuthContainer>
       <SignupNavbar>
         <SignupNav />
       </SignupNavbar>
-      <SignupWrapper>
+      <AuthWrapper>
         <Welcome color={color}>
           <Contents>
             <Logo>
@@ -40,9 +40,7 @@ function SignupLayout({ children, color = "#0D2AAB" }: Props) {
           </Contents>
         </Welcome>
         <Forms>{children}</Forms>
-      </SignupWrapper>
-    </SignupContainer>
+      </AuthWrapper>
+    </AuthContainer>
   );
 }
-
-export default SignupLayout;

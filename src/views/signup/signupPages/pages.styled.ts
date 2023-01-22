@@ -3,7 +3,9 @@ import { AuthButton } from "../../../css/reuseableStyles/button.styled";
 
 // page one/ two & three
 
-export const PageOneContainer = styled.div``;
+export const SignupContainer = styled.div`
+  margin-top: 9.3125rem;
+`;
 
 export const Heading = styled.div`
   color: #090914;
@@ -94,8 +96,6 @@ export const Icon = styled.div`
 `;
 
 // exclusive for page three
-
-export const PageThreeContainer = styled.div``;
 
 export const Industry = styled.div`
   position: relative;

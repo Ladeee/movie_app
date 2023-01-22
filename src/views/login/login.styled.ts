@@ -4,7 +4,7 @@ import { AuthButton } from "../../css/reuseableStyles/button.styled";
 // login / forget password
 
 export const Container = styled.div`
-  margin-top: 4.4375rem;
+  margin-top: 9.3125rem;
 `;
 
 export const Heading = styled.div`

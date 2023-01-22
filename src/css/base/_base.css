@@ -1,5 +1,7 @@
 :root {
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: 1.0582vw;
+  overflow-x: hidden;
 }
 
 a {
@@ -19,3 +21,7 @@ a:hover {
     font-size: 14px;
   }
 }
+
+/* main{
+  width: 100%;
+} */

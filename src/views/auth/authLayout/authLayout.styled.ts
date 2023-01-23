@@ -22,9 +22,9 @@ export const AuthNav = styled.div`
 `;
 
 export const Welcome = styled.div<{ color: string }>`
-  width: 42.625rem;
   background-color: ${(props) => props.color};
   position: relative;
+  width: 42.625rem;
   min-height: 100vh;
   &::before {
     content: "";
@@ -46,6 +46,10 @@ export const Welcome = styled.div<{ color: string }>`
     right: -9.75rem;
     bottom: 0;
     z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -79,6 +83,15 @@ export const Clarity = styled.div`
 export const Forms = styled.div`
   margin-right: 10.625rem;
   z-index: 99;
+
+  @media (max-width: 768px) {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 // signup navbar

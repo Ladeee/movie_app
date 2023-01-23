@@ -39,6 +39,7 @@ export default function AuthLayout({ children, color = "#0D2AAB" }: Props) {
             </Clarity>
           </Contents>
         </Welcome>
+
         <Forms>{children}</Forms>
       </AuthWrapper>
     </AuthContainer>

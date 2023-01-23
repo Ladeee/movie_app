@@ -57,6 +57,7 @@ export default function BusinessNeeds() {
             </Icon>
           </InputWrapper>
         </FormTwoContainer>
+
         <Link to="/companyDetails">
           <Button>Continue</Button>
         </Link>

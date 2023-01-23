@@ -17,6 +17,7 @@ export default function GetStarted() {
           With Nester Verify, you are able to verify addresses <br />
           easily, from anywhere in the world
         </Addresses>
+
         <FormContainer>
           <label>Full Name</label>
           <input type="text" required />
@@ -29,6 +30,7 @@ export default function GetStarted() {
           <label>Confirm Password</label>
           <input type="text" required />
         </FormContainer>
+
         <Link to="/businessNeeds">
           <Button>Next</Button>
         </Link>

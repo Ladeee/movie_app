@@ -9,6 +9,7 @@ export const EmailContainer = styled.div`
 
 export const ConfirmEmail = styled.div`
   color: #090914;
+  white-space: nowrap;
   font-weight: 600;
   font-size: 2.25rem;
   line-height: 2.75rem;
@@ -16,6 +17,7 @@ export const ConfirmEmail = styled.div`
 
 export const ConfirmText = styled.div`
   color: #52525b;
+  white-space: nowrap;
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 1.875rem;

@@ -49,6 +49,10 @@ export const FormContainer = styled.div`
   #create {
     margin-top: 1.125rem;
   }
+
+  @media (max-width: 768px) {
+    gap: 0.375rem;
+  }
 `;
 
 export const Button = styled(AuthButton)`

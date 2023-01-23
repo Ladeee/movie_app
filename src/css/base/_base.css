@@ -18,10 +18,6 @@ a:hover {
 
 @media screen and (max-width: 768px) {
   :root {
-    font-size: 14px;
+    font-size: 1.823vw;
   }
 }
-
-/* main{
-  width: 100%;
-} */

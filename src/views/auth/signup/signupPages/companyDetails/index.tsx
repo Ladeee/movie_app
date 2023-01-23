@@ -21,6 +21,7 @@ export default function CompanyDetails() {
           With Nester Verify, you are able to verify addresses <br />
           easily, from anywhere in the world
         </Addresses>
+
         <FormContainer>
           <label>Company Name</label>
           <input type="text" required />
@@ -38,6 +39,7 @@ export default function CompanyDetails() {
           <label>Role</label>
           <input type="text" required />
         </FormContainer>
+
         <Link to="/confirmEmail">
           <Button>Create Account</Button>
         </Link>

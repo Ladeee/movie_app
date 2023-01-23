@@ -22,10 +22,6 @@ export const Addresses = styled.div`
   margin-top: 2.0625rem;
 `;
 
-export const AddressesWithRed = styled(Addresses)`
-  color: red;
-`;
-
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;

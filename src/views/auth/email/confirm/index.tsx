@@ -17,7 +17,7 @@ export default function Confirm() {
           confirm your email account by clicking the <br />
           link contained in the email you just received!
         </ConfirmText>
-        <Link to="/emailSuccessful">
+        <Link to="/emailsuccessful">
           <ConfirmButton>Login</ConfirmButton>
         </Link>
       </EmailContainer>

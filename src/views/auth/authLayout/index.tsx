@@ -35,7 +35,7 @@ export default function AuthLayout({ children, color = "#0D2AAB" }: Props) {
             </Greetings>
             <Clarity>
               Claritty gives you the blocks & components you <br />
-              need to create a truly professional website
+              need to create a truly professional website.
             </Clarity>
           </Contents>
         </Welcome>

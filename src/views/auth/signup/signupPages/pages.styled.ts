@@ -26,7 +26,6 @@ export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1.1875rem;
-  gap: 11px;
 
   label {
     font-size: 1rem;
@@ -48,10 +47,6 @@ export const FormContainer = styled.div`
 
   #create {
     margin-top: 1.125rem;
-  }
-
-  @media (max-width: 768px) {
-    gap: 0.375rem;
   }
 `;
 
@@ -96,7 +91,6 @@ export const Icon = styled.div`
   right: 0.9794rem;
   width: 1.4581rem;
   height: 1.4581rem;
-  z-index: 99;
 `;
 
 // exclusive for page three

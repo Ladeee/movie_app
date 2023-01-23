@@ -40,7 +40,7 @@ export default function CompanyDetails() {
           <input type="text" required />
         </FormContainer>
 
-        <Link to="/confirmEmail">
+        <Link to="/confirmemail">
           <Button>Create Account</Button>
         </Link>
       </SignupContainer>

@@ -9,7 +9,7 @@ export const AuthContainer = styled.div`
 
 export const AuthWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  gap: 8.375rem;
 `;
 
 export const AuthNav = styled.div`
@@ -56,12 +56,12 @@ export const Welcome = styled.div<{ color: string }>`
 export const Contents = styled.div`
   display: grid;
   place-content: center;
+  margin-top: 12.0625rem;
 `;
 
 export const Logo = styled.div`
   width: 10.9375rem;
   height: 3.5625rem;
-  margin-top: 12.0625rem;
 `;
 
 export const Greetings = styled.div`
@@ -81,8 +81,7 @@ export const Clarity = styled.div`
 `;
 
 export const Forms = styled.div`
-  margin-right: 10.625rem;
-  z-index: 99;
+  z-index: 1;
 
   @media (max-width: 768px) {
     position: absolute;

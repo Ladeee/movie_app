@@ -24,7 +24,7 @@ export default function Forget() {
           <input type="text" required />
         </FormContainer>
 
-        <Link to="/setPassword">
+        <Link to="/setpassword">
           <Button>Reset</Button>
         </Link>
 

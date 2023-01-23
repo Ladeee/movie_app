@@ -31,7 +31,7 @@ export default function GetStarted() {
           <input type="text" required />
         </FormContainer>
 
-        <Link to="/businessNeeds">
+        <Link to="/businessneeds">
           <Button>Next</Button>
         </Link>
       </SignupContainer>

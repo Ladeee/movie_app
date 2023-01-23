@@ -1,16 +1,16 @@
 import {
-  SignupNavContainer,
+  AuthNavbarContainer,
   Company,
   Individual,
   Agent,
-} from "./signup.styled";
+} from "../authLayout.styled";
 
-export default function SignupNav() {
+export default function AuthNavbar() {
   return (
-    <SignupNavContainer>
+    <AuthNavbarContainer>
       <Company>Company</Company>
       <Individual>Individual</Individual>
       <Agent>Agent</Agent>
-    </SignupNavContainer>
+    </AuthNavbarContainer>
   );
 }

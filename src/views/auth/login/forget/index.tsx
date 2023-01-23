@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AuthLayout from "../authLayout";
+import AuthLayout from "../../authLayout";
 import {
   Container,
   Heading,
@@ -8,7 +8,7 @@ import {
   FormContainer,
   Button,
   Acc,
-} from "./login.styled";
+} from "../login.styled";
 
 export default function Forget() {
   return (
@@ -28,9 +28,9 @@ export default function Forget() {
           <Button>Reset</Button>
         </Link>
 
-        {/* <Link to="/"> */}
-        <Acc>Create Account</Acc>
-        {/* </Link> */}
+        <Link to="/">
+          <Acc>Create Account</Acc>
+        </Link>
       </Container>
     </AuthLayout>
   );

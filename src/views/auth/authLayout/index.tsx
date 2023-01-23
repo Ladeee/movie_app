@@ -3,15 +3,15 @@ import {
   Forms,
   AuthContainer,
   AuthWrapper,
-  SignupNavbar,
+  AuthNav,
   Welcome,
   Contents,
   Greetings,
   Logo,
   Clarity,
-} from "./signup.styled";
+} from "./authLayout.styled";
 import NesterLogo from "../../../assets/images/authentification/nesterLogo.png";
-import SignupNav from "./signupNav";
+import AuthNavbar from "./authNavbar";
 
 interface Props {
   children: React.ReactNode;
@@ -21,9 +21,9 @@ interface Props {
 export default function AuthLayout({ children, color = "#0D2AAB" }: Props) {
   return (
     <AuthContainer>
-      <SignupNavbar>
-        <SignupNav />
-      </SignupNavbar>
+      <AuthNav>
+        <AuthNavbar />
+      </AuthNav>
       <AuthWrapper>
         <Welcome color={color}>
           <Contents>

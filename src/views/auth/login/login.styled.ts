@@ -105,6 +105,7 @@ export const Account = styled.div`
 // exclusive for forget password
 
 export const Acc = styled.div`
+  color: #333333;
   text-align: right;
   margin-top: 21rem;
   margin-bottom: 4.4375rem;

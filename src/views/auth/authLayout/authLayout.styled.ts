@@ -12,7 +12,7 @@ export const AuthWrapper = styled.div`
   justify-content: space-between;
 `;
 
-export const SignupNavbar = styled.div`
+export const AuthNav = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 3.375rem;
@@ -83,7 +83,7 @@ export const Forms = styled.div`
 
 // signup navbar
 
-export const SignupNavContainer = styled.div`
+export const AuthNavbarContainer = styled.div`
   display: flex;
   gap: 2.5rem;
   font-weight: 600;

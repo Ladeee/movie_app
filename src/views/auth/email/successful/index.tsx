@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import AuthLayout from "../authLayout";
+import AuthLayout from "../../authLayout";
 import {
   EmailContainer,
   ConfirmEmail,
   ConfirmText,
   SignIn,
   SuccessButton,
-} from "./email.styled";
+} from "../email.styled";
 
 export default function Successful() {
   return (

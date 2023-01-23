@@ -1,11 +1,11 @@
-import AuthLayout from "../authLayout";
+import AuthLayout from "../../authLayout";
 import {
   Container,
   Heading,
   Addresses,
   FormContainer,
   Reset,
-} from "./login.styled";
+} from "../login.styled";
 
 export default function SetPassword() {
   return (

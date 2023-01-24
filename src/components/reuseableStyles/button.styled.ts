@@ -2,6 +2,7 @@
 import styled from "styled-components";
 
 export const AuthButton = styled.button`
+  font-family: "Poppins", sans-serif;
   cursor: pointer;
   display: flex;
   justify-content: center;

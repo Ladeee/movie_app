@@ -9,10 +9,10 @@ import {
 
 export default function Confirm() {
   return (
-    <AuthLayout color="#3F3F46">
+    <AuthLayout bottom="-7.45rem" color="#3F3F46">
       <EmailContainer>
         <ConfirmEmail>Please Confirm Your Email Address</ConfirmEmail>
-        <ConfirmText>
+        <ConfirmText className="uppercase">
           To complete the sign up process, kindly <br />
           confirm your email account by clicking the <br />
           link contained in the email you just received!

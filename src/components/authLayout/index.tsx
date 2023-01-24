@@ -16,16 +16,21 @@ import AuthNavbar from "./authNavbar";
 interface Props {
   children: React.ReactNode;
   color?: string;
+  bottom?: any;
 }
 
-export default function AuthLayout({ children, color = "#0D2AAB" }: Props) {
+export default function AuthLayout({
+  children,
+  color = "#0D2AAB",
+  bottom = 0,
+}: Props) {
   return (
     <AuthContainer>
       <AuthNav>
         <AuthNavbar />
       </AuthNav>
       <AuthWrapper>
-        <Welcome color={color}>
+        <Welcome color={color} bottom={bottom}>
           <Contents>
             <Logo>
               <img src={NesterLogo} alt="" />

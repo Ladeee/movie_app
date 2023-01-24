@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { AuthButton } from "../../../css/reuseableStyles/button.styled";
+import { AuthButton } from "../../../components/reuseableStyles/button.styled";
 
 // login / forget password
 
@@ -7,7 +7,8 @@ export const Container = styled.div`
   margin-top: 9.3125rem;
 `;
 
-export const Heading = styled.p`
+export const Heading = styled.header`
+  font-family: "Inter", sans-serif;
   color: #090914;
   font-weight: 600;
   font-size: 2.25rem;
@@ -22,7 +23,7 @@ export const Addresses = styled.p`
   margin-top: 2.0625rem;
 `;
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.section`
   display: flex;
   flex-direction: column;
   margin-top: 2.625rem;
@@ -44,7 +45,7 @@ export const FormContainer = styled.div`
   }
 `;
 
-export const RememberPassword = styled.div`
+export const RememberPassword = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -63,7 +64,7 @@ export const Remember = styled.p`
   margin-left: 0.5625rem;
 `;
 
-export const Forgot = styled.p`
+export const Forgot = styled.a`
   cursor: pointer;
   color: #2563eb;
   font-weight: 400;
@@ -71,20 +72,8 @@ export const Forgot = styled.p`
   line-height: 1.375rem;
 `;
 
-export const Button = styled.div`
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #0d2aab;
-  color: #ffffff;
-  width: 13.1875rem;
-  height: 3.4375rem;
+export const Button = styled(AuthButton)`
   margin-top: 4.0625rem;
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.75rem;
-  border-radius: 0.5625rem;
 `;
 
 export const Account = styled.p`

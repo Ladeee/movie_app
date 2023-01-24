@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { AuthButton } from "../../../../css/reuseableStyles/button.styled";
+import { AuthButton } from "../../../../components/reuseableStyles/button.styled";
 
 // page one/ two & three
 
@@ -8,6 +8,7 @@ export const SignupContainer = styled.div`
 `;
 
 export const Heading = styled.div`
+  font-family: "Inter", sans-serif;
   color: #090914;
   font-weight: 600;
   font-size: 2.25rem;
@@ -15,6 +16,7 @@ export const Heading = styled.div`
 `;
 
 export const Addresses = styled.div`
+  font-family: "Poppins", sans-serif;
   color: #52525b;
   font-weight: 400;
   font-size: 1.125rem;

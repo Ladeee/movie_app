@@ -5,6 +5,7 @@ import BottomIcon from "../../assets/images/authentification/shapeTwo.png";
 // layout
 export const AuthContainer = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 export const AuthWrapper = styled.div`
@@ -12,7 +13,7 @@ export const AuthWrapper = styled.div`
   gap: 8.375rem;
 `;
 
-export const AuthNav = styled.div`
+export const AuthNav = styled.nav`
   display: flex;
   justify-content: center;
   padding-top: 3.375rem;
@@ -21,11 +22,13 @@ export const AuthNav = styled.div`
   right: 50%;
 `;
 
-export const Welcome = styled.div<{ color: string }>`
+export const Welcome = styled.section<{ color: string; bottom: any }>`
+  font-family: "Poppins", sans-serif;
   background-color: ${(props) => props.color};
   position: relative;
-  width: 42.625rem;
+  width: 46%;
   min-height: 100vh;
+  overflow: hidden;
   &::before {
     content: "";
     background-image: url(${TopIcon});
@@ -44,7 +47,7 @@ export const Welcome = styled.div<{ color: string }>`
     width: 28.75rem;
     height: 13.9375rem;
     right: -9.75rem;
-    bottom: 0;
+    bottom: ${(props) => props.bottom};
     z-index: 1;
   }
 
@@ -59,17 +62,19 @@ export const Contents = styled.div`
   margin-top: 12.0625rem;
 `;
 
-export const Logo = styled.div`
+export const Logo = styled.figure`
   width: 10.9375rem;
   height: 3.5625rem;
 `;
 
-export const Greetings = styled.p`
+export const Greetings = styled.header`
   font-weight: 600;
   font-size: 3.75rem;
   line-height: 5.375rem;
   margin-top: 1.5625rem;
   color: #ffffff;
+  /* font-family: "DM Sans", sans-serif; */
+  /* font-family: "Poppins", sans-serif; */
 `;
 
 export const Clarity = styled.p`
@@ -80,7 +85,7 @@ export const Clarity = styled.p`
   color: #cbd5e1;
 `;
 
-export const Forms = styled.div`
+export const Forms = styled.section`
   z-index: 1;
 
   @media (max-width: 768px) {
@@ -96,6 +101,7 @@ export const Forms = styled.div`
 // signup navbar
 
 export const AuthNavbarContainer = styled.ul`
+  font-family: "Inter", sans-serif;
   display: flex;
   list-style-type: none;
   gap: 2.5rem;
@@ -104,6 +110,8 @@ export const AuthNavbarContainer = styled.ul`
   line-height: 1.5rem;
   text-transform: uppercase;
   z-index: 2;
+  margin: 0;
+  padding: 0;
 `;
 
 export const Company = styled.li`

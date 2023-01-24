@@ -1,14 +1,13 @@
 // ----------- import external dependencies -------------
-import React from "react";
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
+
+// ---------- import internal dependencies ----------
+const CompanyAdminLayout = lazy(() => import("../layouts/CompanyAdminLayout"));
 
 export const router = createBrowserRouter([
   {
-    path: "/",
-    element: (
-      <div className="text-blue-500 text-center">
-        Welcome to the world of nothingness. All you find is amaazing
-      </div>
-    ),
+    path: "/company",
+    element: <CompanyAdminLayout />,
   },
 ]);

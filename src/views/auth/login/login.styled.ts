@@ -79,6 +79,7 @@ export const Button = styled(AuthButton)`
 `;
 
 export const Account = styled.p`
+  font-family: "Poppins", sans-serif;
   cursor: pointer;
   text-align: right;
   color: #333333;
@@ -92,6 +93,7 @@ export const Account = styled.p`
 // exclusive for forget password
 
 export const Acc = styled.p`
+  font-family: "Poppins", sans-serif;
   color: #333333;
   text-align: right;
   margin-top: 21rem;

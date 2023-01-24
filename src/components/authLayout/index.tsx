@@ -39,7 +39,7 @@ export default function AuthLayout({
               Welcome to <br /> Nester Verify
             </Greetings>
             <Clarity>
-              Claritty gives you the blocks & components you <br />
+              Clarity gives you the blocks & components you <br />
               need to create a truly professional website.
             </Clarity>
           </Contents>

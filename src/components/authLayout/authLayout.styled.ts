@@ -73,8 +73,6 @@ export const Greetings = styled.header`
   line-height: 5.375rem;
   margin-top: 1.5625rem;
   color: #ffffff;
-  /* font-family: "DM Sans", sans-serif; */
-  /* font-family: "Poppins", sans-serif; */
 `;
 
 export const Clarity = styled.p`
@@ -117,11 +115,11 @@ export const AuthNavbarContainer = styled.ul`
 export const Company = styled.li`
   cursor: pointer;
   transition: ease-in 0.5s;
-  border-bottom: 0.375rem solid transparent;
+  /* border-bottom: 0.375rem solid transparent; */
 
   &:hover {
-    border-bottom: 0.375rem solid #ffffff;
-    color: #ffffff;
+    /* border-bottom: 0.375rem solid #ffffff; */
+    /* color: #ffffff; */
   }
 `;
 

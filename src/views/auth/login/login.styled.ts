@@ -7,14 +7,14 @@ export const Container = styled.div`
   margin-top: 9.3125rem;
 `;
 
-export const Heading = styled.div`
+export const Heading = styled.p`
   color: #090914;
   font-weight: 600;
   font-size: 2.25rem;
   line-height: 2.75rem;
 `;
 
-export const Addresses = styled.div`
+export const Addresses = styled.p`
   color: #52525b;
   font-weight: 400;
   font-size: 1.125rem;
@@ -56,14 +56,14 @@ export const Check = styled.div`
   align-items: center;
 `;
 
-export const Remember = styled.div`
+export const Remember = styled.p`
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.375rem;
   margin-left: 0.5625rem;
 `;
 
-export const Forgot = styled.div`
+export const Forgot = styled.p`
   cursor: pointer;
   color: #2563eb;
   font-weight: 400;
@@ -87,7 +87,7 @@ export const Button = styled.div`
   border-radius: 0.5625rem;
 `;
 
-export const Account = styled.div`
+export const Account = styled.p`
   cursor: pointer;
   text-align: right;
   color: #333333;
@@ -100,7 +100,7 @@ export const Account = styled.div`
 
 // exclusive for forget password
 
-export const Acc = styled.div`
+export const Acc = styled.p`
   color: #333333;
   text-align: right;
   margin-top: 21rem;

@@ -1,4 +1,4 @@
-import AuthLayout from "../../authLayout";
+import AuthLayout from "../../../../components/authLayout";
 import {
   Container,
   Heading,

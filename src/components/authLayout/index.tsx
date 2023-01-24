@@ -10,7 +10,7 @@ import {
   Logo,
   Clarity,
 } from "./authLayout.styled";
-import NesterLogo from "../../../assets/images/authentification/nesterLogo.png";
+import NesterLogo from "../../assets/images/authentification/nesterLogo.png";
 import AuthNavbar from "./authNavbar";
 
 interface Props {

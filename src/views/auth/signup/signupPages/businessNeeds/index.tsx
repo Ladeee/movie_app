@@ -1,5 +1,5 @@
 import React from "react";
-import AuthLayout from "../../../authLayout";
+import AuthLayout from "../../../../../components/authLayout";
 import {
   SignupContainer,
   Heading,

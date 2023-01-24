@@ -3,11 +3,11 @@ import { AuthButton } from "../../../css/reuseableStyles/button.styled";
 
 // confirm email / email successful
 
-export const EmailContainer = styled.div`
+export const EmailContainer = styled.article`
   margin-top: 9.9375rem;
 `;
 
-export const ConfirmEmail = styled.div`
+export const ConfirmEmail = styled.p`
   color: #090914;
   white-space: nowrap;
   font-weight: 600;
@@ -15,7 +15,7 @@ export const ConfirmEmail = styled.div`
   line-height: 2.75rem;
 `;
 
-export const ConfirmText = styled.div`
+export const ConfirmText = styled.p`
   color: #52525b;
   white-space: nowrap;
   font-weight: 400;
@@ -30,7 +30,7 @@ export const ConfirmButton = styled(AuthButton)`
 
 // exclusive for email successful
 
-export const SignIn = styled.div`
+export const SignIn = styled.p`
   color: #52525b;
   font-weight: 400;
   font-size: 1.125rem;

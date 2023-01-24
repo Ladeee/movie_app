@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import TopIcon from "../../../assets/images/authentification/shapeOne.png";
-import BottomIcon from "../../../assets/images/authentification/shapeTwo.png";
+import TopIcon from "../../assets/images/authentification/shapeOne.png";
+import BottomIcon from "../../assets/images/authentification/shapeTwo.png";
 
 // layout
 export const AuthContainer = styled.div`
@@ -64,7 +64,7 @@ export const Logo = styled.div`
   height: 3.5625rem;
 `;
 
-export const Greetings = styled.div`
+export const Greetings = styled.p`
   font-weight: 600;
   font-size: 3.75rem;
   line-height: 5.375rem;
@@ -72,7 +72,7 @@ export const Greetings = styled.div`
   color: #ffffff;
 `;
 
-export const Clarity = styled.div`
+export const Clarity = styled.p`
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 1.875rem;
@@ -95,8 +95,9 @@ export const Forms = styled.div`
 
 // signup navbar
 
-export const AuthNavbarContainer = styled.div`
+export const AuthNavbarContainer = styled.ul`
   display: flex;
+  list-style-type: none;
   gap: 2.5rem;
   font-weight: 600;
   font-size: 1rem;
@@ -105,7 +106,7 @@ export const AuthNavbarContainer = styled.div`
   z-index: 2;
 `;
 
-export const Company = styled.div`
+export const Company = styled.li`
   cursor: pointer;
   transition: ease-in 0.5s;
   border-bottom: 0.375rem solid transparent;
@@ -116,10 +117,10 @@ export const Company = styled.div`
   }
 `;
 
-export const Individual = styled.div`
+export const Individual = styled.li`
   cursor: pointer;
 `;
 
-export const Agent = styled.div`
+export const Agent = styled.li`
   cursor: pointer;
 `;

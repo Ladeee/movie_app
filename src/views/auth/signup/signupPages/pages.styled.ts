@@ -25,6 +25,7 @@ export const Addresses = styled.div`
 `;
 
 export const FormContainer = styled.div`
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   margin-top: 1.1875rem;

@@ -7,16 +7,9 @@ import {
 } from "../authLayout.styled";
 
 export default function AuthNavbar() {
-  const [colorChange, setColorChange] = useState("white");
-
-  const click = () => {
-    setColorChange("black");
-  };
   return (
     <AuthNavbarContainer>
-      <Company onClick={click} style={{ color: colorChange }}>
-        Company
-      </Company>
+      <Company>Company</Company>
       <Individual>Individual</Individual>
       <Agent>Agent</Agent>
     </AuthNavbarContainer>

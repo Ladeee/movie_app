@@ -36,7 +36,7 @@ export default function AuthLayout({
               <img src={NesterLogo} alt="" />
             </Logo>
             <Greetings>
-              Welcome to <br /> Nestify Verify
+              Welcome to <br /> Nester Verify
             </Greetings>
             <Clarity>
               Claritty gives you the blocks & components you <br />

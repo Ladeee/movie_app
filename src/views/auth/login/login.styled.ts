@@ -24,6 +24,7 @@ export const Addresses = styled.p`
 `;
 
 export const FormContainer = styled.section`
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   margin-top: 2.625rem;
@@ -46,6 +47,7 @@ export const FormContainer = styled.section`
 `;
 
 export const RememberPassword = styled.section`
+  font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;

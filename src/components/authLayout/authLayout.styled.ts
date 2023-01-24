@@ -115,11 +115,11 @@ export const AuthNavbarContainer = styled.ul`
 export const Company = styled.li`
   cursor: pointer;
   transition: ease-in 0.5s;
-  /* border-bottom: 0.375rem solid transparent; */
+  color: #ffffff;
+  border-bottom: 0.375rem solid #ffffff;
 
-  &:hover {
-    /* border-bottom: 0.375rem solid #ffffff; */
-    /* color: #ffffff; */
+  @media (max-width: 768px) {
+    color: #000000;
   }
 `;
 

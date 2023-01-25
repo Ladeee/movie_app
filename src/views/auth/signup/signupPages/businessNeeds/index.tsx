@@ -8,6 +8,7 @@ import {
   InputWrapper,
   Icon,
   Button,
+  Box,
 } from "../pages.styled";
 import Square from "../../../../../assets/images/authentification/square.png";
 import { Link } from "react-router-dom";
@@ -23,38 +24,28 @@ export default function BusinessNeeds() {
         </Addresses>
         <FormTwoContainer>
           <InputWrapper>
-            <input type="text" required placeholder="Address Verification" />
-            <Icon>
-              <img src={Square} alt="" />
-            </Icon>
+            <Box>Address Verification</Box>
+            <input type="checkbox" />
           </InputWrapper>
 
           <InputWrapper>
-            <input type="text" required placeholder="Identity Verification" />
-            <Icon>
-              <img src={Square} alt="" />
-            </Icon>
+            <Box>Identity Verification</Box>
+            <input type="checkbox" />
           </InputWrapper>
 
           <InputWrapper>
-            <input type="text" required placeholder="Business Verification" />
-            <Icon>
-              <img src={Square} alt="" />
-            </Icon>
+            <Box>Business Verification</Box>
+            <input type="checkbox" />
           </InputWrapper>
 
           <InputWrapper>
-            <input type="text" required placeholder="Account Opening" />
-            <Icon>
-              <img src={Square} alt="" />
-            </Icon>
+            <Box>Account Opening</Box>
+            <input type="checkbox" />
           </InputWrapper>
 
           <InputWrapper>
-            <input type="text" required placeholder="Insurance" />
-            <Icon>
-              <img src={Square} alt="" />
-            </Icon>
+            <Box>Insurance</Box>
+            <input type="checkbox" />
           </InputWrapper>
         </FormTwoContainer>
 

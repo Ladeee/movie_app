@@ -60,31 +60,36 @@ export const Button = styled(AuthButton)`
 
 // exclusive for page two
 
-export const FormTwoContainer = styled.div`
+export const FormTwoContainer = styled.section`
   display: flex;
   flex-direction: column;
   gap: 3.1875rem;
   margin-top: 4.375rem;
-
-  input {
-    width: 32.875rem;
-    height: 3.75rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 12px;
-    outline: none;
-    background-color: #f8fafc;
-    padding-left: 2.375rem;
-
-    &::placeholder {
-      color: #828282;
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
-  }
 `;
 
 export const InputWrapper = styled.div`
   position: relative;
+
+  input {
+    cursor: pointer;
+    position: absolute;
+    top: 1.25rem;
+    right: 1rem;
+  }
+`;
+
+export const Box = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: #f8fafc;
+  color: #828282;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  width: 32.875rem;
+  height: 3.75rem;
+  padding-left: 2.375rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 `;
 
 export const Icon = styled.div`

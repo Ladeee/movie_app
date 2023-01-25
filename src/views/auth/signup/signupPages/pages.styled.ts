@@ -61,6 +61,7 @@ export const Button = styled(AuthButton)`
 // exclusive for page two
 
 export const FormTwoContainer = styled.section`
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   gap: 3.1875rem;

@@ -116,7 +116,18 @@ export const Company = styled.li`
   cursor: pointer;
   transition: ease-in 0.5s;
   color: #ffffff;
-  border-bottom: 0.375rem solid #ffffff;
+  display: flex;
+  flex-direction: column;
+
+  &::after {
+    content: "";
+    width: 5.625rem;
+    height: 0.375rem;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 0.1875rem;
+    margin-top: 0.3125rem;
+  }
 
   @media (max-width: 768px) {
     color: #000000;
@@ -125,6 +136,7 @@ export const Company = styled.li`
 
 export const Individual = styled.li`
   cursor: pointer;
+  padding: 0 0.8125rem;
 `;
 
 export const Agent = styled.li`

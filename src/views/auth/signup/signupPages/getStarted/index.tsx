@@ -8,6 +8,32 @@ import {
   FormContainer,
   Button,
 } from "../pages.styled";
+// import CompanyDetails from "../companyDetails";
+// import BusinessNeeds from "../businessNeeds";
+
+// all routes
+// const ALL_TABS = [
+//   BusinessNeeds,
+//   CompanyDetails,
+// ];
+
+// const [page, setPage] = useState(0);
+
+// const { isCompleted: getStartedIsCompleted } = GetStarted;
+// const { isCompleted: businessNeedsIsCompleted } = GetStarted;
+
+// const tabs = [getStartedIsCompleted, businessNeedsIsCompleted];
+
+// const gotoTab = (index: number) => {
+//   // ensure all tabs before this one are filled before the user can proceed.
+//   const previousTabs = tabs.slice(0, index).every(Boolean);
+//   if (previousTabs) {
+//     setPage(index);
+//   } else {
+//     return page;
+//   }
+// };
+// const currentPage = ALL_TABS[page];
 
 export default function GetStarted() {
   return (

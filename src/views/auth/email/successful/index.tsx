@@ -3,7 +3,7 @@ import AuthLayout from "../../../../components/authLayout";
 import {
   EmailContainer,
   ConfirmEmail,
-  ConfirmText,
+  ConfirmSuccess,
   SignIn,
   SuccessButton,
 } from "../email.styled";
@@ -13,11 +13,12 @@ export default function Successful() {
     <AuthLayout bottom="-7.45rem" color="#3F3F46">
       <EmailContainer>
         <ConfirmEmail>Email Confirmation Successful</ConfirmEmail>
-        <ConfirmText>Welcome to Nester Verify!</ConfirmText>
+        <ConfirmSuccess>Welcome to Nester Verify!</ConfirmSuccess>
         <SignIn>
           Kindly click this link to sign in and enjoy Nester <br />
           Services!
         </SignIn>
+
         <Link to="/login">
           <SuccessButton>Login</SuccessButton>
         </Link>

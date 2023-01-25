@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import { AuthButton } from "../../../../components/reuseableStyles/button.styled";
+import { AuthButton } from "../../../../css/reuseableStyles/button.styled";
 
 // page one/ two & three
 
 export const SignupContainer = styled.div`
   margin-top: 9.3125rem;
+  white-space: nowrap;
 `;
 
 export const Heading = styled.header`
@@ -13,6 +14,11 @@ export const Heading = styled.header`
   font-weight: 600;
   font-size: 2.25rem;
   line-height: 2.75rem;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    text-align: center;
+  }
 `;
 
 export const Addresses = styled.p`
@@ -22,6 +28,11 @@ export const Addresses = styled.p`
   font-size: 1.125rem;
   line-height: 1.875rem;
   margin-top: 2.0625rem;
+
+  @media (max-width: 398px) {
+    text-align: center;
+    font-size: 11px;
+  }
 `;
 
 export const FormContainer = styled.div`
@@ -37,15 +48,19 @@ export const FormContainer = styled.div`
   }
 
   input {
-    width: 32.875rem;
-    height: 3.75rem;
+    background-color: #f8fafc;
+    outline: none;
+    position: relative;
     border: 1px solid #cbd5e1;
     border-radius: 12px;
-    outline: none;
-    background-color: #f8fafc;
+    width: 32.875rem;
+    height: 3.75rem;
     margin-top: 0.6875rem;
     padding-left: 2.375rem;
-    position: relative;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   #create {
@@ -66,20 +81,15 @@ export const FormTwoContainer = styled.section`
   flex-direction: column;
   gap: 3.1875rem;
   margin-top: 4.375rem;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
 `;
 
 export const InputWrapper = styled.div`
   position: relative;
 
-  input {
-    cursor: pointer;
-    position: absolute;
-    top: 1.25rem;
-    right: 1rem;
-  }
-`;
-
-export const Box = styled.div`
   display: flex;
   align-items: center;
   background-color: #f8fafc;
@@ -91,7 +101,20 @@ export const Box = styled.div`
   padding-left: 2.375rem;
   font-size: 1rem;
   line-height: 1.5rem;
+
+  input {
+    cursor: pointer;
+    position: absolute;
+    top: 1.25rem;
+    right: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
+
+export const Box = styled.div``;
 
 export const Icon = styled.div`
   cursor: pointer;

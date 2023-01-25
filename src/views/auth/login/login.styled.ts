@@ -1,10 +1,17 @@
 import styled from "styled-components";
-import { AuthButton } from "../../../components/reuseableStyles/button.styled";
+import { AuthButton } from "../../../css/reuseableStyles/button.styled";
 
 // login / forget password
 
 export const Container = styled.div`
   margin-top: 9.3125rem;
+  white-space: nowrap;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Heading = styled.header`
@@ -13,6 +20,11 @@ export const Heading = styled.header`
   font-weight: 600;
   font-size: 2.25rem;
   line-height: 2.75rem;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    text-align: center;
+  }
 `;
 
 export const Addresses = styled.p`
@@ -22,6 +34,11 @@ export const Addresses = styled.p`
   font-size: 1.125rem;
   line-height: 1.875rem;
   margin-top: 2.0625rem;
+
+  @media (max-width: 398px) {
+    text-align: center;
+    font-size: 11px;
+  }
 `;
 
 export const FormContainer = styled.section`
@@ -29,12 +46,14 @@ export const FormContainer = styled.section`
   display: flex;
   flex-direction: column;
   margin-top: 2.625rem;
+
   label {
     color: #000000;
     font-size: 1rem;
     line-height: 1.5rem;
     margin-top: 16px;
   }
+
   input {
     background-color: #f8fafc;
     border: 1px solid #cbd5e1;
@@ -44,6 +63,10 @@ export const FormContainer = styled.section`
     margin-top: 11px;
     border-radius: 0.75rem;
     padding-left: 2.375rem;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 `;
 
@@ -53,6 +76,10 @@ export const RememberPassword = styled.section`
   justify-content: space-between;
   align-items: center;
   margin-top: 1.25rem;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
 `;
 
 export const Check = styled.div`

@@ -1,4 +1,3 @@
-import React from "react";
 import AuthLayout from "../../../../../components/authLayout";
 import {
   SignupContainer,
@@ -6,11 +5,9 @@ import {
   Addresses,
   FormTwoContainer,
   InputWrapper,
-  Icon,
   Button,
   Box,
 } from "../pages.styled";
-import Square from "../../../../../assets/images/authentification/square.png";
 import { Link } from "react-router-dom";
 
 export default function BusinessNeeds() {

@@ -110,6 +110,11 @@ export const AuthNavbarContainer = styled.ul`
   z-index: 2;
   margin: 0;
   padding: 0;
+
+  @media (max-width: 568px) {
+    font-size: 14px;
+    gap: 20px;
+  }
 `;
 
 export const Company = styled.li`
@@ -127,18 +132,31 @@ export const Company = styled.li`
     border: 1px solid #ffffff;
     border-radius: 0.1875rem;
     margin-top: 0.3125rem;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   @media (max-width: 768px) {
     color: #000000;
+    font-size: 0.875rem;
   }
 `;
 
 export const Individual = styled.li`
   cursor: pointer;
   padding: 0 0.8125rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+  }
 `;
 
 export const Agent = styled.li`
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+  }
 `;

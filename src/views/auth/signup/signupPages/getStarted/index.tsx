@@ -1,67 +1,36 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import AuthLayout from "../../../../../components/authLayout";
 
-import {
-  SignupContainer,
-  Heading,
-  Addresses,
-  FormContainer,
-  Button,
-} from "../pages.styled";
-// import CompanyDetails from "../companyDetails";
-// import BusinessNeeds from "../businessNeeds";
+import CompanyDetails from "../companyDetails";
+import BusinessNeeds from "../businessNeeds";
+import File from "../../file";
 
-// all routes
-// const ALL_TABS = [
-//   BusinessNeeds,
-//   CompanyDetails,
-// ];
-
-// const [page, setPage] = useState(0);
-
-// const { isCompleted: getStartedIsCompleted } = GetStarted;
-// const { isCompleted: businessNeedsIsCompleted } = GetStarted;
-
-// const tabs = [getStartedIsCompleted, businessNeedsIsCompleted];
-
-// const gotoTab = (index: number) => {
-//   // ensure all tabs before this one are filled before the user can proceed.
-//   const previousTabs = tabs.slice(0, index).every(Boolean);
-//   if (previousTabs) {
-//     setPage(index);
-//   } else {
-//     return page;
-//   }
-// };
-// const currentPage = ALL_TABS[page];
+//  all routes
+const ALL_TABS = [File, BusinessNeeds, CompanyDetails];
 
 export default function GetStarted() {
+  const [page, setPage] = useState(0);
+
+  const CurrentPage = ALL_TABS[page];
+
+  const color = page === 1 ? "#A96644" : "#1F2041";
+
+  const goToNextPage = async () => {
+    if (page === 2) {
+      const response = await createAccount();
+      return;
+    }
+    setPage((currentValue) => currentValue + 1);
+  };
+
+  const createAccount = async () => {
+    // logic to create account
+    alert("account created");
+  };
+
   return (
-    <AuthLayout color="#0D2AAB">
-      <SignupContainer>
-        <Heading>Get Started</Heading>
-        <Addresses>
-          With Nester Verify, you are able to verify addresses <br />
-          easily, from anywhere in the world
-        </Addresses>
-
-        <FormContainer>
-          <label>Full Name</label>
-          <input type="text" required />
-          <label>Phone Number</label>
-          <input type="text" required />
-          <label>Email Address</label>
-          <input type="text" required />
-          <label id="create">Create Password</label>
-          <input type="text" required />
-          <label>Confirm Password</label>
-          <input type="text" required />
-        </FormContainer>
-
-        <Link to="/businessneeds">
-          <Button>Next</Button>
-        </Link>
-      </SignupContainer>
+    <AuthLayout color={color}>
+      <CurrentPage goToNextPage={goToNextPage} />
     </AuthLayout>
   );
 }

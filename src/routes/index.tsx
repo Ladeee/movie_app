@@ -1,26 +1,24 @@
 // ----------- import external dependencies -------------
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
-const Signup = React.lazy(() => import("../views/auth/signup"));
-const CompanyDetails = React.lazy(
-  () => import("../views/auth/signup/signupPages/companyDetails")
+import { createBrowserRouter, Outlet } from "react-router-dom";
+import Signup from "../views/auth/signup";
+
+const Home = React.lazy(() => import("../views/homepage"));
+const GetStarted = React.lazy(
+  () => import("../views/auth/signup/signupPages/getStarted")
 );
 const Confirm = React.lazy(() => import("../views/auth/email/confirm"));
 const Successful = React.lazy(() => import("../views/auth/email/successful"));
 const Login = React.lazy(() => import("../views/auth/login"));
 const Forget = React.lazy(() => import("../views/auth/login/forget"));
 const SetPassword = React.lazy(() => import("../views/auth/login/setPassword"));
-const BusinessNeeds = React.lazy(
-  () => import("../views/auth/signup/signupPages/businessNeeds")
-);
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Signup />,
+    element: <Home />,
     children: [
-      { path: "/businessneeds", element: <BusinessNeeds /> },
-      { path: "/companydetails", element: <CompanyDetails /> },
+      { path: "/signup", element: <Signup /> },
       { path: "/login", element: <Login /> },
       { path: "/forget", element: <Forget /> },
       { path: "/setpassword", element: <SetPassword /> },

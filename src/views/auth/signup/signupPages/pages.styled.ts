@@ -7,7 +7,7 @@ export const SignupContainer = styled.div`
   margin-top: 9.3125rem;
 `;
 
-export const Heading = styled.div`
+export const Heading = styled.header`
   font-family: "Inter", sans-serif;
   color: #090914;
   font-weight: 600;
@@ -15,7 +15,7 @@ export const Heading = styled.div`
   line-height: 2.75rem;
 `;
 
-export const Addresses = styled.div`
+export const Addresses = styled.p`
   font-family: "Poppins", sans-serif;
   color: #52525b;
   font-weight: 400;

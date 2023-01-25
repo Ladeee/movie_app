@@ -16,6 +16,7 @@ export const Heading = styled.header`
 `;
 
 export const Addresses = styled.p`
+  font-family: "Poppins", sans-serif;
   color: #52525b;
   font-weight: 400;
   font-size: 1.125rem;

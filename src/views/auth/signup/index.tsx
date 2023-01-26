@@ -20,7 +20,7 @@ export default function Signup() {
   const goToNextPage = async () => {
     if (page === 2) {
       const response = await createAccount();
-      return;
+      return response;
     }
     setPage((currentValue) => currentValue + 1);
   };

@@ -9,5 +9,11 @@ export const router = createBrowserRouter([
   {
     path: "/company",
     element: <CompanyAdminLayout />,
+    children: [
+      {
+        path: "dashboard",
+        index: true,
+      },
+    ],
   },
 ]);

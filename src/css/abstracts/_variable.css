@@ -2,4 +2,12 @@
 :root {
   /* ------ white colour config ------ */
   --white100: #fafafb;
+  --white: #ffffff;
+
+  /* ------- blue color config ------- */
+  --blue100: #0d2aab;
+  --indigo600: #4f46e5;
+
+  /* ------ ash color config ------ */
+  --ash50: #e4e4e4;
 }

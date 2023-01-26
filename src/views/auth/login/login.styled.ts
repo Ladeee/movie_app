@@ -84,7 +84,9 @@ export const RememberPassword = styled.section`
   margin-top: 1.25rem;
 
   @media (max-width: 768px) {
-    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 `;
 

@@ -2,6 +2,8 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 
+const AcceptJob = React.lazy(() => import("../views/jobs/acceptJobs"));
+const RejectJob = React.lazy(() => import("../views/jobs/rejectJobs"));
 const Home = React.lazy(() => import("../views/homepage"));
 const GetStarted = React.lazy(() => import("../views/auth/signup"));
 const Confirm = React.lazy(() => import("../views/auth/email/confirm"));
@@ -46,5 +48,15 @@ export const router = createBrowserRouter([
   {
     path: "/emailsuccessful",
     element: <Successful />,
+  },
+
+  {
+    path: "/acceptjob",
+    element: <AcceptJob />,
+  },
+
+  {
+    path: "/rejectjob",
+    element: <RejectJob />,
   },
 ]);

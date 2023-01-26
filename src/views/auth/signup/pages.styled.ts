@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { AuthButton } from "../../../../css/reuseableStyles/button.styled";
+import { AuthButton } from "../../../css/reuseableStyles/button.styled";
 
 // page one/ two & three
 
@@ -68,9 +68,21 @@ export const FormContainer = styled.div`
   }
 `;
 
+export const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const Button = styled(AuthButton)`
   margin-top: 3.4375rem;
   margin-bottom: 2.8125rem;
+`;
+
+export const Btn = styled.div`
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 // exclusive for page two
@@ -87,7 +99,7 @@ export const FormTwoContainer = styled.section`
   }
 `;
 
-export const InputWrapper = styled.div`
+export const BoxWrapper = styled.div`
   position: relative;
 
   display: flex;

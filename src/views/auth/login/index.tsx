@@ -36,13 +36,13 @@ export default function Login() {
             <Remember>Remember me</Remember>
           </Check>
 
-          <Link to="/forget">
+          <Link to="/recoverpassword">
             <Forgot>Forgot password</Forgot>
           </Link>
         </RememberPassword>
         <Button>Login</Button>
 
-        <Link to="/">
+        <Link to="/signup">
           <Account>Create Account</Account>
         </Link>
       </Container>

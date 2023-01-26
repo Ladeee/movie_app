@@ -4,6 +4,7 @@ import {
   Heading,
   Addresses,
   FormContainer,
+  InputWrapper,
   Reset,
 } from "../login.styled";
 
@@ -17,10 +18,14 @@ export default function SetPassword() {
           easily, from anywhere in the world
         </Addresses>
         <FormContainer>
-          <label>New Password</label>
-          <input type="text" required />
-          <label id="create">Confirm Password</label>
-          <input type="text" required />
+          <InputWrapper>
+            <label>New Password</label>
+            <input type="text" required />
+          </InputWrapper>
+          <InputWrapper>
+            <label id="create">Confirm Password</label>
+            <input type="text" required />
+          </InputWrapper>
         </FormContainer>
 
         {/* <Link to="/"> */}

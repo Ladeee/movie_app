@@ -7,7 +7,7 @@ export const AuthButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #0d2aab;
+  background: #1f2041;
   color: #ffffff;
   width: 13.1875rem;
   height: 3.4375rem;

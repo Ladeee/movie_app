@@ -21,7 +21,7 @@ interface Props {
 
 export default function AuthLayout({
   children,
-  color = "#0D2AAB",
+  color = "#1F2041",
   bottom = 0,
 }: Props) {
   return (

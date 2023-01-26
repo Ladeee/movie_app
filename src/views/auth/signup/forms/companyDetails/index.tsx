@@ -1,4 +1,3 @@
-import AuthLayout from "../../../../../components/authLayout";
 import {
   SignupContainer,
   Industry,
@@ -6,8 +5,10 @@ import {
   Heading,
   Addresses,
   FormContainer,
+  InputWrapper,
+  Btn,
   Button,
-} from "../pages.styled";
+} from "../../pages.styled";
 import Indust from "../../../../../assets/images/authentification/industry.png";
 
 export default function CompanyDetails({
@@ -24,10 +25,14 @@ export default function CompanyDetails({
       </Addresses>
 
       <FormContainer>
-        <label>Company Name</label>
-        <input type="text" required />
-        <label>CAC Registration Number</label>
-        <input type="text" required />
+        <InputWrapper>
+          <label>Company Name</label>
+          <input type="text" required />
+        </InputWrapper>
+        <InputWrapper>
+          <label>CAC Registration Number</label>
+          <input type="text" required />
+        </InputWrapper>
         <label>Industry</label>
         <Industry>
           <input type="text" required />
@@ -35,13 +40,19 @@ export default function CompanyDetails({
             <img src={Indust} alt="" />
           </IndustryIcon>
         </Industry>
-        <label id="create">Company Address</label>
-        <input type="text" required />
-        <label>Role</label>
-        <input type="text" required />
+        <InputWrapper>
+          <label id="create">Company Address</label>
+          <input type="text" required />
+        </InputWrapper>
+        <InputWrapper>
+          <label>Role</label>
+          <input type="text" required />
+        </InputWrapper>
       </FormContainer>
 
-      <Button onClick={goToNextPage}>Create Account</Button>
+      <Btn>
+        <Button onClick={goToNextPage}>Create Account</Button>
+      </Btn>
     </SignupContainer>
   );
 }

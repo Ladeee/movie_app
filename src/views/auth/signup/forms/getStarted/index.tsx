@@ -1,14 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
   SignupContainer,
   Heading,
   Addresses,
   FormContainer,
+  InputWrapper,
+  Btn,
   Button,
-} from "../../auth/signup/signupPages/pages.styled";
+} from "../../pages.styled";
 
-export default function File({ goToNextPage }: { goToNextPage: () => void }) {
+export default function GetStarted({
+  goToNextPage,
+}: {
+  goToNextPage: () => void;
+}) {
   return (
     <>
       <SignupContainer>
@@ -19,29 +24,31 @@ export default function File({ goToNextPage }: { goToNextPage: () => void }) {
         </Addresses>
 
         <FormContainer>
-          <div>
+          <InputWrapper>
             <label>Full Name</label>
             <input type="text" required />
-          </div>
-          <div>
+          </InputWrapper>
+          <InputWrapper>
             <label>Phone Number</label>
             <input type="text" required />
-          </div>
-          <div>
+          </InputWrapper>
+          <InputWrapper>
             <label>Email Address</label>
             <input type="text" required />
-          </div>
-          <div>
+          </InputWrapper>
+          <InputWrapper>
             <label id="create">Create Password</label>
             <input type="text" required />
-          </div>
-          <div>
+          </InputWrapper>
+          <InputWrapper>
             <label>Confirm Password</label>
             <input type="text" required />
-          </div>
+          </InputWrapper>
         </FormContainer>
 
-        <Button onClick={goToNextPage}>Next</Button>
+        <Btn>
+          <Button onClick={goToNextPage}>Next</Button>
+        </Btn>
       </SignupContainer>
     </>
   );

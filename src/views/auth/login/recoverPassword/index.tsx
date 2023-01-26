@@ -9,9 +9,9 @@ import {
   Acc,
 } from "../login.styled";
 
-export default function Forget() {
+export default function RecoverPassword() {
   return (
-    <AuthLayout>
+    <AuthLayout color="#2C2F6D">
       <Container>
         <Heading>Recover your password easily!</Heading>
         <Addresses>
@@ -27,7 +27,7 @@ export default function Forget() {
           <Button>Reset</Button>
         </Link>
 
-        <Link to="/">
+        <Link to="/signup">
           <Acc>Create Account</Acc>
         </Link>
       </Container>

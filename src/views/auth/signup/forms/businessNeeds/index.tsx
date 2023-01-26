@@ -1,13 +1,13 @@
-import AuthLayout from "../../../../../components/authLayout";
 import {
   SignupContainer,
   Heading,
   Addresses,
   FormTwoContainer,
-  InputWrapper,
+  BoxWrapper,
   Button,
+  Btn,
   Box,
-} from "../pages.styled";
+} from "../../pages.styled";
 
 export default function BusinessNeeds({
   goToNextPage,
@@ -22,33 +22,35 @@ export default function BusinessNeeds({
         easily, from anywhere in the world
       </Addresses>
       <FormTwoContainer>
-        <InputWrapper>
+        <BoxWrapper>
           <Box>Address Verification</Box>
           <input type="checkbox" />
-        </InputWrapper>
+        </BoxWrapper>
 
-        <InputWrapper>
+        <BoxWrapper>
           <Box>Identity Verification</Box>
           <input type="checkbox" />
-        </InputWrapper>
+        </BoxWrapper>
 
-        <InputWrapper>
+        <BoxWrapper>
           <Box>Business Verification</Box>
           <input type="checkbox" />
-        </InputWrapper>
+        </BoxWrapper>
 
-        <InputWrapper>
+        <BoxWrapper>
           <Box>Account Opening</Box>
           <input type="checkbox" />
-        </InputWrapper>
+        </BoxWrapper>
 
-        <InputWrapper>
+        <BoxWrapper>
           <Box>Insurance</Box>
           <input type="checkbox" />
-        </InputWrapper>
+        </BoxWrapper>
       </FormTwoContainer>
 
-      <Button onClick={goToNextPage}>Continue</Button>
+      <Btn>
+        <Button onClick={goToNextPage}>Continue</Button>
+      </Btn>
     </SignupContainer>
   );
 }

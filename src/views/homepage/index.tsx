@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Home() {
-  return <div>Nester Home</div>;
+  return <h1 className="text-center">Nester Home</h1>;
 }

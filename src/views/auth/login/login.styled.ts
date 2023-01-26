@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { AuthButton } from "../../../css/reuseableStyles/button.styled";
 
-// login / forget password
+// login / recover password
 
 export const Container = styled.div`
   margin-top: 9.3125rem;
@@ -42,6 +42,7 @@ export const Addresses = styled.p`
 `;
 
 export const FormContainer = styled.section`
+  width: 100%;
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
@@ -68,6 +69,11 @@ export const FormContainer = styled.section`
       width: 100%;
     }
   }
+`;
+
+export const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const RememberPassword = styled.section`

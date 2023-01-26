@@ -10,7 +10,6 @@ import {
   Stars,
 } from "../jobs.styled";
 import { HiOutlineStar } from "react-icons/hi";
-import Staricon from "../../../assets/svg/star.svg";
 
 const colors = {
   gray: "#808080",
@@ -38,14 +37,15 @@ export default function AcceptJobs() {
     <AcceptJobContainer>
       <AcceptJobWrapper>
         <Info>Job Accepted!</Info>
+
         <Rate>
           <RateText>Rate the job</RateText>
           <Stars>
             {stars.map((_, index) => {
               return (
                 <Star>
-                  <img
-                    src={Staricon}
+                  <HiOutlineStar
+                    className="starIcon"
                     key={index}
                     onMouseOver={() => handleMouseOver(index + 1)}
                     onMouseLeave={handleMouseLeave}

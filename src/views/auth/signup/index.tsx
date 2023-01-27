@@ -6,14 +6,14 @@ import CompanyDetails from "../signup/forms/companyDetails";
 import BusinessNeeds from "./forms/businessNeeds";
 
 //  all routes
-const ALL_TABS = [GetStarted, BusinessNeeds, CompanyDetails];
+const SIGNUP_TABS = [GetStarted, BusinessNeeds, CompanyDetails];
 
 export default function Signup() {
   const [page, setPage] = useState(0);
 
   const navigate = useNavigate();
 
-  const CurrentPage = ALL_TABS[page];
+  const CurrentPage = SIGNUP_TABS[page];
 
   const color = page === 1 ? "#A96644" : "#1F2041";
 

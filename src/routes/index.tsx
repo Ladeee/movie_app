@@ -1,6 +1,7 @@
 // ----------- import external dependencies -------------
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
+import Verifications from "../views/jobs/createjobs/verification";
 
 const AcceptJob = React.lazy(() => import("../views/jobs/acceptJobs"));
 const RejectJob = React.lazy(() => import("../views/jobs/rejectJobs"));
@@ -58,5 +59,10 @@ export const router = createBrowserRouter([
   {
     path: "/rejectjob",
     element: <RejectJob />,
+  },
+
+  {
+    path: "/verifications",
+    element: <Verifications />,
   },
 ]);

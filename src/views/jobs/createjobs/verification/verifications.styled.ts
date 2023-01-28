@@ -5,6 +5,7 @@ import {
   VerificationInput,
 } from "./button";
 
+// verifications
 export const VerificationContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -93,6 +94,7 @@ export const RightInfo = styled.section``;
 export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
 
   label {
     color: #344054;
@@ -109,6 +111,13 @@ export const InputWrapper = styled.div`
     border-radius: 0.5rem;
     margin-top: 0.375rem;
   }
+
+  i {
+    cursor: pointer;
+    position: absolute;
+    right: 1.3438rem;
+    bottom: 0.5rem;
+  }
 `;
 
 export const Input = styled(VerificationInput)`
@@ -116,9 +125,59 @@ export const Input = styled(VerificationInput)`
   padding-left: 1rem;
 `;
 
+// export const DropdownIcon = styled.div`
+
+// `;
+
 export const Upload = styled.div`
   margin-top: 2rem;
   /* p{
     text-align: left;
   } */
+`;
+
+export const ImageWrapper = styled.div`
+  cursor: pointer;
+  position: relative;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #999999;
+  border-radius: 50%;
+  width: 7.6875rem;
+  height: 7.6875rem;
+  margin-top: 1.4375rem;
+
+  .uploadInput {
+    color: transparent;
+    background-color: transparent;
+    cursor: pointer;
+    width: 7.6875rem;
+    height: 7.6875rem;
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 9;
+  }
+
+  i {
+    position: absolute;
+    color: #999999;
+  }
+
+  /* div {
+    border: 1px solid #999999;
+    border-radius: 50%;
+    width: 7.6875rem;
+    height: 7.6875rem;
+    margin-top: 1.4375rem;
+  } */
+
+  .uploadedImage {
+    position: absolute;
+    width: 7.6875rem;
+    height: 7.6875rem;
+    border-radius: 50%;
+    z-index: 1;
+  }
 `;

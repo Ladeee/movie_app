@@ -50,7 +50,6 @@ export default function Verifications() {
           <CreateBtn>Create Job</CreateBtn>
         </RightHeader>
       </Header>
-
       <div>{pageDisplay()}</div>
     </VerificationContainer>
   );

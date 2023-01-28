@@ -9,8 +9,13 @@ import {
   LeftInfo,
   RightInfo,
   VerificationButtons,
+  // DropdownIcon,
   Submit,
 } from "../verifications.styled";
+
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { CiCalendarDate } from "react-icons/ci";
+
 export default function GuarantorVerification({
   nextPage,
 }: {
@@ -38,6 +43,9 @@ export default function GuarantorVerification({
           <InputWrapper>
             <label>L.G.A</label>
             <Input type="text" />
+            <i>
+              <MdOutlineKeyboardArrowDown />
+            </i>
           </InputWrapper>
           <InputWrapper>
             <label>Additional Information</label>
@@ -62,6 +70,9 @@ export default function GuarantorVerification({
           <InputWrapper>
             <label>State</label>
             <Input type="text" />
+            <i>
+              <MdOutlineKeyboardArrowDown />
+            </i>
           </InputWrapper>
           <InputWrapper>
             <label>Closest Landmark</label>
@@ -70,6 +81,9 @@ export default function GuarantorVerification({
           <InputWrapper>
             <label>Verification Due Date</label>
             <Input type="text" />
+            <i id="calender">
+              <CiCalendarDate className="w-6 h-6" />
+            </i>
           </InputWrapper>
         </RightInfo>
       </FormWrapper>

@@ -58,8 +58,9 @@ export const Welcome = styled.section<{ color: string; bottom: any }>`
 
 export const Contents = styled.div`
   display: grid;
-  place-content: center;
+  place-content: flex-end;
   margin-top: 12.0625rem;
+  margin-right: 7.25rem;
 `;
 
 export const Logo = styled.figure`

@@ -16,7 +16,7 @@ a:hover {
   z-index: 1000;
 } */
 
-@media (min-width: 768px) and (max-width: 2000px) {
+@media (min-width: 768px) and (max-width: 2560px) {
   :root {
     /* font-size: 16px; */
     font-size: 1.0582vw;

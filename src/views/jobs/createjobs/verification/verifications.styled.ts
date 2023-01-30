@@ -17,7 +17,6 @@ export const VerificationContainer = styled.div`
 export const Header = styled.section`
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   gap: 26.625rem;
   p {
     font-size: 1.5rem;
@@ -73,7 +72,6 @@ export const Submit = styled(VerificationDownButtons)`
 export const AddressContainer = styled.div`
   margin-top: 1.625rem;
   width: 75.5rem;
-  /* height: 66.9375rem; */
   background: #ffffff;
   border: 1px solid #e4e4e7;
   border-radius: 0.625rem;
@@ -131,9 +129,6 @@ export const Input = styled(VerificationInput)`
 
 export const Upload = styled.div`
   margin-top: 2rem;
-  /* p{
-    text-align: left;
-  } */
 `;
 
 export const ImageWrapper = styled.div`
@@ -165,14 +160,6 @@ export const ImageWrapper = styled.div`
     color: #999999;
   }
 
-  /* div {
-    border: 1px solid #999999;
-    border-radius: 50%;
-    width: 7.6875rem;
-    height: 7.6875rem;
-    margin-top: 1.4375rem;
-  } */
-
   .uploadedImage {
     position: absolute;
     width: 7.6875rem;
@@ -180,4 +167,38 @@ export const ImageWrapper = styled.div`
     border-radius: 50%;
     z-index: 1;
   }
+`;
+
+// verification navbar
+
+export const VerificationNavContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5.1875rem;
+`;
+
+export const Individual = styled.button`
+  border: 1px solid #7961f9;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 0.875rem;
+  height: 2.3125rem;
+  border-radius: 0.1875rem;
+`;
+
+export const Guarantor = styled.button`
+  border: 1px solid #7961f9;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: 0.1875rem;
+`;
+
+export const Agent = styled.button`
+  border: 1px solid #7961f9;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.25rem;
+  border-radius: 0.1875rem;
 `;

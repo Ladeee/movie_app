@@ -144,7 +144,7 @@ const ListItem = styled.li`
 
 const OtherMenus = styled.ul`
   position: absolute;
-  bottom: 150px;
+  bottom: 55px;
 
   li {
     margin-bottom: 0.5rem;

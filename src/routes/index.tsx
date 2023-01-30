@@ -4,6 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 // ---------- import internal dependencies ----------
 const CompanyAdminLayout = lazy(() => import("../layouts/CompanyAdminLayout"));
+const CompanyDashboard = lazy(() => import("../screens/companyDashboard"));
 
 export const router = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ export const router = createBrowserRouter([
       {
         path: "dashboard",
         index: true,
+        element: <CompanyDashboard />,
       },
     ],
   },

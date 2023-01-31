@@ -17,12 +17,3 @@ export const AuthButton = styled.button`
   border-radius: 0.5625rem;
   border: none;
 `;
-
-// export const theme = {
-//   colors: {
-//     powderWhite: "#FFFDF9",
-//     persianGreen: "#06B49A",
-//     lightBlue: "#AFDBD2",
-//     onyx: "#36313D"
-//   }
-// }

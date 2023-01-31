@@ -10,13 +10,13 @@ export const AuthContainer = styled.div`
 
 export const AuthWrapper = styled.div`
   display: flex;
-  gap: 8.375rem;
+  gap: 17.8667vw;
 `;
 
 export const AuthNav = styled.nav`
   display: flex;
   justify-content: center;
-  padding-top: 3.375rem;
+  padding-top: 22px;
   position: absolute;
   left: 50%;
   right: 50%;
@@ -35,8 +35,8 @@ export const Welcome = styled.section<{ color: string; bottom: any }>`
     background-size: contain;
     position: absolute;
     background-repeat: no-repeat;
-    width: 7.125rem;
-    height: 8.875rem;
+    width: 15.2vw;
+    height: 18.9333vw;
   }
   &::after {
     content: "";
@@ -44,9 +44,9 @@ export const Welcome = styled.section<{ color: string; bottom: any }>`
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    width: 28.75rem;
-    height: 13.9375rem;
-    right: -9.75rem;
+    width: 61.3333vw;
+    height: 25.4667vw;
+    right: -26.6667vw;
     bottom: ${(props) => props.bottom};
     z-index: 1;
   }
@@ -59,28 +59,28 @@ export const Welcome = styled.section<{ color: string; bottom: any }>`
 export const Contents = styled.div`
   display: grid;
   place-content: flex-end;
-  margin-top: 12.0625rem;
-  margin-right: 7.25rem;
+  margin-top: 25.7333vw;
+  margin-right: 15.4667vw;
 `;
 
 export const Logo = styled.figure`
-  width: 10.9375rem;
-  height: 3.5625rem;
+  width: 23.3333vw;
+  height: 7.6vw;
 `;
 
 export const Greetings = styled.header`
   font-weight: 600;
-  font-size: 3.75rem;
-  line-height: 5.375rem;
-  margin-top: 1.5625rem;
+  font-size: 8vw;
+  line-height: 11.4667vw;
+  margin-top: 3.3333vw;
   color: #ffffff;
 `;
 
 export const Clarity = styled.p`
   font-weight: 400;
-  font-size: 1.125rem;
-  line-height: 1.875rem;
-  margin-top: 0.5625rem;
+  font-size: 2.4vw;
+  line-height: 4vw;
+  margin-top: 1.2vw;
   color: #cbd5e1;
 `;
 
@@ -103,16 +103,16 @@ export const AuthNavbarContainer = styled.ul`
   font-family: "Inter", sans-serif;
   display: flex;
   list-style-type: none;
-  gap: 2.5rem;
+  gap: 5.3333vw;
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 2.1333vw;
+  line-height: 3.2vw;
   text-transform: uppercase;
   z-index: 2;
   margin: 0;
   padding: 0;
 
-  @media (max-width: 568px) {
+  @media (max-width: 567.99px) {
     font-size: 14px;
     gap: 20px;
   }
@@ -127,12 +127,12 @@ export const Company = styled.li`
 
   &::after {
     content: "";
-    width: 5.625rem;
-    height: 0.375rem;
+    width: 12vw;
+    height: 0.8vw;
     background-color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 0.1875rem;
-    margin-top: 0.3125rem;
+    border: 0.1333vw solid #ffffff;
+    border-radius: 0.4vw;
+    margin-top: 0.6667vw;
 
     @media (max-width: 768px) {
       display: none;
@@ -141,16 +141,16 @@ export const Company = styled.li`
 
   @media (max-width: 768px) {
     color: #000000;
-    font-size: 0.875rem;
+    font-size: 14px;
   }
 `;
 
 export const Individual = styled.li`
   cursor: pointer;
-  padding: 0 0.8125rem;
+  padding: 0 1.7333vw;
 
   @media (max-width: 768px) {
-    font-size: 0.875rem;
+    font-size: 14px;
   }
 `;
 
@@ -158,6 +158,6 @@ export const Agent = styled.li`
   cursor: pointer;
 
   @media (max-width: 768px) {
-    font-size: 0.875rem;
+    font-size: 14px;
   }
 `;

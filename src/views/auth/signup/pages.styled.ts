@@ -4,7 +4,7 @@ import { AuthButton } from "../../../css/reuseableStyles/button.styled";
 // page one/ two & three
 
 export const SignupContainer = styled.div`
-  margin-top: 9.2vw;
+  margin-top: 3.3125rem;
   white-space: nowrap;
 `;
 
@@ -12,8 +12,8 @@ export const Heading = styled.header`
   font-family: "Inter", sans-serif;
   color: #090914;
   font-weight: 600;
-  font-size: 4.8vw;
-  line-height: 5.8667vw;
+  font-size: 1.6rem;
+  line-height: 2.75rem;
 
   @media (max-width: 768px) {
     font-size: 18px;
@@ -25,9 +25,9 @@ export const Addresses = styled.p`
   font-family: "Poppins", sans-serif;
   color: #52525b;
   font-weight: 400;
-  font-size: 2.4vw;
-  line-height: 4vw;
-  margin-top: 2.2667vw;
+  font-size: 1rem;
+  line-height: 1.875rem;
+  margin-top: 1rem;
 
   @media (max-width: 398px) {
     text-align: center;
@@ -42,8 +42,8 @@ export const FormContainer = styled.div`
   margin-top: 1.1875rem;
 
   label {
-    font-size: 2.1333vw;
-    line-height: 3.2vw;
+    font-size: 0.825rem;
+    line-height: 24px;
   }
 
   input {
@@ -51,10 +51,10 @@ export const FormContainer = styled.div`
     outline: none;
     position: relative;
     border: 1px solid #cbd5e1;
-    border-radius: 1.6vw;
-    width: 70.1333vw;
-    height: 5.8667vw;
-    padding-left: 5.0667vw;
+    border-radius: 12px;
+    width: 32.875rem;
+    height: 2.75rem;
+    padding-left: 2.375rem;
 
     @media (max-width: 768px) {
       width: 100%;
@@ -62,7 +62,7 @@ export const FormContainer = styled.div`
   }
 
   #create {
-    margin-top: 2.4vw;
+    margin-top: 1.125rem;
   }
 `;
 
@@ -72,7 +72,7 @@ export const InputWrapper = styled.div`
 `;
 
 export const Button = styled(AuthButton)`
-  margin-top: 4.2667vw;
+  margin-top: 2rem;
 `;
 
 export const Btn = styled.div`
@@ -88,8 +88,8 @@ export const FormTwoContainer = styled.section`
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 4.2667vw;
-  margin-top: 5.0667vw;
+  gap: 2rem;
+  margin-top: 2.375rem;
 
   @media (max-width: 768px) {
     display: flex;
@@ -104,18 +104,18 @@ export const BoxWrapper = styled.div`
   background-color: #f8fafc;
   color: #828282;
   border: 1px solid #cbd5e1;
-  border-radius: 1.6vw;
-  width: 70.1333vw;
-  height: 5.8667vw;
-  padding-left: 5.0667vw;
-  font-size: 2.1333vw;
-  line-height: 3.2vw;
+  border-radius: 12px;
+  width: 32.875rem;
+  height: 2.75rem;
+  padding-left: 2.375rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 
   input {
     cursor: pointer;
     position: absolute;
-    top: 1.28vw;
-    right: 2.1333vw;
+    top: 0.6rem;
+    right: 1rem;
   }
 
   @media (max-width: 768px) {
@@ -128,10 +128,10 @@ export const Box = styled.div``;
 export const Icon = styled.div`
   cursor: pointer;
   position: absolute;
-  top: 2.6667vw;
-  right: 2.0894vw;
-  width: 3.1106vw;
-  height: 3.1106vw;
+  top: 1.25rem;
+  right: 0.9794rem;
+  width: 1.4581rem;
+  height: 1.4581rem;
 `;
 
 // exclusive for page three
@@ -143,8 +143,8 @@ export const Industry = styled.div`
 export const IndustryIcon = styled.div`
   cursor: pointer;
   position: absolute;
-  top: 5.1204vw;
-  right: 3.0052vw;
-  width: 1.2759vw;
-  height: 0.816vw;
+  top: 2.4002rem;
+  right: 1.4087rem;
+  width: 0.5981rem;
+  height: 0.3825rem;
 `;

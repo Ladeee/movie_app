@@ -4,7 +4,7 @@ import { AuthButton } from "../../../css/reuseableStyles/button.styled";
 // login / recover password
 
 export const Container = styled.div`
-  margin-top: 9.2vw;
+  margin-top: 4.3125rem;
   white-space: nowrap;
 
   @media (max-width: 768px) {
@@ -18,8 +18,8 @@ export const Heading = styled.header`
   font-family: "Inter", sans-serif;
   color: #090914;
   font-weight: 600;
-  font-size: 4.8vw;
-  line-height: 5.8667vw;
+  font-size: 1.6rem;
+  line-height: 2.75rem;
 
   @media (max-width: 768px) {
     font-size: 18px;
@@ -31,9 +31,9 @@ export const Addresses = styled.p`
   font-family: "Poppins", sans-serif;
   color: #52525b;
   font-weight: 400;
-  font-size: 2.4vw;
-  line-height: 4vw;
-  margin-top: 4.4vw;
+  font-size: 1;
+  line-height: 1.875rem;
+  margin-top: 2.0625rem;
 
   @media (max-width: 398px) {
     text-align: center;
@@ -46,24 +46,24 @@ export const FormContainer = styled.section`
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
-  margin-top: 5.6vw;
+  margin-top: 2.625rem;
 
   label {
     color: #000000;
-    font-size: 2.1333vw;
-    line-height: 3.2vw;
-    margin-top: 0.6667vw;
+    font-size: 0.825rem;
+    line-height: 1.5rem;
+    margin-top: 5px;
   }
 
   input {
     background-color: #f8fafc;
     border: 1px solid #cbd5e1;
     outline: none;
-    width: 70.1333vw;
-    height: 5.8667vw;
-    margin-top: 1.4667vw;
+    width: 32.875rem;
+    height: 2.75rem;
+    margin-top: 11px;
     border-radius: 0.75rem;
-    padding-left: 5.0667vw;
+    padding-left: 2.375rem;
 
     @media (max-width: 768px) {
       width: 100%;
@@ -81,7 +81,7 @@ export const RememberPassword = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2.6667vw;
+  margin-top: 1.25rem;
 
   @media (max-width: 768px) {
     gap: 20px;
@@ -95,21 +95,21 @@ export const Check = styled.div`
 
 export const Remember = styled.p`
   font-weight: 400;
-  font-size: 1.8667vw;
-  line-height: 2.9333vw;
-  margin-left: 1.2vw;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  margin-left: 0.5625rem;
 `;
 
 export const Forgot = styled.a`
   cursor: pointer;
   color: #2563eb;
   font-weight: 400;
-  font-size: 1.8667vw;
-  line-height: 2.9333vw;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 `;
 
 export const Button = styled(AuthButton)`
-  margin-top: 6.5333vw;
+  margin-top: 3.0625rem;
 `;
 
 export const Account = styled.p`
@@ -118,9 +118,9 @@ export const Account = styled.p`
   text-align: right;
   color: #333333;
   font-weight: 400;
-  font-size: 2.1333vw;
-  line-height: 2.1333vw;
-  margin-top: 10.6667vw;
+  font-size: 1rem;
+  line-height: 1rem;
+  margin-top: 5rem;
 `;
 
 // exclusive for forget password
@@ -129,11 +129,11 @@ export const Acc = styled.p`
   font-family: "Poppins", sans-serif;
   color: #333333;
   text-align: right;
-  margin-top: 10.6667vw;
+  margin-top: 5rem;
 `;
 
 // exclusive for set password
 
 export const Reset = styled(AuthButton)`
-  margin-top: 14.2667vw;
+  margin-top: 6.6875rem;
 `;

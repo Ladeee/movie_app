@@ -4,7 +4,7 @@ import { AuthButton } from "../../../css/reuseableStyles/button.styled";
 // confirm email / email successful
 
 export const EmailContainer = styled.article`
-  margin-top: 21.2vw;
+  margin-top: 9.9375rem;
   white-space: nowrap;
 `;
 
@@ -13,8 +13,8 @@ export const ConfirmEmail = styled.header`
   color: #090914;
   white-space: nowrap;
   font-weight: 600;
-  font-size: 4.8vw;
-  line-height: 5.8667vw;
+  font-size: 2.25rem;
+  line-height: 2.75rem;
 
   @media (max-width: 568px) {
     font-size: 1rem;
@@ -25,9 +25,9 @@ export const ConfirmText = styled.p`
   font-family: "Poppins", sans-serif;
   color: #52525b;
   font-weight: 400;
-  font-size: 2.4vw;
-  line-height: 4vw;
-  margin-top: 4.4vw;
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+  margin-top: 2.0625rem;
 
   @media (max-width: 400px) {
     font-size: 11px;
@@ -35,7 +35,7 @@ export const ConfirmText = styled.p`
 `;
 
 export const ConfirmButton = styled(AuthButton)`
-  margin-top: 7.7333vw;
+  margin-top: 3.625rem;
 
   @media (max-width: 768px) {
     width: 147px;
@@ -49,9 +49,9 @@ export const ConfirmSuccess = styled.p`
   font-family: "Poppins", sans-serif;
   color: #52525b;
   font-weight: 400;
-  font-size: 2.4vw;
-  line-height: 4vw;
-  margin-top: 4.4vw;
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+  margin-top: 2.0625rem;
 
   @media (max-width: 367px) {
     font-size: 12px;
@@ -62,9 +62,9 @@ export const SignIn = styled.a`
   font-family: "Poppins", sans-serif;
   color: #52525b;
   font-weight: 400;
-  font-size: 2.4vw;
-  line-height: 4vw;
-  margin-top: 2.6667vw;
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+  margin-top: 1.25rem;
 
   @media (max-width: 367px) {
     font-size: 11px;
@@ -72,7 +72,7 @@ export const SignIn = styled.a`
 `;
 
 export const SuccessButton = styled(AuthButton)`
-  margin-top: 6.1333vw;
+  margin-top: 2.875rem;
 
   @media (max-width: 768px) {
     width: 147px;

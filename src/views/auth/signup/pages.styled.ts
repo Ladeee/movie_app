@@ -8,17 +8,17 @@ export const SignupContainer = styled.div`
   white-space: nowrap;
 `;
 
-export const Heading = styled.header`
+export const Heading = styled.h1`
   font-family: "Inter", sans-serif;
   color: #090914;
   font-weight: 600;
   font-size: 4.8vw;
   line-height: 5.8667vw;
 
-  @media (max-width: 768px) {
-    font-size: 18px;
-    text-align: center;
-  }
+  // @media (max-width: 768px) {
+  //   font-size: 18px;
+  //   text-align: center;
+  // }
 `;
 
 export const Addresses = styled.p`

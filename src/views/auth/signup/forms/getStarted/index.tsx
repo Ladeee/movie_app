@@ -17,7 +17,7 @@ export default function GetStarted({
   return (
     <>
       <SignupContainer>
-        <Heading>Get Started</Heading>
+        <Heading className="sm:text-center md:text-left">Get Started</Heading>
         <Addresses>
           With Nester Verify, you are able to verify addresses <br />
           easily, from anywhere in the world

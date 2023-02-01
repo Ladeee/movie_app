@@ -73,6 +73,7 @@ export const jobsSummary = {
   options: {
     spanGaps: true,
     responsive: true,
+    maintainAspectRatio: true,
     layout: {
       padding: {
         top: 50,
@@ -159,7 +160,7 @@ export const jobStat = {
   options: {
     responsive: true,
     cutout: "60%",
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     plugins: {
       // beforeInit(chart) {
       //   chart.data.legend.forEach(function (label, index, labelsArr) {

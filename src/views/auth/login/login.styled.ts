@@ -41,7 +41,7 @@ export const Addresses = styled.p`
   }
 `;
 
-export const FormContainer = styled.section`
+export const FormContainer = styled.form`
   width: 100%;
   font-family: "Poppins", sans-serif;
   display: flex;

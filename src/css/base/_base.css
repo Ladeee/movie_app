@@ -1,4 +1,7 @@
 :root {
+  /* overflow-x: hidden;
+  margin: 0;
+  padding: 0; */
   font-size: 16px;
 }
 
@@ -19,3 +22,10 @@ a:hover {
     font-size: 14px;
   }
 }
+
+/* @media (min-width: 768px) and (max-width: 2560px) {
+  :root {
+    /* font-size: 16px; */
+/* font-size: 1.0582vw; */
+/* } */
+/* } */

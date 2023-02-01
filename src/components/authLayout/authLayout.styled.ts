@@ -16,7 +16,7 @@ export const AuthWrapper = styled.div`
 export const AuthNav = styled.nav`
   display: flex;
   justify-content: center;
-  padding-top: 1.375rem;
+  padding-top: 3.375rem;
   position: absolute;
   left: 50%;
   right: 50%;
@@ -45,8 +45,8 @@ export const Welcome = styled.section<{ color: string; bottom: any }>`
     background-repeat: no-repeat;
     position: absolute;
     width: 28.75rem;
-    height: 11.9375rem;
-    right: -12.5rem;
+    height: 13.9375rem;
+    right: -9.75rem;
     bottom: ${(props) => props.bottom};
     z-index: 1;
   }
@@ -78,7 +78,7 @@ export const Greetings = styled.header`
 
 export const Clarity = styled.p`
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.875rem;
   margin-top: 0.5625rem;
   color: #cbd5e1;
@@ -105,7 +105,7 @@ export const AuthNavbarContainer = styled.ul`
   list-style-type: none;
   gap: 2.5rem;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.5rem;
   text-transform: uppercase;
   z-index: 2;

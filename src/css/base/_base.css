@@ -1,5 +1,5 @@
 :root {
-  font-size: min(max(1rem, 4vw), 16px);
+  font-size: 1.0582vw;
 }
 
 a {
@@ -10,12 +10,8 @@ a:hover {
   text-decoration: none;
 }
 
-/* .select__menu {
-  z-index: 1000;
-} */
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   :root {
-    font-size: min(max(1rem, 4vw), 14px);
+    font-size: 14px;
   }
 }

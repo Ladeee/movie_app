@@ -4,8 +4,7 @@
   "addMark": true,
   "vw": true,
   "vwHover": true,
-  "remHover": false,
-  "vwDesign": 1920,
+  "vwDesign": 1600,
   "languages": [
     "html",
     "vue",

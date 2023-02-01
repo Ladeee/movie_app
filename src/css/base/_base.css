@@ -14,8 +14,8 @@ a:hover {
   z-index: 1000;
 } */
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   :root {
     font-size: min(max(1rem, 4vw), 14px);
   }
-}
+} */

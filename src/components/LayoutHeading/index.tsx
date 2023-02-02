@@ -9,7 +9,7 @@ interface Props {
 
 function LayoutHeading({ heading, children, content }: Props) {
   return (
-    <div className="flex justify-between mt-12 items-center">
+    <div className="flex justify-between mt-12 items-center flex-wrap">
       <h1 className="font-montserrat">{heading}</h1>
       {children ? children : <span>{content}</span>}
     </div>

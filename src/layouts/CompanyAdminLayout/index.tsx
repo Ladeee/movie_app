@@ -11,7 +11,7 @@ import { sizes } from "../../utils/screenSizes";
 
 function AdminLayout() {
   // ------ component state managers ------
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [screenSize, setScreenSize] = useState<number | null>(null);
 
   useEffect(() => {
@@ -33,13 +33,13 @@ function AdminLayout() {
   return (
     <>
       <Seo content="Skip to navigation" section="navigation" allowSkip>
-        <main className="bg-white-100 h-[100vh]">
+        <main className="bg-white-100 h-[100vh] overflow-y-auto">
           {/* ------ admin sidebar wrapper -------- */}
-          {open && <SideNav />}
+          {open && <SideNav close={() => setOpen(false)} />}
 
           {/* ------- main content section --------- */}
           <MainContent>
-            <ContentHeader />
+            <ContentHeader click={() => setOpen(true)} />
             <Outlet />
           </MainContent>
         </main>

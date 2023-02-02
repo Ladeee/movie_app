@@ -31,8 +31,9 @@ module.exports = {
           500: "var(--red500)",
         },
         grey: {
-          800: "var(--grey800",
-          900: "var(--grey900",
+          500: "var(--grey500)",
+          800: "var(--grey800)",
+          900: "var(--grey900)",
         },
         orange: {
           50: "var(--orange50)",

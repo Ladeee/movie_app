@@ -1,5 +1,7 @@
 // ------------- import external dependencies -------------
 import styled from "styled-components";
+import { Link, NavLink } from "react-router-dom";
+import { AiOutlineClose } from "react-icons/ai";
 
 // ------------ import internal dependencies ----------
 import Logo from "../../../../assets/logo-light.png";
@@ -11,7 +13,7 @@ import { ReactComponent as Users } from "../../../../assets/svg/users.svg";
 import { ReactComponent as Accounts } from "../../../../assets/svg/accounts.svg";
 import { ReactComponent as Insights } from "../../../../assets/svg/insights.svg";
 import { ReactComponent as Support } from "../../../../assets/svg/support.svg";
-import { Link, NavLink } from "react-router-dom";
+import { sizes } from "../../../../utils/screenSizes";
 
 interface MenuItem {
   title: string;
@@ -67,9 +69,14 @@ const menus: MenuItem[] = [
   },
 ];
 
-function SideNav() {
+interface Props {
+  close: () => void;
+}
+
+function SideNav({ close }: Props) {
   return (
     <SideNavWrapper>
+      <AiOutlineClose className="close-menu" onClick={close} />
       <SideBarWrapper>
         <div className="flex justify-center">
           <img
@@ -113,12 +120,30 @@ export default SideNav;
 
 const SideNavWrapper = styled.aside`
   width: 280px;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: fixed;
   top: 0;
+  z-index: 2;
+
+  .close-menu {
+    display: none;
+  }
+
+  @media screen and (max-width: ${sizes.tabletL}) {
+    background: var(--white);
+    .close-menu {
+      display: block;
+      margin-left: auto;
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-size: 1.5rem;
+      color: var(--blue100);
+    }
+  }
 `;
 
 const SideBarWrapper = styled.div`
@@ -127,6 +152,7 @@ const SideBarWrapper = styled.div`
   border-radius: 30px;
   margin-left: 1.5rem;
   overflow-y: auto;
+  overscroll-behavior-y: contain;
 `;
 
 const ListItem = styled.li`
@@ -137,14 +163,12 @@ const ListItem = styled.li`
     gap: 1rem;
     font-size: 0.875rem;
     font-family: "Montserrat", sans-serif;
-    overscroll-behavior-y: contain;
     color: var(--white);
   }
 `;
 
 const OtherMenus = styled.ul`
-  position: absolute;
-  bottom: 55px;
+  margin-top: 10rem;
 
   li {
     margin-bottom: 0.5rem;

@@ -1,14 +1,20 @@
 // ------------ import external dependencies ------------
 import React from "react";
 import styled from "styled-components";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 // ------------ import internal dependencies ------------
 import SearchInput from "../../../../components/SearchInput";
 import { ReactComponent as Message } from "../../../../assets/svg/message.svg";
 import { ReactComponent as Bell } from "../../../../assets/svg/bell.svg";
 import Profile from "../../../../assets/profile.png";
+import { sizes } from "../../../../utils/screenSizes";
 
-function ContentHeader() {
+interface Props {
+  click: () => void;
+}
+
+function ContentHeader({ click }: Props) {
   return (
     <>
       <div className="flex justify-between">
@@ -20,6 +26,7 @@ function ContentHeader() {
           </MessageWrapper>
           <Bell className="cursor-pointer" />
           <img src={Profile} alt="user profile" className="cursor-pointer" />
+          <RxHamburgerMenu className="mobile-hamburger" onClick={click} />
         </ProfileWrapper>
       </div>
     </>
@@ -54,4 +61,18 @@ const ProfileWrapper = styled.div`
   display: flex;
   gap: 2rem;
   align-items: center;
+
+  & .mobile-hamburger {
+    display: none;
+  }
+
+  @media screen and (max-width: ${sizes.tabletL}) {
+    & .mobile-hamburger {
+      display: block;
+    }
+
+    & > svg {
+      width: 30px;
+    }
+  }
 `;

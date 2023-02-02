@@ -82,7 +82,7 @@ export const jobsSummary = {
     },
     scales: {
       y: {
-        weight: 1000,
+        weight: 3000,
         beginAtZero: true,
         border: {
           display: false,

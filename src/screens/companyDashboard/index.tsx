@@ -20,6 +20,7 @@ import { Line, Doughnut } from "react-chartjs-2";
 // ---------- import internal dependencies ----------
 import LayoutHeading from "../../components/LayoutHeading";
 import { jobsSummary, jobStat } from "../../utils/chartData";
+import { ReactComponent as Filter } from "../../assets/svg/filter.svg";
 
 // ------- initialize chartjs -------
 ChartJS.register(
@@ -38,7 +39,7 @@ function CompanyDashbaord() {
   return (
     <>
       <LayoutHeading heading="Dashboard">
-        <div className="flex gap-5 items-center">
+        <div className="flex md:gap-5 items-center flex-wrap sm:gap-y-0">
           <div className="flex gap-3 items-center">
             <span className="font-montserrat text-sm ">Wallet Balance</span>
             <span className="text-2xl font-montserrat font font-semibold">
@@ -53,7 +54,7 @@ function CompanyDashbaord() {
       </LayoutHeading>
 
       {/* ------- dashboard summary cards ------- */}
-      <div className="mt-5 grid md:grid-cols-4 sm:grid-cols-1 gap-6">
+      <div className="mt-5 grid md:grid-cols-4 grid-cols-1 gap-6">
         <BoxWrapper>
           <span className="text-purple-100">TOTAL CREATED JOBS</span>
           <div className="content-count">
@@ -97,13 +98,13 @@ function CompanyDashbaord() {
       </div>
 
       {/* ------- Job status section ------- */}
-      <div className=" mt-7 grid grid-cols-3 gap-6">
-        <CardWrapper className="col-span-2">
-          <div className="flex justify-between items-center">
+      <div className="mt-7 grid md:grid-cols-3 grid-cols-1 gap-6">
+        <CardWrapper className="md:col-span-2">
+          <div className="flex justify-between items-center flex-wrap gap-y-3">
             <h2 className="text-grey-900 font-inter font-semibold text-base">
               MoM Job Status
             </h2>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap md:gap-0">
               <PillsWrapper active={true}>12 Months</PillsWrapper>
               <PillsWrapper>6 Months</PillsWrapper>
               <PillsWrapper>30 Days</PillsWrapper>
@@ -117,6 +118,7 @@ function CompanyDashbaord() {
             <Line data={jobsSummary.data} options={jobsSummary.options} />
           </div>
         </CardWrapper>
+
         <CardWrapper>
           <div>
             <article>
@@ -150,6 +152,25 @@ function CompanyDashbaord() {
             <div>
               <Doughnut data={jobStat.data} options={jobStat.options} />
             </div>
+          </div>
+        </CardWrapper>
+      </div>
+
+      {/* ------- transactions activities ------- */}
+      <div className="mt-7 grid md:grid-cols-3 grid-cols-1 gap-6">
+        <CardWrapper className="md:col-span-2">
+          <div className="flex justify-between">
+            <article>
+              <h2 className="text-grey-900 font-inter font-semibold text-base">
+                Transactions
+              </h2>
+              <p className="font-jakarta text-grey-500 text-xs">
+                Lorem ipsum dolor sit amet, consectetur adipis.
+              </p>
+            </article>
+            <button className="btn btn-tran font-jakarta text-sm font-semibold justify-between flex items-center">
+              Filter <Filter />
+            </button>
           </div>
         </CardWrapper>
       </div>

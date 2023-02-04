@@ -8,7 +8,7 @@ export const SignupContainer = styled.div`
   white-space: nowrap;
 `;
 
-export const Heading = styled.header`
+export const Heading = styled.h1`
   font-family: "Inter", sans-serif;
   color: #090914;
   font-weight: 600;
@@ -17,25 +17,10 @@ export const Heading = styled.header`
 
   @media (max-width: 768px) {
     font-size: 18px;
-    text-align: center;
   }
 `;
 
-export const Addresses = styled.p`
-  font-family: "Poppins", sans-serif;
-  color: #52525b;
-  font-weight: 400;
-  font-size: 1.125rem;
-  line-height: 1.875rem;
-  margin-top: 2.0625rem;
-
-  @media (max-width: 398px) {
-    text-align: center;
-    font-size: 11px;
-  }
-`;
-
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
@@ -59,7 +44,8 @@ export const FormContainer = styled.div`
     padding-left: 2.375rem;
 
     @media (max-width: 768px) {
-      width: 100%;
+      width: 19.75rem;
+      padding-left: 0.375rem;
     }
   }
 

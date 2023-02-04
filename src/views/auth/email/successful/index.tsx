@@ -10,7 +10,7 @@ import {
 
 export default function Successful() {
   return (
-    <AuthLayout bottom="-7.45rem" color="#3F3F46">
+    <AuthLayout bottom="-6.45rem" color="#3F3F46">
       <EmailContainer>
         <ConfirmEmail>Email Confirmation Successful</ConfirmEmail>
         <ConfirmSuccess>Welcome to Nester Verify!</ConfirmSuccess>

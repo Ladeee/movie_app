@@ -3,7 +3,6 @@ import AuthLayout from "../../../../components/authLayout";
 import {
   Container,
   Heading,
-  Addresses,
   FormContainer,
   Button,
   Acc,
@@ -14,13 +13,9 @@ export default function RecoverPassword() {
     <AuthLayout color="#2C2F6D">
       <Container>
         <Heading>Recover your password easily!</Heading>
-        <Addresses>
-          With Nester Verify, you are able to verify addresses <br />
-          easily, from anywhere in the world
-        </Addresses>
         <FormContainer>
-          <label>Email Address</label>
-          <input type="text" required />
+          <label htmlFor="email">Email Address</label>
+          <input type="email" required id="email" data-testid="email" />
         </FormContainer>
 
         <Link to="/setpassword">

@@ -29,11 +29,6 @@ export const router = createBrowserRouter([
   },
 
   {
-    path: "/setpassword",
-    element: <SetPassword />,
-  },
-
-  {
     path: "/login",
     element: <Login />,
   },
@@ -41,6 +36,11 @@ export const router = createBrowserRouter([
   {
     path: "/recoverpassword",
     element: <RecoverPassword />,
+  },
+
+  {
+    path: "/setpassword",
+    element: <SetPassword />,
   },
 
   {

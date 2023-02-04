@@ -14,30 +14,18 @@ export const Container = styled.div`
   }
 `;
 
-export const Heading = styled.header`
+export const Heading = styled.h1`
   font-family: "Inter", sans-serif;
   color: #090914;
   font-weight: 600;
   font-size: 1.6rem;
   line-height: 2.75rem;
+  margin-top: 9.3125rem;
 
   @media (max-width: 768px) {
     font-size: 18px;
     text-align: center;
-  }
-`;
-
-export const Addresses = styled.p`
-  font-family: "Poppins", sans-serif;
-  color: #52525b;
-  font-weight: 400;
-  font-size: 1;
-  line-height: 1.875rem;
-  margin-top: 2.0625rem;
-
-  @media (max-width: 398px) {
-    text-align: center;
-    font-size: 11px;
+    margin-top: 3.3125rem;
   }
 `;
 
@@ -60,13 +48,14 @@ export const FormContainer = styled.form`
     border: 1px solid #cbd5e1;
     outline: none;
     width: 32.875rem;
-    height: 2.75rem;
+    height: 3.75rem;
     margin-top: 11px;
     border-radius: 0.75rem;
     padding-left: 2.375rem;
 
     @media (max-width: 768px) {
-      width: 100%;
+      width: 18.75rem;
+      padding-left: 0.375rem;
     }
   }
 `;
@@ -120,7 +109,8 @@ export const Account = styled.p`
   font-weight: 400;
   font-size: 1rem;
   line-height: 1rem;
-  margin-top: 5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.4375rem;
 `;
 
 // exclusive for forget password
@@ -129,7 +119,7 @@ export const Acc = styled.p`
   font-family: "Poppins", sans-serif;
   color: #333333;
   text-align: right;
-  margin-top: 5rem;
+  margin-top: 8rem;
 `;
 
 // exclusive for set password

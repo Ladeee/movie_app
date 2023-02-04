@@ -2,7 +2,6 @@ import React from "react";
 import {
   SignupContainer,
   Heading,
-  Addresses,
   FormContainer,
   InputWrapper,
   Btn,
@@ -18,36 +17,45 @@ export default function GetStarted({
     <>
       <SignupContainer>
         <Heading className="sm:text-center md:text-left">Get Started</Heading>
-        <Addresses>
-          With Nester Verify, you are able to verify addresses <br />
-          easily, from anywhere in the world
-        </Addresses>
-
         <FormContainer>
           <InputWrapper>
-            <label>Full Name</label>
-            <input type="text" required />
+            <label htmlFor="name">Full Name</label>
+            <input type="text" required id="name" data-testid="name" />
           </InputWrapper>
           <InputWrapper>
-            <label>Phone Number</label>
-            <input type="text" required />
+            <label htmlFor="phone">Phone Number</label>
+            <input type="number" required id="phone" data-testid="phone" />
           </InputWrapper>
           <InputWrapper>
-            <label>Email Address</label>
-            <input type="text" required />
+            <label htmlFor="email">Email Address</label>
+            <input type="email" required id="email" data-testid="email" />
           </InputWrapper>
           <InputWrapper>
-            <label id="create">Create Password</label>
-            <input type="text" required />
+            <label id="password" htmlFor="password">
+              Create Password
+            </label>
+            <input
+              type="password"
+              required
+              id="password"
+              data-testid="password"
+            />
           </InputWrapper>
           <InputWrapper>
-            <label>Confirm Password</label>
-            <input type="text" required />
+            <label htmlFor="confirm_passoword">Confirm Password</label>
+            <input
+              type="password"
+              required
+              id="confirm_passoword"
+              data-testid="confirm_password"
+            />
           </InputWrapper>
         </FormContainer>
 
         <Btn>
-          <Button onClick={goToNextPage}>Next</Button>
+          <Button type="submit" onClick={goToNextPage}>
+            Next
+          </Button>
         </Btn>
       </SignupContainer>
     </>

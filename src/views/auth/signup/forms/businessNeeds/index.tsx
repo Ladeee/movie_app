@@ -1,7 +1,6 @@
 import {
   SignupContainer,
   Heading,
-  Addresses,
   FormTwoContainer,
   BoxWrapper,
   Button,
@@ -16,11 +15,9 @@ export default function BusinessNeeds({
 }) {
   return (
     <SignupContainer>
-      <Heading>Select Your Business Needs</Heading>
-      <Addresses>
-        With Nester Verify, you are able to verify addresses <br />
-        easily, from anywhere in the world
-      </Addresses>
+      <Heading className="sm:text-center md:text-left">
+        Select Your Business Needs
+      </Heading>
       <FormTwoContainer>
         <BoxWrapper>
           <Box>Address Verification</Box>

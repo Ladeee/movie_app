@@ -2,7 +2,6 @@ import AuthLayout from "../../../../components/authLayout";
 import {
   Container,
   Heading,
-  Addresses,
   FormContainer,
   InputWrapper,
   Reset,
@@ -13,18 +12,24 @@ export default function SetPassword() {
     <AuthLayout color="#007C23">
       <Container>
         <Heading>Welcome Back!</Heading>
-        <Addresses>
-          With Nester Verify, you are able to verify addresses <br />
-          easily, from anywhere in the world
-        </Addresses>
         <FormContainer>
           <InputWrapper>
-            <label>New Password</label>
-            <input type="text" required />
+            <label htmlFor="new_password">New Password</label>
+            <input
+              type="password"
+              required
+              id="new_password"
+              data-testid="new_password"
+            />
           </InputWrapper>
           <InputWrapper>
-            <label id="create">Confirm Password</label>
-            <input type="text" required />
+            <label htmlFor="confirm_password">Confirm Password</label>
+            <input
+              type="password"
+              required
+              id="confirm_password"
+              data-testid="confirm_password"
+            />
           </InputWrapper>
         </FormContainer>
 

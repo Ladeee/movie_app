@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 import { HiOutlineDocumentDownload } from "react-icons/hi";
+import { FiMoreHorizontal } from "react-icons/fi";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -18,6 +19,7 @@ import {
 import { Line, Doughnut } from "react-chartjs-2";
 
 // ---------- import internal dependencies ----------
+import Pill from "../../components/Pills";
 import LayoutHeading from "../../components/LayoutHeading";
 import { jobsSummary, jobStat } from "../../utils/chartData";
 import { ReactComponent as Filter } from "../../assets/svg/filter.svg";
@@ -158,8 +160,8 @@ function CompanyDashbaord() {
 
       {/* ------- transactions activities ------- */}
       <div className="mt-7 grid md:grid-cols-3 grid-cols-1 gap-6">
-        <CardWrapper className="md:col-span-2">
-          <div className="flex justify-between">
+        <CardWrapper className="md:col-span-2 p-0 pb-3">
+          <div className="flex justify-between p-3 flex-wrap">
             <article>
               <h2 className="text-grey-900 font-inter font-semibold text-base">
                 Transactions
@@ -172,6 +174,127 @@ function CompanyDashbaord() {
               Filter <Filter />
             </button>
           </div>
+
+          {/* ------ Transaction list ------ */}
+          <TransactionWrapper>
+            <div>
+              <Pill content="Deposit" type="success" />
+              <span className="font-inter text-xs">23 Mar 2022</span>
+            </div>
+            <div>
+              <div>
+                <span className="font-inter text-xs block">16:24</span>
+                <span className="font-inter text-xs block text-grey-800">
+                  10,000
+                </span>
+              </div>
+              <FiMoreHorizontal className="text-grey-800" />
+            </div>
+          </TransactionWrapper>
+          <TransactionWrapper>
+            <div>
+              <Pill content="Address verification" type="success" />
+              <span className="font-inter text-xs">23 Mar 2022</span>
+            </div>
+            <div>
+              <div>
+                <span className="font-inter text-xs block">16:24</span>
+                <span className="font-inter text-xs block text-grey-800">
+                  10,000
+                </span>
+              </div>
+              <FiMoreHorizontal className="text-grey-800" />
+            </div>
+          </TransactionWrapper>
+          <TransactionWrapper>
+            <div>
+              <Pill content="Identity verification" type="pending" />
+              <span className="font-inter text-xs">23 Mar 2022</span>
+            </div>
+            <div>
+              <div>
+                <span className="font-inter text-xs block">16:24</span>
+                <span className="font-inter text-xs block text-grey-800">
+                  10,000
+                </span>
+              </div>
+              <FiMoreHorizontal className="text-grey-800" />
+            </div>
+          </TransactionWrapper>
+          <TransactionWrapper>
+            <div>
+              <Pill content="Business verification" />
+              <span className="font-inter text-xs">23 Mar 2022</span>
+            </div>
+            <div>
+              <div>
+                <span className="font-inter text-xs block">16:24</span>
+                <span className="font-inter text-xs block text-grey-800">
+                  10,000
+                </span>
+              </div>
+              <FiMoreHorizontal className="text-grey-800" />
+            </div>
+          </TransactionWrapper>
+        </CardWrapper>
+
+        {/* ------- recent activities -------- */}
+        <CardWrapper className="p-0 pb-3">
+          <div className="bg-blue-100 p-4 rounded-tl-lg rounded-tr-lg">
+            <article>
+              <h2 className="font-montserrat text-base text-white-100 font-medium">
+                Recent Activities
+              </h2>
+            </article>
+          </div>
+          <div className="overflow-auto w-full">
+            <TableWrapper>
+              <tbody>
+                <tr>
+                  <td>Job ID</td>
+                  <td>J2765279TY</td>
+                  <td>Request</td>
+                  <td>23 Mar 2022</td>
+                  <td>1:30 pm</td>
+                </tr>
+                <tr>
+                  <td>Job ID</td>
+                  <td>J2765279TY</td>
+                  <td>Request</td>
+                  <td>23 Mar 2022</td>
+                  <td>1:30 pm</td>
+                </tr>{" "}
+                <tr>
+                  <td>Job ID</td>
+                  <td>J2765279TY</td>
+                  <td>Request</td>
+                  <td>23 Mar 2022</td>
+                  <td>1:30 pm</td>
+                </tr>{" "}
+                <tr>
+                  <td>Job ID</td>
+                  <td>J2765279TY</td>
+                  <td>Request</td>
+                  <td>23 Mar 2022</td>
+                  <td>1:30 pm</td>
+                </tr>{" "}
+                <tr>
+                  <td>Job ID</td>
+                  <td>J2765279TY</td>
+                  <td>Request</td>
+                  <td>23 Mar 2022</td>
+                  <td>1:30 pm</td>
+                </tr>
+                <tr>
+                  <td>Job ID</td>
+                  <td>J2765279TY</td>
+                  <td>Request</td>
+                  <td>23 Mar 2022</td>
+                  <td>1:30 pm</td>
+                </tr>
+              </tbody>
+            </TableWrapper>
+          </div>
         </CardWrapper>
       </div>
     </>
@@ -181,14 +304,14 @@ function CompanyDashbaord() {
 export default CompanyDashbaord;
 
 const CardWrapper = styled.div`
-  background: var(--white);
+  background: var(--white50);
   border: 1px solid var(--grey200);
   border-radius: 10px;
   padding: 0.8rem;
 `;
 
 const BoxWrapper = styled.div`
-  background: var(--white);
+  background: var(--white50);
   border: 1px solid var(--grey200);
   border-radius: 10px;
   padding: 0.5rem 0.8rem;
@@ -260,5 +383,60 @@ const LegendIndicator = styled.div`
     font-weight: 500;
     font-size: 0.75rem;
     font-family: "Montserrat";
+  }
+`;
+
+const TransactionWrapper = styled.div`
+  padding: 1.8rem 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--grey200);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Inter";
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    &:first-child {
+      width: 40%;
+    }
+
+    &:last-child {
+      width: 30%;
+    }
+  }
+`;
+
+const TableWrapper = styled.table`
+  table-layout: auto;
+  width: 100%;
+  border-collapse: collapse;
+
+  tr {
+    display: block;
+    padding: 0.5rem;
+
+    &:nth-child(even) {
+      background-color: var(--white200);
+    }
+    td {
+      font-size: 0.75rem;
+      font-weight: 500;
+      font-family: "Montserrat";
+      padding: 0.5rem;
+      white-space: nowrap;
+      color: var(--black100);
+
+      &:last-child {
+        color: var(--grey500);
+      }
+    }
   }
 `;

@@ -6,13 +6,17 @@ module.exports = {
     extend: {
       colors: {
         white: {
+          50: "var(--white50)",
           100: "var(--white100)",
         },
         blue: {
           50: "var(--blue50)",
+          100: "var(--blue100)",
           200: "var(--blue200)",
           300: "var(--blue300)",
           400: "var(--blue400)",
+          pillBg: "var(--pillBGBlue)",
+          pillColor: "var(--pillBlueColor)",
         },
         purple: {
           50: "var(--purple50)",
@@ -20,11 +24,20 @@ module.exports = {
           200: "var(--purple200)",
         },
         green: {
+          100: "var(--green100)",
+          300: "var(--green300)",
           500: "var(--green500)",
+          700: "var(--green700)",
+          900: "var(--green900)",
           teal: "var(--tealGreen)",
         },
         brown: {
           100: "var(--brown100)",
+        },
+        yellow: {
+          100: "var(--yellow100)",
+          400: "var(--yellow400)",
+          900: "var(--yellow900)",
         },
         red: {
           100: "var(--red100)",

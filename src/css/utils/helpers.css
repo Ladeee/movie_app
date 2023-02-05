@@ -15,7 +15,7 @@ btn:active {
 
 .btn-blue {
   background: var(--blue100);
-  color: var(--white);
+  color: var(--white50);
 }
 
 .btn-blue-tran {

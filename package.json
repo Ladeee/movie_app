@@ -47,8 +47,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "yarn lint",
-    "*.{css,less,scss,html,json,jsx,js,ts,tsx}": "yarn format",
-    "*.test.{js,jsx,ts,tsx}": "yarn test"
+    "*.{css,less,scss,html,json,jsx,js,ts,tsx}": "yarn format"
   },
   "devDependencies": {
     "@types/react-helmet": "^6.1.6",

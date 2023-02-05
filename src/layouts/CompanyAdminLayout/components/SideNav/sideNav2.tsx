@@ -1,17 +1,12 @@
 // ------------- import external dependencies -------------
 import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineCaretDown } from "react-icons/ai";
 
 // ------------ import internal dependencies ----------
 import Logo from "../../../../assets/logo-light.png";
 import { ReactComponent as Dashboard } from "../../../../assets/svg/dashboard.svg";
-import { ReactComponent as Jobs } from "../../../../assets/svg/jobs.svg";
-import { ReactComponent as Transactions } from "../../../../assets/svg/transactions.svg";
-import { ReactComponent as Messages } from "../../../../assets/svg/messages.svg";
-import { ReactComponent as Users } from "../../../../assets/svg/users.svg";
 import { ReactComponent as Accounts } from "../../../../assets/svg/accounts.svg";
-import { ReactComponent as Insights } from "../../../../assets/svg/insights.svg";
 import { ReactComponent as Support } from "../../../../assets/svg/support.svg";
 import { sizes } from "../../../../utils/screenSizes";
 
@@ -33,35 +28,11 @@ const menus: MenuItem[] = [
     path: "dashboard",
   },
   {
-    title: "Jobs",
-    icon: Jobs,
-    path: "jobs",
-  },
-  {
-    title: "Transactions",
-    icon: Transactions,
-    path: "trabsactions",
-  },
-  {
-    title: "Messages",
-    icon: Messages,
-    path: "messages",
-  },
-  {
-    title: "User Management",
-    icon: Users,
-    path: "users",
-  },
-  {
     title: "Accounts Opening",
     icon: Accounts,
     path: "accounts",
   },
-  {
-    title: "Insights",
-    icon: Insights,
-    path: "insights",
-  },
+
   {
     title: "Support",
     icon: Support,
@@ -73,7 +44,7 @@ interface Props {
   close: () => void;
 }
 
-function SideNav({ close }: Props) {
+function SideNav2({ close }: Props) {
   return (
     <SideNavWrapper>
       <AiOutlineClose className="close-menu" onClick={close} />
@@ -85,12 +56,18 @@ function SideNav({ close }: Props) {
             alt="Nester verify Brand logo"
           />
         </div>
+        <div className="pl-10 flex items-center gap-4 text-white-50 font-montserrat font-bold text-2xl">
+          <AiOutlineCaretDown />
+          <span>Accounts</span>
+        </div>
+
+        {/* ------ company acount navigation ------ */}
         <nav>
-          <ul className=" list-none">
+          <ul className="list-none">
             {menus.map((ele: MenuItem, ind: number) => (
               <ListItem key={ind}>
                 <NavLink
-                  to={`/company/${ele.path}`}
+                  to={`/company-account/${ele.path}`}
                   className={({ isActive }) =>
                     isActive ? "font-bold" : "font-normal"
                   }
@@ -116,7 +93,7 @@ function SideNav({ close }: Props) {
   );
 }
 
-export default SideNav;
+export default SideNav2;
 
 const SideNavWrapper = styled.aside`
   width: 280px;
@@ -168,7 +145,7 @@ const ListItem = styled.li`
 `;
 
 const OtherMenus = styled.ul`
-  margin-top: 10rem;
+  margin-top: 20rem;
 
   li {
     margin-bottom: 0.5rem;

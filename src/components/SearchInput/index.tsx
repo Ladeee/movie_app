@@ -62,7 +62,7 @@ const SearchWrapper = styled.div`
   border: 1px solid var(--ash50);
   border-radius: 10px;
   display: flex;
-  background: var(--white);
+  background: var(--white50);
   align-items: center;
   padding-right: 1rem;
 
@@ -92,6 +92,6 @@ const SearchBox = styled.input`
     border: none;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    background: var(--white);
+    background: var(--white50);
   }
 `;

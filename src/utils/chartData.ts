@@ -206,3 +206,174 @@ export const jobStat = {
     },
   },
 };
+
+export const accountSummary = {
+  data: {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [
+      {
+        backgroundColor: "rgba(155, 160, 245, 1)",
+        borderColor: "#333382",
+        borderWidth: 1,
+        tension: 0.4,
+        data: [20, 40, 50, 60, 50, 40],
+      },
+      {
+        backgroundColor: "rgba(155, 160, 245, 1)",
+        borderColor: "#333382",
+        borderWidth: 1,
+        tension: 0.4,
+        data: [10, 30, 60, 50, 70, 70],
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    indexAxis: "y" as const,
+    maintainAspectRatio: false,
+
+    scales: {
+      y: {
+        weight: 3000,
+        beginAtZero: true,
+        border: {
+          display: true,
+          width: 1,
+        },
+        ticks: {
+          // display: true,
+          padding: 10,
+          color: "#818d8a",
+          autoSkip: true,
+          font: { weight: "normal", family: "Plus Jakarta Sans" },
+          stepSize: 2000,
+        },
+        grid: {
+          drawBorder: true,
+          borderDashOffset: 1,
+          drawTicks: true,
+          display: true,
+        },
+      },
+      x: {
+        ticks: {
+          padding: 10,
+          color: "#818d8a",
+          font: { weight: "normal", family: "Plus Jakarta Sans" },
+        },
+        grid: {
+          drawBorder: false,
+          borderDashOffset: 1,
+          drawTicks: true,
+          display: true,
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        yAlign: "bottom" as const,
+        backgroundColor: "#FFFFFF",
+        titleColor: "#71717A",
+        titleFont: { weight: "medium", family: "Plus Jakarta Sans" },
+        titleAlign: "center" as const,
+        bodyColor: "#18181B",
+        borderColor: "#E4E4E7",
+        borderWidth: 1,
+        bodyAlign: "center" as const,
+        bodyFont: { weight: "medium" },
+        displayColors: false,
+      },
+    },
+  },
+};
+
+export const locationSummary = {
+  data: {
+    labels: [
+      "Lag",
+      "Abj",
+      "Kan",
+      "Oyo",
+      "Ogu",
+      "Mad",
+      "Lok",
+      "Jos",
+      "Imo",
+      "PH",
+      "Edo",
+      "Iba",
+    ],
+    datasets: [
+      {
+        backgroundColor: "rgba(6, 78, 59, 1)",
+        tension: 0.4,
+        data: [20, 40, 50, 60, 50, 40, 80, 90, 60, 50, 40, 70],
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+
+    maintainAspectRatio: false,
+
+    scales: {
+      y: {
+        weight: 3000,
+        beginAtZero: true,
+        border: {
+          display: true,
+          width: 1,
+        },
+        ticks: {
+          display: false,
+          padding: 10,
+          color: "#818d8a",
+          autoSkip: true,
+          font: { weight: "normal", family: "Plus Jakarta Sans" },
+          stepSize: 2000,
+        },
+        grid: {
+          drawBorder: false,
+          borderDashOffset: 1,
+          drawTicks: false,
+          display: false,
+        },
+      },
+      x: {
+        ticks: {
+          diplay: false,
+          padding: 10,
+          color: "#818d8a",
+          font: { weight: "normal", family: "Plus Jakarta Sans" },
+        },
+        grid: {
+          display: false,
+          drawBorder: false,
+          borderDashOffset: 1,
+          drawTicks: false,
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        yAlign: "bottom" as const,
+        backgroundColor: "#FFFFFF",
+        titleColor: "#71717A",
+        titleFont: { weight: "medium", family: "Plus Jakarta Sans" },
+        titleAlign: "center" as const,
+        bodyColor: "#18181B",
+        borderColor: "#E4E4E7",
+        borderWidth: 1,
+        bodyAlign: "center" as const,
+        bodyFont: { weight: "medium" },
+        displayColors: false,
+      },
+    },
+  },
+};

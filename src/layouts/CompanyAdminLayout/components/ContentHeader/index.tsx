@@ -53,7 +53,7 @@ const MessageWrapper = styled.div`
     right: 0;
     font-size: 0.75rem;
     font-family: "Plus Jakarta Sans", sans-serif;
-    color: var(--white);
+    color: var(--white50);
   }
 `;
 

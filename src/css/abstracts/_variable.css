@@ -2,7 +2,8 @@
 :root {
   /* ------ white color config ------ */
   --white100: #fafafb;
-  --white: #ffffff;
+  --white200: #f8f8fa;
+  --white50: #ffffff;
 
   /* ------- blue color config ------- */
   --blue50: #b3ebf7;
@@ -11,6 +12,8 @@
   --blue300: #2f85d4;
   --blue400: #2b58cd;
   --indigo600: #4f46e5;
+  --pillBGBlue: #94cbff;
+  --pillBlueColor: #1c49bd;
 
   /* ------ ash color config ------ */
   --ash50: #e4e4e4;
@@ -28,7 +31,11 @@
   --red500: #ef4444;
 
   /* ------ green color confi ------- */
+  --green100: #dcfce7;
   --green500: #22c55e;
+  --green300: #6ee7b7;
+  --green700: #047857;
+  --green900: #14532d;
   --tealGreen: #0c9cb8;
 
   /* ------ purple color config ------ */
@@ -40,6 +47,13 @@
   --orange100: #d97161;
   --orange50: #ff9c8d;
 
+  /* ------- yellow color config ------ */
+  --yellow100: #fef9c3;
+  --yellow400: #facc15;
+  --yellow900: #713f12;
+
   /* ------ misc color config ------- */
   --brown100: #db6f08;
+
+  --black100: #121212;
 }

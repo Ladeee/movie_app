@@ -22,16 +22,11 @@ export default function Login() {
         <FormContainer>
           <InputWrapper>
             <label htmlFor="email">Email Address</label>
-            <input type="email" required id="email" data-testid="email" />
+            <input type="email" required id="email" />
           </InputWrapper>
           <InputWrapper>
             <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              required
-              id="password"
-              data-testid="password"
-            />
+            <input type="password" required id="password" minLength={6} />
           </InputWrapper>
         </FormContainer>
 

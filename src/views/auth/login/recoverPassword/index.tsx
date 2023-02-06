@@ -15,7 +15,7 @@ export default function RecoverPassword() {
         <Heading>Recover your password easily!</Heading>
         <FormContainer>
           <label htmlFor="email">Email Address</label>
-          <input type="email" required id="email" data-testid="email" />
+          <input type="email" required id="email" />
         </FormContainer>
 
         <Link to="/setpassword">

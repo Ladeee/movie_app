@@ -15,12 +15,7 @@ export default function SetPassword() {
         <FormContainer>
           <InputWrapper>
             <label htmlFor="new_password">New Password</label>
-            <input
-              type="password"
-              required
-              id="new_password"
-              data-testid="new_password"
-            />
+            <input type="password" required id="new_password" minLength={6} />
           </InputWrapper>
           <InputWrapper>
             <label htmlFor="confirm_password">Confirm Password</label>
@@ -28,7 +23,7 @@ export default function SetPassword() {
               type="password"
               required
               id="confirm_password"
-              data-testid="confirm_password"
+              minLength={6}
             />
           </InputWrapper>
         </FormContainer>

@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 import SkipToContent from "../Ally";
 
 interface SkipToContentProps {
-  page: string;
+  page?: string;
   children: React.ReactNode;
   content: string;
   section: string;

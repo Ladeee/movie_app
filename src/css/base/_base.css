@@ -1,5 +1,6 @@
 :root {
-  font-size: 1.0582vw;
+  --rootsize: 1.0582vw;
+  font-size: var(--rootSize);
 }
 
 a {
@@ -14,7 +15,7 @@ a:hover {
   z-index: 1000;
 } */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   :root {
     font-size: 14px;
   }

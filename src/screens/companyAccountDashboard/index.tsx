@@ -159,7 +159,37 @@ function CompanyAccountDashbaord() {
             <span className="text-purple-100 block font-montserrat text-sm font-bold">
               Tier 1 Savings
             </span>
-            <span className=" font-semibold text-4xl pt-1 font-montserrat block">
+            <span className=" font-semibold text-3xl pt-1 font-montserrat block">
+              650
+            </span>
+          </div>
+        </CardWrapper>
+        <CardWrapper>
+          <div>
+            <span className="text-brown-100 block font-montserrat text-sm font-bold">
+              Tier 2 Savings
+            </span>
+            <span className=" font-semibold text-3xl pt-1 font-montserrat block">
+              1040
+            </span>
+          </div>
+        </CardWrapper>
+        <CardWrapper>
+          <div>
+            <span className="text-green-teal block font-montserrat text-sm font-bold">
+              Tier 3 Savings
+            </span>
+            <span className=" font-semibold text-3xl pt-1 font-montserrat block">
+              650
+            </span>
+          </div>
+        </CardWrapper>
+        <CardWrapper>
+          <div>
+            <span className=" block font-montserrat text-sm font-bold">
+              Wallet
+            </span>
+            <span className=" font-semibold text-3xl pt-1 font-montserrat block">
               650
             </span>
           </div>

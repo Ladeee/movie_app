@@ -1,0 +1,31 @@
+.btn {
+  min-height: 35px;
+  min-width: 100px;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-family: "Montserrat";
+  font-size: 0.875rem;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+btn:active {
+  outline: 1px solid var(--indigo600);
+}
+
+.btn-blue {
+  background: var(--blue100);
+  color: var(--white50);
+}
+
+.btn-blue-tran {
+  background: transparent;
+  color: var(--blue100);
+  border: 1px solid var(--blue100);
+}
+
+.btn-tran {
+  background: transparent;
+  color: var(--grey900);
+  border: 1px solid var(--grey300);
+}

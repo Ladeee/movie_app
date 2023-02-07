@@ -1,7 +1,6 @@
 // ----------- import external dependencies -------------
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Verifications from "../views/jobs/createjobs/verification";
 
 // ---------- import internal dependencies ----------
 const Home = lazy(() => import("../views/homepage"));
@@ -21,7 +20,9 @@ const CompanyDashboard = lazy(() => import("../screens/companyDashboard"));
 const CompanyAccountDashboard = lazy(
   () => import("../screens/companyAccountDashboard")
 );
-
+const Verifications = lazy(
+  () => import("../views/jobs/createjobs/verification")
+);
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -66,6 +67,11 @@ export const router = createBrowserRouter([
         index: true,
         element: <CompanyDashboard />,
       },
+      {
+        path: "verifications",
+        index: true,
+        element: <Verifications />,
+      },
     ],
   },
   {
@@ -78,5 +84,9 @@ export const router = createBrowserRouter([
         element: <CompanyAccountDashboard />,
       },
     ],
+  },
+  {
+    path: "/verifications",
+    element: <Verifications />,
   },
 ]);

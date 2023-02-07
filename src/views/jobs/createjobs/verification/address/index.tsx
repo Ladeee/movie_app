@@ -24,14 +24,14 @@ export default function AddressVerification({
 }) {
   const [uploadedImage, setUploadedImage] = useState<string>("");
 
-  const formSubmit = (e: any) => {
-    e.preventDefault();
-    // Submit your form with the uploadedImage as one of your fields
-    console.log({ uploadedImage });
-    alert(
-      "here you'd submit the form using\n the uploadedImage like any other field"
-    );
-  };
+  // const formSubmit = (e: any) => {
+  //   e.preventDefault();
+  //   // Submit your form with the uploadedImage as one of your fields
+  //   console.log({ uploadedImage });
+  //   alert(
+  //     "here you'd submit the form using\n the uploadedImage like any other field"
+  //   );
+  // };
 
   const convertFile = (files: FileList | null) => {
     if (files) {
@@ -63,7 +63,12 @@ export default function AddressVerification({
           </i>
 
           {uploadedImage.indexOf("image/") > -1 && (
-            <img src={uploadedImage} width={300} className="uploadedImage" />
+            <img
+              src={uploadedImage}
+              width={300}
+              className="uploadedImage"
+              alt="uploaded"
+            />
           )}
         </ImageWrapper>
       </Upload>

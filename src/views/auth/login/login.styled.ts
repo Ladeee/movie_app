@@ -4,7 +4,7 @@ import { AuthButton } from "../../../css/reuseableStyles/button.styled";
 // login / recover password
 
 export const Container = styled.div`
-  margin-top: 9.3125rem;
+  margin-top: 4.3125rem;
   white-space: nowrap;
 
   @media (max-width: 768px) {
@@ -14,34 +14,22 @@ export const Container = styled.div`
   }
 `;
 
-export const Heading = styled.header`
+export const Heading = styled.h1`
   font-family: "Inter", sans-serif;
   color: #090914;
   font-weight: 600;
-  font-size: 2.25rem;
+  font-size: 1.6rem;
   line-height: 2.75rem;
+  margin-top: 9.3125rem;
 
   @media (max-width: 768px) {
     font-size: 18px;
     text-align: center;
+    margin-top: 3.3125rem;
   }
 `;
 
-export const Addresses = styled.p`
-  font-family: "Poppins", sans-serif;
-  color: #52525b;
-  font-weight: 400;
-  font-size: 1.125rem;
-  line-height: 1.875rem;
-  margin-top: 2.0625rem;
-
-  @media (max-width: 398px) {
-    text-align: center;
-    font-size: 11px;
-  }
-`;
-
-export const FormContainer = styled.section`
+export const FormContainer = styled.form`
   width: 100%;
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -50,9 +38,9 @@ export const FormContainer = styled.section`
 
   label {
     color: #000000;
-    font-size: 1rem;
+    font-size: 0.825rem;
     line-height: 1.5rem;
-    margin-top: 16px;
+    margin-top: 5px;
   }
 
   input {
@@ -66,7 +54,8 @@ export const FormContainer = styled.section`
     padding-left: 2.375rem;
 
     @media (max-width: 768px) {
-      width: 100%;
+      width: 18.75rem;
+      padding-left: 0.375rem;
     }
   }
 `;
@@ -111,7 +100,7 @@ export const Forgot = styled.a`
 `;
 
 export const Button = styled(AuthButton)`
-  margin-top: 4.0625rem;
+  margin-top: 3.0625rem;
 `;
 
 export const Account = styled.p`
@@ -122,8 +111,8 @@ export const Account = styled.p`
   font-weight: 400;
   font-size: 1rem;
   line-height: 1rem;
-  margin-top: 11.4375rem;
-  margin-bottom: 4.4375rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.4375rem;
 `;
 
 // exclusive for forget password
@@ -132,13 +121,11 @@ export const Acc = styled.p`
   font-family: "Poppins", sans-serif;
   color: #333333;
   text-align: right;
-  margin-top: 21rem;
-  margin-bottom: 4.4375rem;
+  margin-top: 8rem;
 `;
 
 // exclusive for set password
 
 export const Reset = styled(AuthButton)`
   margin-top: 6.6875rem;
-  margin-bottom: 16.875rem;
 `;

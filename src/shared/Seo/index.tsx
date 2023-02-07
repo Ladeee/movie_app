@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 import SkipToContent from "../Ally";
 
 interface SkipToContentProps {
-  page: string;
+  page?: string;
   children: React.ReactNode;
   content: string;
   section: string;
@@ -23,7 +23,7 @@ function Seo({
   return (
     <>
       <Helmet>
-        <title>{`Mudal Client Merchant - ${page || "Home"}`}</title>
+        <title>{`Nester verify - ${page || "Home"}`}</title>
       </Helmet>
       {allowSkip && <SkipToContent content={content} section={section} />}
       {children}

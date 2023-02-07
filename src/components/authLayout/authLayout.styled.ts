@@ -33,7 +33,7 @@ export const Welcome = styled.section<{ color: string; bottom: any }>`
     content: "";
     background-image: url(${TopIcon});
     background-size: contain;
-    position: absolute;
+    position: fixed;
     background-repeat: no-repeat;
     width: 7.125rem;
     height: 8.875rem;
@@ -43,10 +43,10 @@ export const Welcome = styled.section<{ color: string; bottom: any }>`
     background-image: url(${BottomIcon});
     background-size: contain;
     background-repeat: no-repeat;
-    position: absolute;
+    position: fixed;
     width: 28.75rem;
-    height: 13.9375rem;
-    right: -9.75rem;
+    height: 10.9375rem;
+    right: 39.5%;
     bottom: ${(props) => props.bottom};
     z-index: 1;
   }
@@ -58,8 +58,10 @@ export const Welcome = styled.section<{ color: string; bottom: any }>`
 
 export const Contents = styled.div`
   display: grid;
-  place-content: center;
+  place-content: flex-end;
   margin-top: 12.0625rem;
+  margin-left: 8.5rem;
+  position: fixed;
 `;
 
 export const Logo = styled.figure`

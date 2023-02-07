@@ -8,11 +8,12 @@ export const SkipToContentStyle = styled.a`
   z-index: 2050;
   font-size: 1rem;
   font-weight: 300;
-  background-color: var(--purple600);
+  // background-color: var(--purple600);
   text-decoration: none !important;
   top: -12rem;
   outline: none;
   padding: 0.5rem 2rem;
+  color: red;
 
   &:focus {
     top: 0;

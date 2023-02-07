@@ -3,8 +3,8 @@
   "fixedDigits": 4,
   "addMark": true,
   "vw": true,
-  "vwHover": false,
-  "vwDesign": 1920,
+  "vwHover": true,
+  "vwDesign": 1600,
   "languages": [
     "html",
     "vue",

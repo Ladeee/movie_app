@@ -1,9 +1,59 @@
 /* ------- configure variables ------ */
+:root {
+  /* ------ white color config ------ */
+  --white100: #fafafb;
+  --white200: #f8f8fa;
+  --white50: #ffffff;
 
-/* define color name */
+  /* ------- blue color config ------- */
+  --blue50: #b3ebf7;
+  --blue100: #0d2aab;
+  --blue200: #00d4fd;
+  --blue300: #2f85d4;
+  --blue400: #2b58cd;
+  --indigo600: #4f46e5;
+  --pillBGBlue: #94cbff;
+  --pillBlueColor: #1c49bd;
 
-/* $blue: '#1F2041',
-  $brown: '#A96644',
-  $chocolate: '#3F3F46',
-  $green: '#007C23',
-  $navyblue: '#2C2F6D', */
+  /* ------ ash color config ------ */
+  --ash50: #e4e4e4;
+
+  /* ------ grey color config ------- */
+  --grey200: #e4e4e7;
+  --grey300: #d4d4d8;
+  --grey400: #a1a1a1;
+  --grey500: #71717a;
+  --grey800: #4b5057;
+  --grey900: #18181b;
+
+  /* -------- red color config ------- */
+  --red100: #cf1010;
+  --red500: #ef4444;
+
+  /* ------ green color confi ------- */
+  --green100: #dcfce7;
+  --green500: #22c55e;
+  --green300: #6ee7b7;
+  --green700: #047857;
+  --green900: #14532d;
+  --tealGreen: #0c9cb8;
+
+  /* ------ purple color config ------ */
+  --purple50: #d3cef8;
+  --purple100: #543bd2;
+  --purple200: #542be7;
+
+  /* ------- orange color config ------ */
+  --orange100: #d97161;
+  --orange50: #ff9c8d;
+
+  /* ------- yellow color config ------ */
+  --yellow100: #fef9c3;
+  --yellow400: #facc15;
+  --yellow900: #713f12;
+
+  /* ------ misc color config ------- */
+  --brown100: #db6f08;
+
+  --black100: #121212;
+}

@@ -9,7 +9,7 @@ import {
 
 export default function Confirm() {
   return (
-    <AuthLayout bottom="-7.45rem" color="#3F3F46">
+    <AuthLayout bottom="-6.45rem" color="#3F3F46">
       <EmailContainer>
         <ConfirmEmail>Please Confirm Your Email Address</ConfirmEmail>
         <ConfirmText className="uppercase">

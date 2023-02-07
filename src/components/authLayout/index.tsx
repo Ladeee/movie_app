@@ -45,7 +45,9 @@ export default function AuthLayout({
           </Contents>
         </Welcome>
 
-        <Forms>{children}</Forms>
+        <Forms className="absolute flex flex-col inset-x-1/2 items-center sm:static">
+          {children}
+        </Forms>
       </AuthWrapper>
     </AuthContainer>
   );

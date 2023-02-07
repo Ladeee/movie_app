@@ -51,7 +51,7 @@ export const Welcome = styled.section<{ color: string; bottom: any }>`
     z-index: 1;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
     display: none;
   }
 `;
@@ -87,15 +87,6 @@ export const Clarity = styled.p`
 
 export const Forms = styled.section`
   z-index: 1;
-
-  @media (max-width: 768px) {
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 `;
 
 // signup navbar

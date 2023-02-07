@@ -20,7 +20,7 @@ export const Heading = styled.h1`
   font-weight: 600;
   font-size: 1.6rem;
   line-height: 2.75rem;
-  margin-top: 9.3125rem;
+  margin-top: 4.4375rem;
 
   @media (max-width: 768px) {
     font-size: 18px;

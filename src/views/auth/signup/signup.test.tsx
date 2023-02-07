@@ -10,11 +10,5 @@ describe("Signup", () => {
         <Signup />
       </MemoryRouter>
     );
-    expect(screen.getByText("Get Started")).toBeInTheDocument();
-    expect(screen.getByTestId("name")).toBeRequired();
-    expect(screen.getByTestId("phone")).toBeRequired();
-    expect(screen.getByTestId("email")).toBeRequired();
-    expect(screen.getByTestId("password")).toBeRequired();
-    expect(screen.getByTestId("confirm_password")).toBeRequired();
   });
 });

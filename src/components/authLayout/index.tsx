@@ -12,13 +12,11 @@ import {
 } from "./authLayout.styled";
 import NesterLogo from "../../assets/images/authentification/nesterLogo.png";
 import AuthNavbar from "./authNavbar";
-
 interface Props {
   children: React.ReactNode;
   color?: string;
   bottom?: any;
 }
-
 export default function AuthLayout({
   children,
   color = "#1F2041",
@@ -44,7 +42,6 @@ export default function AuthLayout({
             </Clarity>
           </Contents>
         </Welcome>
-
         <Forms>{children}</Forms>
       </AuthWrapper>
     </AuthContainer>

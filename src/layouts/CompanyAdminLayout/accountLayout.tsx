@@ -51,7 +51,7 @@ function CompanyAccountLayout() {
 export default CompanyAccountLayout;
 
 const MainContent = styled.section`
-  margin-left: 280px;
+  margin-left: 250px;
   padding: 1.5rem 2rem;
 
   @media screen and (max-width: ${sizes.tabletL}) {

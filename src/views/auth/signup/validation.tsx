@@ -1,4 +1,3 @@
-import React from "react";
 import { IValues } from "../type";
 
 const Validation = (values: {
@@ -8,7 +7,7 @@ const Validation = (values: {
 }) => {
   let error: IValues = { email: "", password: "", confirm_password: "" };
   const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
+  // const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
 
   if (values.email === "") {
     error.email = "Name should not be empty";

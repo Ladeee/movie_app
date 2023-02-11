@@ -9,15 +9,20 @@ import {
 export const VerificationContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-family: "Inter", sans-serif;
   white-space: nowrap;
+
+  @media (max-width: 1024px) {
+    float: unset;
+  }
 `;
 
 export const Header = styled.section`
   display: flex;
   align-items: center;
-  gap: 26.625rem;
+  /* gap: 26.625rem; */
+
+  gap: 20rem;
   p {
     font-size: 1.5rem;
     line-height: 2.25rem;
@@ -71,7 +76,7 @@ export const Submit = styled(VerificationDownButtons)`
 
 export const AddressContainer = styled.div`
   margin-top: 1.625rem;
-  width: 75.5rem;
+  /* width: 75.5rem; */
   background: #ffffff;
   border: 1px solid #e4e4e7;
   border-radius: 0.625rem;
@@ -83,6 +88,9 @@ export const FormWrapper = styled.div`
   display: flex;
   gap: 3.0625rem;
   margin-top: 1.6875rem;
+
+  /* flex-wrap: wrap-reverse;
+  width: 100%; */
 `;
 
 export const LeftInfo = styled.section``;

@@ -72,9 +72,7 @@ export const Submit = styled(VerificationDownButtons)`
   color: #ffffff;
 `;
 
-// Address verification
-
-export const AddressContainer = styled.div`
+export const PageDisplay = styled.div`
   margin-top: 1.625rem;
   background: #ffffff;
   border: 1px solid #e4e4e7;
@@ -82,6 +80,10 @@ export const AddressContainer = styled.div`
   padding-bottom: 3.8125rem;
   padding-left: 4.25rem;
 `;
+
+// Address verification
+
+export const AddressContainer = styled.div``;
 
 export const FormWrapper = styled.div`
   display: flex;
@@ -122,6 +124,14 @@ export const InputWrapper = styled.div`
     position: absolute;
     right: 1.3438rem;
     bottom: 0.5rem;
+  }
+
+  #lgaIcon {
+    position: absolute;
+    right: 20%;
+    @media (max-width: 1024px) {
+      right: 1.3438rem;
+    }
   }
 `;
 

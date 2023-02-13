@@ -11,20 +11,61 @@ import {
   VerificationButtons,
   // DropdownIcon,
   Submit,
+  ImageWrapper,
 } from "../verifications.styled";
 
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { CiCalendarDate } from "react-icons/ci";
+import { ImFilePicture } from "react-icons/im";
+import { useState } from "react";
+import VerificationNavbar from "../verificationnavbar";
 
 export default function GuarantorVerification({
   nextPage,
 }: {
   nextPage: () => void;
 }) {
+  const [uploadedImage, setUploadedImage] = useState<string>("");
+
+  const convertFile = (files: FileList | null) => {
+    if (files) {
+      const fileRef = files[0] || "";
+      const fileType: string = fileRef.type || "";
+      console.log("This file upload is of type:", fileType);
+      const reader = new FileReader();
+      reader.readAsBinaryString(fileRef);
+      reader.onload = (ev: any) => {
+        // convert it to base64
+        setUploadedImage(`data:${fileType};base64,${btoa(ev.target.result)}`);
+      };
+    }
+  };
+
   return (
     <AddressContainer>
+      <VerificationNavbar />
       <Upload>
         <p className="text-base font-semibold">Upload guarantor image</p>
+        <ImageWrapper>
+          <input
+            type="file"
+            title=""
+            className="uploadInput"
+            onChange={(e) => convertFile(e.target.files)}
+          />
+          <i>
+            <ImFilePicture className="w-10 h-10" />
+          </i>
+
+          {uploadedImage.indexOf("image/") > -1 && (
+            <img
+              src={uploadedImage}
+              width={300}
+              className="uploadedImage"
+              alt="uploaded"
+            />
+          )}
+        </ImageWrapper>
       </Upload>
       <FormWrapper>
         <LeftInfo>

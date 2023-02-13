@@ -59,18 +59,35 @@ export const Welcome = styled.section<{ color: string; bottom: any }>`
     right: 39.5%;
     bottom: ${(props) => props.bottom};
     z-index: 1;
-    @media (max-width: 1024px) {
-      /* position: absolute; */
-      /* left: 10%; */
-    }
-  }
 
-  @media (max-width: 1024px) {
-    /* flex: 0.5; */
-    display: block;
+    @media (max-width: 1024px) {
+      display: none;
+    }
   }
   @media (max-width: 768px) {
     display: none;
+  }
+`;
+
+export const BottomIconImg = styled.div`
+  display: none;
+
+  @media (max-width: 1024px) {
+    display: block;
+    position: absolute;
+    width: inherit;
+  }
+
+  img {
+    @media (max-width: 1024px) {
+      position: fixed;
+      width: inherit;
+      object-fit: contain;
+      height: 25%;
+      right: 50%;
+      left: 15%;
+      top: 82%;
+    }
   }
 `;
 

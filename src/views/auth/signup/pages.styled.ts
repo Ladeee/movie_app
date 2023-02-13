@@ -151,7 +151,8 @@ export const IndustryIcon = styled.div`
   cursor: pointer;
   position: absolute;
   top: 2.4002rem;
-  right: 1.4087rem;
+  /* right: 1.4087rem; */
+  right: 25%;
   width: 0.5981rem;
   height: 0.3825rem;
 

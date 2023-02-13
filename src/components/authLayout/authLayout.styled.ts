@@ -92,6 +92,8 @@ export const Contents = styled.div`
 `;
 
 export const Logo = styled.figure`
+  display: flex;
+  align-items: center;
   width: 10.9375rem;
   height: 3.5625rem;
 `;

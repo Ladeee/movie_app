@@ -6,11 +6,10 @@ import {
   Upload,
   Input,
   InputWrapper,
-  LeftInfo,
-  RightInfo,
   VerificationButtons,
   Submit,
   ImageWrapper,
+  Info,
 } from "../verifications.styled";
 
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
@@ -73,46 +72,40 @@ export default function AddressVerification({
         </ImageWrapper>
       </Upload>
       <FormWrapper>
-        <LeftInfo>
+        <Info>
           <InputWrapper>
             <label>First Name</label>
             <Input type="text" placeholder="First name" />
           </InputWrapper>
           <InputWrapper>
-            <label>Email</label>
-            <Input type="email" placeholder="you@gmail.com" />
-          </InputWrapper>
-          <InputWrapper>
-            <label>Address</label>
-            <Input type="text" placeholder="111, Williams st Yaba" />
-          </InputWrapper>
-          <InputWrapper>
-            <label>L.G.A</label>
-            <Input type="text" />
-            <i id="lgaIcon">
-              <MdOutlineKeyboardArrowDown />
-            </i>
-          </InputWrapper>
-          <InputWrapper>
-            <label>Additional Information</label>
-            <textarea />
-          </InputWrapper>
-
-          <VerificationButtons>
-            <AddGuarantor onClick={nextPage}>Add Guarantor</AddGuarantor>
-            <Submit>Submit and Pay</Submit>
-          </VerificationButtons>
-        </LeftInfo>
-
-        <RightInfo>
-          <InputWrapper>
             <label>Last Name</label>
             <Input type="text" placeholder="Last name" />
+          </InputWrapper>
+        </Info>
+
+        <Info>
+          <InputWrapper>
+            <label>Email</label>
+            <Input type="email" placeholder="you@gmail.com" />
           </InputWrapper>
           <InputWrapper>
             <label>Phone Number</label>
             <Input type="tel" placeholder="+1 (555)" />
           </InputWrapper>
+        </Info>
+
+        <Info>
+          <InputWrapper>
+            <label>Address</label>
+            <Input type="text" placeholder="111, Williams st Yaba" />
+          </InputWrapper>
+          <InputWrapper>
+            <label>Closest Landmark</label>
+            <Input type="text" placeholder="you@company.com" />
+          </InputWrapper>
+        </Info>
+
+        <Info>
           <InputWrapper>
             <label>State</label>
             <Input type="text" />
@@ -121,8 +114,17 @@ export default function AddressVerification({
             </i>
           </InputWrapper>
           <InputWrapper>
-            <label>Closest Landmark</label>
-            <Input type="text" placeholder="you@company.com" />
+            <label>L.G.A</label>
+            <Input type="text" />
+            <i id="lgaIcon">
+              <MdOutlineKeyboardArrowDown />
+            </i>
+          </InputWrapper>
+        </Info>
+        <Info id="reverse">
+          <InputWrapper>
+            <label>Additional Information</label>
+            <textarea />
           </InputWrapper>
           <InputWrapper>
             <label>Verification Due Date</label>
@@ -131,7 +133,14 @@ export default function AddressVerification({
               <CiCalendarDate className="w-6 h-6" />
             </i>
           </InputWrapper>
-        </RightInfo>
+        </Info>
+
+        <Info>
+          <VerificationButtons>
+            <AddGuarantor onClick={nextPage}>Add Guarantor</AddGuarantor>
+            <Submit>Submit and Pay</Submit>
+          </VerificationButtons>
+        </Info>
       </FormWrapper>
     </AddressContainer>
   );

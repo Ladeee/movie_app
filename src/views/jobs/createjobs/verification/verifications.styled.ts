@@ -16,16 +16,26 @@ export const VerificationContainer = styled.div`
     width: 80%;
     margin: 2.164rem auto;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 export const Header = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 
   p {
     font-size: 1.5rem;
     line-height: 2.25rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
   }
 `;
 
@@ -39,6 +49,12 @@ export const LeftHeader = styled.div`
   align-items: center;
   gap: 0.625rem;
   margin-top: 1.4375rem;
+
+  #job-text {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 `;
 
 export const RightHeader = styled.div`
@@ -46,6 +62,10 @@ export const RightHeader = styled.div`
   align-items: center;
   gap: 1.25rem;
   margin-top: 2.2844rem;
+
+  @media (max-width: 768px) {
+    width: 40%;
+  }
 `;
 
 export const Continue = styled(VerificationTopButtons)``;
@@ -59,17 +79,26 @@ export const CreateBtn = styled(VerificationTopButtons)`
 
 export const VerificationButtons = styled.div`
   margin-top: 3.875rem;
+  width: 100%;
 `;
 
 export const AddGuarantor = styled(VerificationDownButtons)`
   background-color: #fefefe;
   color: #1f2041;
+
+  @media (max-width: 768px) {
+    width: 60%;
+  }
 `;
 
 export const Submit = styled(VerificationDownButtons)`
   margin-top: 1.625rem;
   background-color: #1f2041;
   color: #ffffff;
+
+  @media (max-width: 768px) {
+    width: 60%;
+  }
 `;
 
 export const PageDisplay = styled.div`
@@ -79,6 +108,11 @@ export const PageDisplay = styled.div`
   border-radius: 0.625rem;
   padding-bottom: 3.8125rem;
   padding-left: 4.25rem;
+
+  @media (max-width: 768px) {
+    padding: auto;
+    width: 100%;
+  }
 `;
 
 // Address verification
@@ -86,17 +120,25 @@ export const PageDisplay = styled.div`
 export const AddressContainer = styled.div``;
 
 export const FormWrapper = styled.div`
-  display: flex;
-  gap: 3.0625rem;
   margin-top: 1.6875rem;
 
-  /* flex-wrap: wrap-reverse;
-  width: 100%; */
+  #reverse {
+    @media (max-width: 768px) {
+      display: flex;
+      flex-wrap: wrap-reverse;
+    }
+  }
 `;
 
-export const LeftInfo = styled.section``;
+export const Info = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.0625rem;
 
-export const RightInfo = styled.section``;
+  @media (max-width: 768px) {
+    gap: 0;
+  }
+`;
 
 export const InputWrapper = styled.div`
   display: flex;
@@ -113,10 +155,18 @@ export const InputWrapper = styled.div`
   textarea {
     resize: none;
     border: 1px solid #d0d5dd;
-    width: 30rem;
+    width: 26rem;
     height: 7.25rem;
     border-radius: 0.5rem;
     margin-top: 0.375rem;
+
+    @media (max-width: 1024px) {
+      width: 30rem;
+    }
+
+    @media (max-width: 768px) {
+      width: 80%;
+    }
   }
 
   i {
@@ -124,30 +174,38 @@ export const InputWrapper = styled.div`
     position: absolute;
     right: 1.3438rem;
     bottom: 0.5rem;
+
+    @media (max-width: 768px) {
+      margin-right: 20%;
+    }
+  }
+  #calender {
+    position: absolute;
+    top: 40%;
+
+    @media (max-width: 768px) {
+      top: 64%;
+    }
   }
 
-  #lgaIcon {
-    position: absolute;
-    right: 20%;
-    @media (max-width: 1024px) {
-      right: 1.3438rem;
-    }
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 
 export const Input = styled(VerificationInput)`
   margin-top: 0.375rem;
   padding-left: 1rem;
-  width: 25rem;
+  width: 26rem;
 
   @media (max-width: 1024px) {
     width: 30rem;
   }
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 `;
-
-// export const DropdownIcon = styled.div`
-
-// `;
 
 export const Upload = styled.div`
   margin-top: 2rem;

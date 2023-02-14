@@ -6,6 +6,11 @@ import { AuthButton } from "../../../css/reuseableStyles/button.styled";
 export const EmailContainer = styled.article`
   margin-top: 9.9375rem;
   white-space: nowrap;
+  width: 44vw;
+
+  @media (max-width: 768px) {
+    width: auto;
+  }
 `;
 
 export const ConfirmEmail = styled.header`
@@ -15,6 +20,10 @@ export const ConfirmEmail = styled.header`
   font-weight: 600;
   font-size: 2.25rem;
   line-height: 2.75rem;
+
+  @media (max-width: 1024px) {
+    font-size: 1.45rem;
+  }
 
   @media (max-width: 568px) {
     font-size: 1rem;
@@ -28,6 +37,10 @@ export const ConfirmText = styled.p`
   font-size: 1.125rem;
   line-height: 1.875rem;
   margin-top: 2.0625rem;
+
+  @media (max-width: 1024px) {
+    font-size: 1rem;
+  }
 
   @media (max-width: 400px) {
     font-size: 11px;
@@ -53,6 +66,10 @@ export const ConfirmSuccess = styled.p`
   line-height: 1.875rem;
   margin-top: 2.0625rem;
 
+  @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 1rem;
+  }
+
   @media (max-width: 367px) {
     font-size: 12px;
   }
@@ -65,6 +82,10 @@ export const SignIn = styled.a`
   font-size: 1.125rem;
   line-height: 1.875rem;
   margin-top: 1.25rem;
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 1rem;
+  }
 
   @media (max-width: 367px) {
     font-size: 11px;

@@ -5,12 +5,22 @@ import BottomIcon from "../../assets/images/authentification/shapeTwo.png";
 // layout
 export const AuthContainer = styled.div`
   position: relative;
-  width: 100%;
+  max-width: 100%;
+
+  @media (max-width: 1024px) {
+    flex: 1;
+  }
 `;
 
 export const AuthWrapper = styled.div`
   display: flex;
   gap: 8.375rem;
+
+  @media (max-width: 1024px) {
+    justify-content: space-between;
+    gap: 0;
+    margin-right: 5%;
+  }
 `;
 
 export const AuthNav = styled.nav`
@@ -28,7 +38,7 @@ export const Welcome = styled.section<{ color: string; bottom: any }>`
   position: relative;
   width: 46%;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: auto;
   &::before {
     content: "";
     background-image: url(${TopIcon});
@@ -42,17 +52,42 @@ export const Welcome = styled.section<{ color: string; bottom: any }>`
     content: "";
     background-image: url(${BottomIcon});
     background-size: contain;
-    background-repeat: no-repeat;
     position: fixed;
+    background-repeat: no-repeat;
     width: 28.75rem;
     height: 10.9375rem;
     right: 39.5%;
     bottom: ${(props) => props.bottom};
     z-index: 1;
-  }
 
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
   @media (max-width: 768px) {
     display: none;
+  }
+`;
+
+export const BottomIconImg = styled.div`
+  display: none;
+
+  @media (max-width: 1024px) {
+    display: block;
+    position: absolute;
+    width: inherit;
+  }
+
+  img {
+    @media (max-width: 1024px) {
+      position: fixed;
+      width: inherit;
+      object-fit: contain;
+      height: 25%;
+      right: 50%;
+      left: 15%;
+      top: 82%;
+    }
   }
 `;
 
@@ -62,9 +97,20 @@ export const Contents = styled.div`
   margin-top: 12.0625rem;
   margin-left: 8.5rem;
   position: fixed;
+
+  @media (max-width: 1024px) {
+    display: grid;
+    place-content: center;
+    margin-left: 0;
+    margin-right: 0;
+    width: inherit;
+    white-space: nowrap;
+  }
 `;
 
 export const Logo = styled.figure`
+  display: flex;
+  align-items: center;
   width: 10.9375rem;
   height: 3.5625rem;
 `;
@@ -75,6 +121,11 @@ export const Greetings = styled.header`
   line-height: 5.375rem;
   margin-top: 1.5625rem;
   color: #ffffff;
+
+  @media (max-width: 1024px) {
+    font-size: 2.063rem;
+    line-height: 3rem;
+  }
 `;
 
 export const Clarity = styled.p`
@@ -83,18 +134,23 @@ export const Clarity = styled.p`
   line-height: 1.875rem;
   margin-top: 0.5625rem;
   color: #cbd5e1;
+
+  @media (max-width: 1024px) {
+    font-size: 0.825rem;
+  }
 `;
 
 export const Forms = styled.section`
   z-index: 1;
+  max-width: 44%;
 
   @media (max-width: 768px) {
     position: absolute;
-    left: 50%;
-    right: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    left: 50%;
+    right: 50%;
   }
 `;
 

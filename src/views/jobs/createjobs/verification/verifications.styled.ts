@@ -85,6 +85,7 @@ export const VerificationButtons = styled.div`
 export const AddGuarantor = styled(VerificationDownButtons)`
   background-color: #fefefe;
   color: #1f2041;
+  width: 26rem;
 
   @media (max-width: 768px) {
     width: 60%;
@@ -92,9 +93,10 @@ export const AddGuarantor = styled(VerificationDownButtons)`
 `;
 
 export const Submit = styled(VerificationDownButtons)`
-  margin-top: 1.625rem;
   background-color: #1f2041;
   color: #ffffff;
+  width: 26rem;
+  margin-top: 1.625rem;
 
   @media (max-width: 768px) {
     width: 60%;
@@ -249,6 +251,5 @@ export const ImageWrapper = styled.div`
   }
 `;
 
-// Guarantor Container
-
-export const GuarantorContainer = styled.div``;
+// Identity Container
+export const IdentityContainer = styled.div``;

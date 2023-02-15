@@ -14,6 +14,7 @@ import AddressVerification from "./address";
 import GuarantorVerification from "./guarantor";
 import Checkmark from "../../../../assets/images/verification/vercheckmark.png";
 import styled from "styled-components";
+import IdentityVerification from "./identity";
 
 export default function Verifications() {
   const [verificationPage, setVerificationPage] = useState<any>(0);
@@ -32,7 +33,7 @@ export default function Verifications() {
     } else if (verificationPage === 1 || isActive === "Guarantor") {
       return <GuarantorVerification />;
     } else {
-      return;
+      return <IdentityVerification />;
     }
   };
 
@@ -140,6 +141,11 @@ export const Image = styled.div`
     height: 1.25rem;
 
     @media (max-width: 768px) {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+
+    @media (max-width: 468px) {
       display: none;
     }
   }

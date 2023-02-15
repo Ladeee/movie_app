@@ -1,6 +1,5 @@
 // import React, { useState } from "react";
 import {
-  GuarantorContainer,
   FormWrapper,
   Upload,
   Input,
@@ -15,6 +14,7 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { CiCalendarDate } from "react-icons/ci";
 import { ImFilePicture } from "react-icons/im";
 import { useState } from "react";
+import styled from "styled-components";
 
 export default function GuarantorVerification() {
   const [uploadedImage, setUploadedImage] = useState<string>("");
@@ -63,7 +63,7 @@ export default function GuarantorVerification() {
       <FormWrapper>
         <Info>
           <InputWrapper>
-            <label className="text-[#333382]">First Name</label>
+            <label>First Name</label>
             <Input
               type="text"
               className="border-[#333382]"
@@ -71,7 +71,7 @@ export default function GuarantorVerification() {
             />
           </InputWrapper>
           <InputWrapper>
-            <label className="text-[#333382]">Last Name</label>
+            <label>Last Name</label>
             <Input
               type="text"
               className="border-[#333382]"
@@ -82,7 +82,7 @@ export default function GuarantorVerification() {
 
         <Info>
           <InputWrapper>
-            <label className="text-[#333382]">Email</label>
+            <label>Email</label>
             <Input
               type="email"
               className="border-[#333382]"
@@ -90,7 +90,7 @@ export default function GuarantorVerification() {
             />
           </InputWrapper>
           <InputWrapper>
-            <label className="text-[#333382]">Phone Number</label>
+            <label>Phone Number</label>
             <Input
               type="tel"
               className="border-[#333382]"
@@ -101,7 +101,7 @@ export default function GuarantorVerification() {
 
         <Info>
           <InputWrapper>
-            <label className="text-[#333382]">Address</label>
+            <label>Address</label>
             <Input
               type="text"
               className="border-[#333382]"
@@ -109,7 +109,7 @@ export default function GuarantorVerification() {
             />
           </InputWrapper>
           <InputWrapper>
-            <label className="text-[#333382]">Closest Landmark</label>
+            <label>Closest Landmark</label>
             <Input
               type="text"
               className="border-[#333382]"
@@ -120,14 +120,14 @@ export default function GuarantorVerification() {
 
         <Info>
           <InputWrapper>
-            <label className="text-[#333382]">State</label>
+            <label>State</label>
             <Input type="text" className="border-[#333382]" />
             <i>
               <MdOutlineKeyboardArrowDown />
             </i>
           </InputWrapper>
           <InputWrapper>
-            <label className="text-[#333382]">L.G.A</label>
+            <label>L.G.A</label>
             <Input type="text" className="border-[#333382]" />
             <i id="lgaIcon">
               <MdOutlineKeyboardArrowDown />
@@ -136,11 +136,11 @@ export default function GuarantorVerification() {
         </Info>
         <Info id="reverse">
           <InputWrapper>
-            <label className="text-[#333382]">Additional Information</label>
+            <label>Additional Information</label>
             <textarea className="border-[#333382]" />
           </InputWrapper>
           <InputWrapper>
-            <label className="text-[#333382]">Verification Due Date</label>
+            <label>Verification Due Date</label>
             <Input type="text" className="border-[#333382]" />
             <i id="calender">
               <CiCalendarDate className="w-6 h-6" />
@@ -157,3 +157,9 @@ export default function GuarantorVerification() {
     </GuarantorContainer>
   );
 }
+
+const GuarantorContainer = styled.div`
+  label {
+    color: #333382;
+  }
+`;

@@ -140,6 +140,11 @@ export const Image = styled.div`
     height: 1.25rem;
 
     @media (max-width: 768px) {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+
+    @media (max-width: 468px) {
       display: none;
     }
   }

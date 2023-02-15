@@ -64,7 +64,7 @@ export const RightHeader = styled.div`
   margin-top: 2.2844rem;
 
   @media (max-width: 768px) {
-    width: 40%;
+    display: none;
   }
 `;
 
@@ -110,7 +110,7 @@ export const PageDisplay = styled.div`
   padding-left: 4.25rem;
 
   @media (max-width: 768px) {
-    padding: auto;
+    padding-left: 2.25rem;
     width: 100%;
   }
 `;
@@ -248,3 +248,7 @@ export const ImageWrapper = styled.div`
     z-index: 1;
   }
 `;
+
+// Guarantor Container
+
+export const GuarantorContainer = styled.div``;

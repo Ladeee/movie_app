@@ -68,7 +68,7 @@ export const router = createBrowserRouter([
         element: <CompanyDashboard />,
       },
       {
-        path: "verifications",
+        path: "jobs",
         index: true,
         element: <Verifications />,
       },

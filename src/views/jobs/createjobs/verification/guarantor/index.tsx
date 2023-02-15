@@ -1,7 +1,6 @@
 // import React, { useState } from "react";
 import {
-  AddGuarantor,
-  AddressContainer,
+  GuarantorContainer,
   FormWrapper,
   Upload,
   Input,
@@ -17,11 +16,7 @@ import { CiCalendarDate } from "react-icons/ci";
 import { ImFilePicture } from "react-icons/im";
 import { useState } from "react";
 
-export default function GuarantorVerification({
-  nextPage,
-}: {
-  nextPage: () => void;
-}) {
+export default function GuarantorVerification() {
   const [uploadedImage, setUploadedImage] = useState<string>("");
 
   const convertFile = (files: FileList | null) => {
@@ -39,9 +34,11 @@ export default function GuarantorVerification({
   };
 
   return (
-    <AddressContainer>
+    <GuarantorContainer>
       <Upload>
-        <p className="text-base font-semibold">Upload guarantor image</p>
+        <p className="text-base font-semibold text-[#333382]">
+          Upload guarantor image
+        </p>
         <ImageWrapper>
           <input
             type="file"
@@ -66,48 +63,72 @@ export default function GuarantorVerification({
       <FormWrapper>
         <Info>
           <InputWrapper>
-            <label>First Name</label>
-            <Input type="text" placeholder="First name" />
+            <label className="text-[#333382]">First Name</label>
+            <Input
+              type="text"
+              className="border-[#333382]"
+              placeholder="First name"
+            />
           </InputWrapper>
           <InputWrapper>
-            <label>Last Name</label>
-            <Input type="text" placeholder="Last name" />
-          </InputWrapper>
-        </Info>
-
-        <Info>
-          <InputWrapper>
-            <label>Email</label>
-            <Input type="email" placeholder="you@gmail.com" />
-          </InputWrapper>
-          <InputWrapper>
-            <label>Phone Number</label>
-            <Input type="tel" placeholder="+1 (555)" />
+            <label className="text-[#333382]">Last Name</label>
+            <Input
+              type="text"
+              className="border-[#333382]"
+              placeholder="Last name"
+            />
           </InputWrapper>
         </Info>
 
         <Info>
           <InputWrapper>
-            <label>Address</label>
-            <Input type="text" placeholder="111, Williams st Yaba" />
+            <label className="text-[#333382]">Email</label>
+            <Input
+              type="email"
+              className="border-[#333382]"
+              placeholder="you@gmail.com"
+            />
           </InputWrapper>
           <InputWrapper>
-            <label>Closest Landmark</label>
-            <Input type="text" placeholder="you@company.com" />
+            <label className="text-[#333382]">Phone Number</label>
+            <Input
+              type="tel"
+              className="border-[#333382]"
+              placeholder="+1 (555)"
+            />
           </InputWrapper>
         </Info>
 
         <Info>
           <InputWrapper>
-            <label>State</label>
-            <Input type="text" />
+            <label className="text-[#333382]">Address</label>
+            <Input
+              type="text"
+              className="border-[#333382]"
+              placeholder="111, Williams st Yaba"
+            />
+          </InputWrapper>
+          <InputWrapper>
+            <label className="text-[#333382]">Closest Landmark</label>
+            <Input
+              type="text"
+              className="border-[#333382]"
+              placeholder="you@company.com"
+            />
+          </InputWrapper>
+        </Info>
+
+        <Info>
+          <InputWrapper>
+            <label className="text-[#333382]">State</label>
+            <Input type="text" className="border-[#333382]" />
             <i>
               <MdOutlineKeyboardArrowDown />
             </i>
           </InputWrapper>
           <InputWrapper>
-            <label>L.G.A</label>
-            <Input type="text" />
+            <label className="text-[#333382]">L.G.A</label>
+            <Input type="text" className="border-[#333382]" />
             <i id="lgaIcon">
               <MdOutlineKeyboardArrowDown />
             </i>
@@ -115,12 +136,12 @@ export default function GuarantorVerification({
         </Info>
         <Info id="reverse">
           <InputWrapper>
-            <label>Additional Information</label>
-            <textarea />
+            <label className="text-[#333382]">Additional Information</label>
+            <textarea className="border-[#333382]" />
           </InputWrapper>
           <InputWrapper>
-            <label>Verification Due Date</label>
-            <Input type="text" />
+            <label className="text-[#333382]">Verification Due Date</label>
+            <Input type="text" className="border-[#333382]" />
             <i id="calender">
               <CiCalendarDate className="w-6 h-6" />
             </i>
@@ -129,11 +150,10 @@ export default function GuarantorVerification({
 
         <Info>
           <VerificationButtons>
-            <AddGuarantor onClick={nextPage}>Add Guarantor</AddGuarantor>
-            <Submit>Submit and Pay</Submit>
+            <Submit className="bg-#333382">Submit and Pay</Submit>
           </VerificationButtons>
         </Info>
       </FormWrapper>
-    </AddressContainer>
+    </GuarantorContainer>
   );
 }

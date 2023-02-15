@@ -30,7 +30,7 @@ export default function Verifications() {
     if (verificationPage === 0 && isActive === "Individual") {
       return <AddressVerification nextPage={nextPage} />;
     } else if (verificationPage === 1 || isActive === "Guarantor") {
-      return <GuarantorVerification nextPage={nextPage} />;
+      return <GuarantorVerification />;
     } else {
       return;
     }
@@ -45,13 +45,6 @@ export default function Verifications() {
   };
   const clickedButtonHandler = (name: any) => {
     setIsActive(name);
-    // if(verificationPage === name){
-    setVerificationPage((currentValue: any) => currentValue + 1);
-    // }
-
-    // if (verificationPage === VerificationTitles.length - 1) {
-    //   return;
-    // }
   };
 
   const colors =
@@ -129,8 +122,8 @@ export const VerificationNavContainer = styled.div`
     border-radius: 0.1875rem;
 
     @media (max-width: 768px) {
-      width: 25%;
-      font-size: 0.75rem;
+      width: 28%;
+      font-size: 0.625rem;
     }
   }
 
@@ -147,8 +140,7 @@ export const Image = styled.div`
     height: 1.25rem;
 
     @media (max-width: 768px) {
-      width: 0.875rem;
-      height: 0.875rem;
+      display: none;
     }
   }
 `;

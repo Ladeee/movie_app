@@ -17,7 +17,7 @@ const Settings = () => {
     <>
       <LayoutHeading heading="Settings" />
       <div className="w-64 bg-[#DCDCDC] flex flex-col items-center justify-between pt-16 mt-5 rounded-lg overflow-hidden">
-        <img src={changeProfileImage} />
+        <img alt="profile image" src={changeProfileImage} />
         <button className="w-full border-none bg-white py-4 text-sm text-gray-600">
           {" "}
           Change profile image{" "}

@@ -15,6 +15,8 @@ import GuarantorVerification from "./guarantor";
 import Checkmark from "../../../../assets/images/verification/vercheckmark.png";
 import styled from "styled-components";
 import IdentityVerification from "./identity";
+// import JobPopup from "../popup";
+// import { Link } from "react-router-dom";
 
 export default function Verifications() {
   const [verificationPage, setVerificationPage] = useState<any>(0);
@@ -39,11 +41,8 @@ export default function Verifications() {
 
   const nextPage = () => {
     setVerificationPage((currentValue: number) => currentValue + 1);
-
-    if (verificationPage === VerificationTitles.length - 1) {
-      return;
-    }
   };
+
   const clickedButtonHandler = (name: any) => {
     setIsActive(name);
   };

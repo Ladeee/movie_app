@@ -23,6 +23,8 @@ const CompanyAccountDashboard = lazy(
 const Verifications = lazy(
   () => import("../views/jobs/createjobs/verification")
 );
+// const JobPopup = lazy(() => import("../views/jobs/createjobs/popup"));
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -72,6 +74,11 @@ export const router = createBrowserRouter([
         index: true,
         element: <Verifications />,
       },
+      // {
+      //   path: "popup",
+      //   index: true,
+      //   element: <JobPopup />,
+      // },
     ],
   },
   {

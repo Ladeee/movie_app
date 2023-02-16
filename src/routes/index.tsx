@@ -16,10 +16,11 @@ const CompanyAdminLayout = lazy(() => import("../layouts/CompanyAdminLayout"));
 const CompanyAccountLayout = lazy(
   () => import("../layouts/CompanyAdminLayout/accountLayout")
 );
-const CompanyDashboard = lazy(() => import("../screens/companyDashboard"));
+
 const Settings = lazy(() => import("../screens/companyDashboard/settings"));
+const CompanyDashboard = lazy(() => import("../views/companyDashboard"));
 const CompanyAccountDashboard = lazy(
-  () => import("../screens/companyAccountDashboard")
+  () => import("../views/companyAccountDashboard")
 );
 
 export const router = createBrowserRouter([

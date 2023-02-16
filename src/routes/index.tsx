@@ -1,4 +1,4 @@
-// ----------- import external dependencies -------------
+// ----------- import external dependenciess -------------
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 

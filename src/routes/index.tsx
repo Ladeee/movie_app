@@ -3,7 +3,7 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 // ---------- import internal dependencies ----------
-const Home = lazy(() => import("../views/homepage"));
+// const Home = lazy(() => import("../views/homepage"));
 const GetStarted = lazy(() => import("../views/auth/signup"));
 const Confirm = lazy(() => import("../views/auth/email/confirm"));
 const Successful = lazy(() => import("../views/auth/email/successful"));
@@ -26,9 +26,31 @@ const Verifications = lazy(
 // const JobPopup = lazy(() => import("../views/jobs/createjobs/popup"));
 
 export const router = createBrowserRouter([
+  // {
+  //   path: "/",
+  //   element: <Home />,
+  // },
+
   {
     path: "/",
-    element: <Home />,
+    element: <CompanyAdminLayout />,
+    children: [
+      {
+        path: "dashboard",
+        index: true,
+        element: <CompanyDashboard />,
+      },
+      {
+        path: "jobs",
+        index: true,
+        element: <Verifications />,
+      },
+      // {
+      //   path: "popup",
+      //   index: true,
+      //   element: <JobPopup />,
+      // },
+    ],
   },
 
   {
@@ -60,27 +82,27 @@ export const router = createBrowserRouter([
     path: "/emailsuccessful",
     element: <Successful />,
   },
-  {
-    path: "/company",
-    element: <CompanyAdminLayout />,
-    children: [
-      {
-        path: "dashboard",
-        index: true,
-        element: <CompanyDashboard />,
-      },
-      {
-        path: "jobs",
-        index: true,
-        element: <Verifications />,
-      },
-      // {
-      //   path: "popup",
-      //   index: true,
-      //   element: <JobPopup />,
-      // },
-    ],
-  },
+  // {
+  //   path: "/company",
+  //   element: <CompanyAdminLayout />,
+  //   children: [
+  //     {
+  //       path: "dashboard",
+  //       index: true,
+  //       element: <CompanyDashboard />,
+  //     },
+  //     {
+  //       path: "jobs",
+  //       index: true,
+  //       element: <Verifications />,
+  //     },
+  //     // {
+  //     //   path: "popup",
+  //     //   index: true,
+  //     //   element: <JobPopup />,
+  //     // },
+  //   ],
+  // },
   {
     path: "/company-account",
     element: <CompanyAccountLayout />,

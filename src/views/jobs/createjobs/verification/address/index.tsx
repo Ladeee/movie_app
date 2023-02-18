@@ -15,6 +15,7 @@ import {
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { CiCalendarDate } from "react-icons/ci";
 import { ImFilePicture } from "react-icons/im";
+import VerificationNavbar from "../verificationNavbar";
 
 export default function AddressVerification({
   nextPage,
@@ -48,6 +49,7 @@ export default function AddressVerification({
 
   return (
     <AddressContainer>
+      <VerificationNavbar />
       <Upload>
         <p className="text-base font-semibold">Upload individual image</p>
         <ImageWrapper>

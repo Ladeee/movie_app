@@ -15,6 +15,7 @@ import { CiCalendarDate } from "react-icons/ci";
 import { ImFilePicture } from "react-icons/im";
 import { useState } from "react";
 import styled from "styled-components";
+import VerificationNavbar from "../verificationNavbar";
 
 export default function GuarantorVerification() {
   const [uploadedImage, setUploadedImage] = useState<string>("");
@@ -35,6 +36,7 @@ export default function GuarantorVerification() {
 
   return (
     <GuarantorContainer>
+      <VerificationNavbar />
       <Upload>
         <p className="text-base font-semibold text-[#333382]">
           Upload guarantor image

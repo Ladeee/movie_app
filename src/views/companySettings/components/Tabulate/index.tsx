@@ -11,11 +11,10 @@ const Tabulate = (props: Props) => {
 
   return (
     <TableWrapper
-      className={`${className} flex flex-col gap-y-[1px] bg-[#E4E4E7]`}
+      className={`${className} flex flex-col gap-y-[1px] bg-[#E4E4E7] overflow-hidden`}
     >
       <h2 className="w-full bg-[white] p-8 text-sm text-gray-700 font-montserrat font-semibold">
-        {" "}
-        {heading}{" "}
+        {heading}
       </h2>
       {children}
     </TableWrapper>
@@ -23,7 +22,7 @@ const Tabulate = (props: Props) => {
 };
 
 const TableWrapper = styled.div`
-  border: 1px solid #e4e4e7;
+  border: 1px solid var(--grey200);
 `;
 
 export default Tabulate;

@@ -16,7 +16,7 @@ const CompanyAdminLayout = lazy(() => import("../layouts/CompanyAdminLayout"));
 const CompanyAccountLayout = lazy(
   () => import("../layouts/CompanyAdminLayout/accountLayout")
 );
-const Settings = lazy(() => import("../screens/companyDashboard/settings"));
+const Settings = lazy(() => import("../views/companySettings"));
 const CompanyDashboard = lazy(() => import("../views/companyDashboard"));
 const CompanyAccountDashboard = lazy(
   () => import("../views/companyAccountDashboard")

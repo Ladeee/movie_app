@@ -70,7 +70,7 @@ export default function IdentityVerification() {
 
         <Info>
           <VerificationButtons>
-            <Submit className="bg-[#0D2AAB]">Submit and Pay</Submit>
+            <Submit>Submit and Pay</Submit>
           </VerificationButtons>
         </Info>
       </FormWrapper>

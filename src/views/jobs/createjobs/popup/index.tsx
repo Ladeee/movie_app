@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import Verifications from "../verification";
-import AddressVerification from "../verification/address";
 import {
   CreateBtn,
   Dropdown,

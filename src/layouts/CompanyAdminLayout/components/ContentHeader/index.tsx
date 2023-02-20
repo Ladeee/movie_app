@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 // ------------ import internal dependencies ------------
-import SearchInput from "../../../../components/SearchInput";
+// import SearchInput from "../../../../components/SearchInput";
 import { ReactComponent as Message } from "../../../../assets/svg/message.svg";
 import { ReactComponent as Bell } from "../../../../assets/svg/bell.svg";
 import Profile from "../../../../assets/profile.png";
@@ -17,8 +17,8 @@ interface Props {
 function ContentHeader({ click }: Props) {
   return (
     <>
-      <div className="flex justify-between">
-        <SearchInput />
+      <div className="flex justify-end">
+        {/* <SearchInput /> */}
         <ProfileWrapper>
           <MessageWrapper>
             <Message />

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import AddressVerification from "../verification/address";
+import { useNavigate } from "react-router-dom";
 import {
   CreateBtn,
   Dropdown,
@@ -11,15 +11,17 @@ import {
   Select,
 } from "./popup.styled";
 
-export default function JobPopup({ nextPage }: { nextPage: () => void }) {
+export default function JobPopup() {
   const [open, setOpen] = useState(false);
 
   const click = () => {
     setOpen(true);
   };
 
+  const navigate = useNavigate();
+
   const next = () => {
-    return <AddressVerification nextPage={nextPage} />;
+    navigate("/company/jobs");
   };
   return (
     <PopContainer>

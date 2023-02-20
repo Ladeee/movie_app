@@ -77,41 +77,35 @@ function SideNav({ close }: Props) {
   return (
     <SideNavWrapper>
       <AiOutlineClose className="close-menu" onClick={close} />
-      <SideBarWrapper>
-        <div className="flex justify-center">
-          <img
-            src={Logo}
-            className=" h-[120px]"
-            alt="Nester verify Brand logo"
-          />
-        </div>
-        <nav>
-          <ul className=" list-none">
-            {menus.map((ele: MenuItem, ind: number) => (
-              <ListItem key={ind}>
-                <NavLink
-                  to={`/${ele.path}`}
-                  className={({ isActive }) =>
-                    isActive ? "font-bold" : "font-normal"
-                  }
-                >
-                  <ele.icon />
-                  <span>{ele.title}</span>
-                </NavLink>
-              </ListItem>
-            ))}
-          </ul>
+      <div className="flex justify-center">
+        <img src={Logo} className=" h-[120px]" alt="Nester verify Brand logo" />
+      </div>
+      <nav>
+        <ul className=" list-none">
+          {menus.map((ele: MenuItem, ind: number) => (
+            <ListItem key={ind}>
+              <NavLink
+                to={`/company/${ele.path}`}
+                className={({ isActive }) =>
+                  isActive ? "font-bold" : "font-normal"
+                }
+              >
+                <ele.icon />
+                <span>{ele.title}</span>
+              </NavLink>
+            </ListItem>
+          ))}
+        </ul>
 
-          <OtherMenus className="list-none">
-            <ListItem>
-              <Link to="/company/settings">Settings</Link>
-            </ListItem>
-            <ListItem>
-              <Link to="#">Logout</Link>
-            </ListItem>
-          </OtherMenus>
-        </nav>
-      </SideBarWrapper>
+        <OtherMenus className="list-none">
+          <ListItem>
+            <Link to="/company/settings">Settings</Link>
+          </ListItem>
+          <ListItem>
+            <Link to="#">Logout</Link>
+          </ListItem>
+        </OtherMenus>
+      </nav>
     </SideNavWrapper>
   );
 }
@@ -119,21 +113,20 @@ function SideNav({ close }: Props) {
 export default SideNav;
 
 const SideNavWrapper = styled.aside`
-  width: 280px;
+  width: 250px;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  background: var(--blue100);
   position: fixed;
   top: 0;
   z-index: 2;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
 
   .close-menu {
     display: none;
   }
 
   @media screen and (max-width: ${sizes.tabletL}) {
-    background: var(--white50);
     .close-menu {
       display: block;
       margin-left: auto;
@@ -141,18 +134,9 @@ const SideNavWrapper = styled.aside`
       top: 14px;
       right: 14px;
       font-size: 1.5rem;
-      color: var(--blue100);
+      color: var(--white50);
     }
   }
-`;
-
-const SideBarWrapper = styled.div`
-  background: var(--blue100);
-  height: 90%;
-  border-radius: 30px;
-  margin-left: 1.5rem;
-  overflow-y: auto;
-  overscroll-behavior-y: contain;
 `;
 
 const ListItem = styled.li`

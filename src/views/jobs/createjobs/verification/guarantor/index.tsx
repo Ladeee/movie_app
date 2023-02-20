@@ -36,9 +36,7 @@ export default function GuarantorVerification() {
   return (
     <GuarantorContainer>
       <Upload>
-        <p className="text-base font-semibold text-[#333382]">
-          Upload guarantor image
-        </p>
+        <p className="text-base font-semibold">Upload guarantor image</p>
         <ImageWrapper>
           <input
             type="file"
@@ -64,71 +62,47 @@ export default function GuarantorVerification() {
         <Info>
           <InputWrapper>
             <label>First Name</label>
-            <Input
-              type="text"
-              className="border-[#333382]"
-              placeholder="First name"
-            />
+            <Input type="text" placeholder="First name" />
           </InputWrapper>
           <InputWrapper>
             <label>Last Name</label>
-            <Input
-              type="text"
-              className="border-[#333382]"
-              placeholder="Last name"
-            />
+            <Input type="text" placeholder="Last name" />
           </InputWrapper>
         </Info>
 
         <Info>
           <InputWrapper>
             <label>Email</label>
-            <Input
-              type="email"
-              className="border-[#333382]"
-              placeholder="you@gmail.com"
-            />
+            <Input type="email" placeholder="you@gmail.com" />
           </InputWrapper>
           <InputWrapper>
             <label>Phone Number</label>
-            <Input
-              type="tel"
-              className="border-[#333382]"
-              placeholder="+1 (555)"
-            />
+            <Input type="tel" placeholder="+1 (555)" />
           </InputWrapper>
         </Info>
 
         <Info>
           <InputWrapper>
             <label>Address</label>
-            <Input
-              type="text"
-              className="border-[#333382]"
-              placeholder="111, Williams st Yaba"
-            />
+            <Input type="text" placeholder="111, Williams st Yaba" />
           </InputWrapper>
           <InputWrapper>
             <label>Closest Landmark</label>
-            <Input
-              type="text"
-              className="border-[#333382]"
-              placeholder="you@company.com"
-            />
+            <Input type="text" placeholder="you@company.com" />
           </InputWrapper>
         </Info>
 
         <Info>
           <InputWrapper>
             <label>State</label>
-            <Input type="text" className="border-[#333382]" />
+            <Input type="text" />
             <i>
               <MdOutlineKeyboardArrowDown />
             </i>
           </InputWrapper>
           <InputWrapper>
             <label>L.G.A</label>
-            <Input type="text" className="border-[#333382]" />
+            <Input type="text" />
             <i id="lgaIcon">
               <MdOutlineKeyboardArrowDown />
             </i>
@@ -137,11 +111,11 @@ export default function GuarantorVerification() {
         <Info id="reverse">
           <InputWrapper>
             <label>Additional Information</label>
-            <textarea className="border-[#333382]" />
+            <textarea />
           </InputWrapper>
           <InputWrapper>
             <label>Verification Due Date</label>
-            <Input type="text" className="border-[#333382]" />
+            <Input type="text" />
             <i id="calender">
               <CiCalendarDate className="w-6 h-6" />
             </i>
@@ -150,7 +124,7 @@ export default function GuarantorVerification() {
 
         <Info>
           <VerificationButtons>
-            <Submit className="bg-#333382">Submit and Pay</Submit>
+            <Submit>Submit and Pay</Submit>
           </VerificationButtons>
         </Info>
       </FormWrapper>
@@ -158,8 +132,4 @@ export default function GuarantorVerification() {
   );
 }
 
-const GuarantorContainer = styled.div`
-  label {
-    color: #333382;
-  }
-`;
+const GuarantorContainer = styled.div``;

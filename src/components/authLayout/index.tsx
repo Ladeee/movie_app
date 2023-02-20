@@ -9,9 +9,12 @@ import {
   Greetings,
   Logo,
   Clarity,
+  BottomIconImg,
 } from "./authLayout.styled";
-import NesterLogo from "../../assets/images/authentification/nesterLogo.png";
+import NesterLogo from "../../assets/logo-light.png";
 import AuthNavbar from "./authNavbar";
+import BottomIcon from "../../assets/images/authentification/shapeTwo.png";
+
 interface Props {
   children: React.ReactNode;
   color?: string;
@@ -41,6 +44,9 @@ export default function AuthLayout({
               easily, from anywhere in the world
             </Clarity>
           </Contents>
+          <BottomIconImg>
+            <img className="img" src={BottomIcon} alt="bottom icon" />
+          </BottomIconImg>
         </Welcome>
         <Forms>{children}</Forms>
       </AuthWrapper>

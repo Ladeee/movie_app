@@ -12,22 +12,21 @@ import {
 import { IoIosArrowForward } from "react-icons/io";
 import AddressVerification from "./address";
 import GuarantorVerification from "./guarantor";
+import IdentityVerification from "./identity";
+import { Link } from "react-router-dom";
 import Checkmark from "../../../../assets/images/verification/vercheckmark.png";
 import styled from "styled-components";
-import IdentityVerification from "./identity";
-// import JobPopup from "../popup";
-// import { Link } from "react-router-dom";
 
 export default function Verifications() {
-  const [verificationPage, setVerificationPage] = useState<any>(0);
+  const [verificationPage, setVerificationPage] = useState(0);
   const [isActive, setIsActive] = useState<any>("Individual");
 
+  const buttons = ["Individual", "Guarantor", "Identity"];
   const VerificationTitles = [
     "Address Verification",
     "Guarantor Verification",
     "Identity Verification",
   ];
-  const buttons = ["Individual", "Guarantor", "Identity"];
 
   const pageDisplay = () => {
     if (verificationPage === 0 && isActive === "Individual") {
@@ -41,18 +40,16 @@ export default function Verifications() {
 
   const nextPage = () => {
     setVerificationPage((currentValue: number) => currentValue + 1);
+    setIsActive("Guarantor");
   };
 
   const clickedButtonHandler = (name: any) => {
+    setVerificationPage((currentValue: number) => currentValue + 1);
     setIsActive(name);
+    if (verificationPage === VerificationTitles.length - 1) {
+      return VerificationTitles;
+    }
   };
-
-  const colors =
-    isActive === "Individual"
-      ? "#7961F9"
-      : isActive === "Guarantor"
-      ? "#333382"
-      : "#0D2AAB";
 
   return (
     <VerificationContainer>
@@ -63,14 +60,17 @@ export default function Verifications() {
           </p>
           <IoIosArrowForward id="job-text" />
           <p className="font-semibold font-montserrat">
-            {VerificationTitles[verificationPage]}
+            {VerificationTitles[verificationPage] ||
+              VerificationTitles[isActive]}
           </p>
         </LeftHeader>
         <RightHeader>
           <Continue className="text-sm font-semibold font-inter">
             Continue
           </Continue>
-          <CreateBtn>Create Job</CreateBtn>
+          <Link to="popup">
+            <CreateBtn>Create Job</CreateBtn>
+          </Link>
         </RightHeader>
       </Header>
 
@@ -80,8 +80,8 @@ export default function Verifications() {
             <button
               name={name}
               style={{
-                backgroundColor: isActive === name ? colors : "#FFFFFF",
-                color: isActive === name ? "#FFFFFF" : colors,
+                backgroundColor: isActive === name ? "#333382" : "#FFFFFF",
+                color: isActive === name ? "#FFFFFF" : "#333382",
               }}
               onClick={() => clickedButtonHandler(name)}
             >
@@ -92,6 +92,7 @@ export default function Verifications() {
             </button>
           ))}
         </VerificationNavContainer>
+
         {pageDisplay()}
       </PageDisplay>
     </VerificationContainer>
@@ -113,7 +114,7 @@ export const VerificationNavContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: 0.25rem;
-    border: 1px solid #7961f9;
+    border: 1px solid #333382;
     width: 9.125rem;
     height: 2.3125rem;
     font-weight: 600;

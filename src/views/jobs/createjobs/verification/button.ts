@@ -33,4 +33,9 @@ export const VerificationInput = styled.input`
   border-radius: 8px;
   width: 30rem;
   height: 3rem;
+
+  ::placeholder {
+    color: #667085;
+    opacity: 0.4;
+  }
 `;

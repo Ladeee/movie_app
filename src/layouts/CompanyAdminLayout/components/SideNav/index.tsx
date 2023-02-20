@@ -85,7 +85,7 @@ function SideNav({ close }: Props) {
           {menus.map((ele: MenuItem, ind: number) => (
             <ListItem key={ind}>
               <NavLink
-                to={`/company/${ele.path}`}
+                to={`/${ele.path}`}
                 className={({ isActive }) =>
                   isActive ? "font-bold" : "font-normal"
                 }

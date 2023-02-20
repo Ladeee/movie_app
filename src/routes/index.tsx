@@ -3,7 +3,7 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 // ---------- import internal dependencies ----------
-const Home = lazy(() => import("../views/homepage"));
+// const Home = lazy(() => import("../views/homepage"));
 const GetStarted = lazy(() => import("../views/auth/signup"));
 const Confirm = lazy(() => import("../views/auth/email/confirm"));
 const Successful = lazy(() => import("../views/auth/email/successful"));
@@ -26,10 +26,10 @@ const Verifications = lazy(
 
 const JobPopup = lazy(() => import("../views/jobs/createjobs/popup"));
 export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
+  // {
+  //   path: "/",
+  //   element: <Home />,
+  // },
 
   {
     path: "/signup",
@@ -61,7 +61,7 @@ export const router = createBrowserRouter([
     element: <Successful />,
   },
   {
-    path: "/company",
+    path: "/",
     element: <CompanyAdminLayout />,
     children: [
       {

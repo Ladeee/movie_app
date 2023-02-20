@@ -19,7 +19,7 @@ import styled from "styled-components";
 
 export default function Verifications() {
   const [verificationPage, setVerificationPage] = useState(0);
-  const [isActive, setIsActive] = useState("Individual");
+  const [isActive, setIsActive] = useState<any>("Individual");
 
   const buttons = ["Individual", "Guarantor", "Identity"];
   const VerificationTitles = [
@@ -40,10 +40,15 @@ export default function Verifications() {
 
   const nextPage = () => {
     setVerificationPage((currentValue: number) => currentValue + 1);
+    setIsActive("Guarantor");
   };
 
   const clickedButtonHandler = (name: any) => {
+    setVerificationPage((currentValue: number) => currentValue + 1);
     setIsActive(name);
+    if (verificationPage === VerificationTitles.length - 1) {
+      return VerificationTitles;
+    }
   };
 
   return (
@@ -55,7 +60,8 @@ export default function Verifications() {
           </p>
           <IoIosArrowForward id="job-text" />
           <p className="font-semibold font-montserrat">
-            {VerificationTitles[verificationPage]}
+            {VerificationTitles[verificationPage] ||
+              VerificationTitles[isActive]}
           </p>
         </LeftHeader>
         <RightHeader>

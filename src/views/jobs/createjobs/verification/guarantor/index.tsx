@@ -36,9 +36,7 @@ export default function GuarantorVerification() {
   return (
     <GuarantorContainer>
       <Upload>
-        <p className="text-base font-semibold text-[#333382]">
-          Upload guarantor image
-        </p>
+        <p className="text-base font-semibold">Upload guarantor image</p>
         <ImageWrapper>
           <input
             type="file"

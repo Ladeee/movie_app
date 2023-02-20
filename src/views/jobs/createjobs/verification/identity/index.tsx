@@ -40,14 +40,14 @@ export default function IdentityVerification() {
         <Info>
           <InputWrapper>
             <label>ID Type</label>
-            <Input type="text" placeholder="111, Williams st Yaba" />
+            <Input type="text" />
             <i id="lgaIcon">
               <MdOutlineKeyboardArrowDown />
             </i>
           </InputWrapper>
           <InputWrapper>
             <label>ID Number</label>
-            <Input type="number" placeholder="you@company.com" />
+            <Input type="number" />
             <i id="lgaIcon">
               <MdOutlineKeyboardArrowDown />
             </i>

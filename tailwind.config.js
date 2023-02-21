@@ -22,6 +22,7 @@ module.exports = {
           50: "var(--purple50)",
           100: "var(--purple100)",
           200: "var(--purple200)",
+          300: "var(--purple300)",
         },
         green: {
           100: "var(--green100)",
@@ -51,6 +52,9 @@ module.exports = {
         orange: {
           50: "var(--orange50)",
           100: "var(--orange100)",
+        },
+        ash: {
+          50: "var(--ash50)",
         },
       },
       fontFamily: {

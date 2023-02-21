@@ -23,6 +23,7 @@ const CompanyDashboard = lazy(() => import("../views/companyDashboard"));
 const CompanyAccountDashboard = lazy(
   () => import("../views/companyAccountDashboard")
 );
+const JobsOverview = lazy(() => import("../views/jobs"));
 
 export const router = createBrowserRouter([
   {
@@ -77,8 +78,11 @@ export const router = createBrowserRouter([
         element: <CompanyDashboard />,
       },
       {
+        path: "jobs",
+        element: <JobsOverview />,
+      },
+      {
         path: "settings",
-        index: true,
         element: <Settings />,
       },
     ],

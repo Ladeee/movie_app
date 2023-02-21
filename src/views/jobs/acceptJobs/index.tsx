@@ -9,7 +9,7 @@ import {
   Star,
   Stars,
 } from "../jobs.styled";
-import { HiOutlineStar } from "react-icons/hi";
+import { MdStar } from "react-icons/md";
 
 const colors = {
   gray: "#808080",
@@ -44,7 +44,7 @@ export default function AcceptJobs() {
             {stars.map((_, index) => {
               return (
                 <Star>
-                  <HiOutlineStar
+                  <MdStar
                     className="starIcon"
                     key={index}
                     onMouseOver={() => handleMouseOver(index + 1)}

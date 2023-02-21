@@ -10,7 +10,7 @@ export const AcceptJobContainer = styled.div`
   height: 100vh;
 `;
 
-export const AcceptJobWrapper = styled.div`
+export const AcceptJobWrapper = styled.section`
   font-family: "Inter", sans-serif;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@ export const AcceptJobWrapper = styled.div`
   }
 `;
 
-export const Info = styled.header`
+export const Info = styled.h1`
   font-weight: 600;
   font-size: 2.25rem;
   line-height: 2.75rem;
@@ -50,18 +50,18 @@ export const Rate = styled.div`
   }
 `;
 
-export const RateText = styled.p`
+export const RateText = styled.h1`
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 2.75rem;
 `;
 
-export const Stars = styled.span`
+export const Stars = styled.div`
   display: flex;
   gap: 0.125rem;
 `;
 
-export const Star = styled.i`
+export const Star = styled.span`
   cursor: pointer;
 
   .starIcon {
@@ -98,7 +98,7 @@ export const Button = styled.button`
 
 // reject job styles
 
-export const RejectJobContainer = styled.div`
+export const RejectJobContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,7 +125,7 @@ export const RejectJobWrapper = styled.div`
   }
 `;
 
-export const RejectText = styled.header`
+export const RejectText = styled.p`
   color: #000000;
   text-align: center;
   font-weight: 400;

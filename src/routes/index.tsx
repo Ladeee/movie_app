@@ -12,10 +12,13 @@ const RecoverPassword = lazy(
   () => import("../views/auth/login/recoverPassword")
 );
 const SetPassword = lazy(() => import("../views/auth/login/setPassword"));
+const AcceptJobs = lazy(() => import("../views/jobs/acceptJobs"));
+const RejectJobs = lazy(() => import("../views/jobs/rejectJobs"));
 const CompanyAdminLayout = lazy(() => import("../layouts/CompanyAdminLayout"));
 const CompanyAccountLayout = lazy(
   () => import("../layouts/CompanyAdminLayout/accountLayout")
 );
+const Settings = lazy(() => import("../views/companySettings"));
 const CompanyDashboard = lazy(() => import("../views/companyDashboard"));
 const CompanyAccountDashboard = lazy(
   () => import("../views/companyAccountDashboard")
@@ -23,6 +26,7 @@ const CompanyAccountDashboard = lazy(
 const Verifications = lazy(
   () => import("../views/jobs/createjobs/verification")
 );
+const JobsOverview = lazy(() => import("../views/jobs"));
 
 const MultipleAddress = lazy(
   () => import("../views/jobs/createjobs/popup/multipleAddress")
@@ -65,6 +69,14 @@ export const router = createBrowserRouter([
     element: <Successful />,
   },
   {
+    path: "/acceptjob",
+    element: <AcceptJobs />,
+  },
+  {
+    path: "/rejectjob",
+    element: <RejectJobs />,
+  },
+  {
     path: "/company",
     element: <CompanyAdminLayout />,
     children: [
@@ -87,6 +99,11 @@ export const router = createBrowserRouter([
         path: "csv",
         index: true,
         element: <MultipleAddress />,
+        element: <JobsOverview />,
+      },
+      {
+        path: "settings",
+        element: <Settings />,
       },
     ],
   },

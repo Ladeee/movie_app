@@ -102,15 +102,6 @@ export const FileWrapper = styled.section`
   }
 `;
 
-// export const Templates = styled.div`
-//   box-sizing: border-box;
-//   background: #f8f8f8;
-//   border: 1px solid #d0d0d0;
-//   width: 16.3125rem;
-//   height: 22.625rem;
-//   border-radius: 0.25rem;
-// `;
-
 export const FileBox = styled.div`
   width: 100%;
   display: flex;
@@ -152,4 +143,32 @@ export const FileBox = styled.div`
 export const FileButton = styled(VerificationTopButtons)`
   background-color: #333382;
   margin-top: 2.3125rem;
+`;
+
+export const UploadImage = styled.div`
+  position: relative;
+  box-sizing: border-box;
+  background: #f8f8f8;
+  border: 1px solid #d0d0d0;
+  width: 16.3125rem;
+  height: 22.625rem;
+  border-radius: 0.25rem;
+
+  .uploadInput {
+    cursor: pointer;
+    color: transparent;
+    background-color: transparent;
+    position: absolute;
+    width: 7.6875rem;
+    top: 84%;
+    opacity: 0;
+    z-index: 9;
+  }
+
+  .uploadedImage {
+    position: absolute;
+    width: 16.3125rem;
+    height: 100%;
+    z-index: 1;
+  }
 `;

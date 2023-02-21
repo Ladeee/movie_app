@@ -4,6 +4,7 @@ import {
   FileButton,
   FileWrapper,
   MultipleAddressContainer,
+  UploadImage,
   // Templates,
 } from "./popup.styled";
 import {
@@ -18,7 +19,20 @@ import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Download from "../../../../assets/images/verification/download.png";
 import Upload from "../../../../assets/images/verification/upload.png";
+
 export default function MultipleAddress() {
+  const XLSX_FILE = "http://localhost:3000/template.xlsx";
+
+  const download = (url: any) => {
+    const fileName = url.split("/").pop();
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("download", fileName);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  };
+
   return (
     <MultipleAddressContainer>
       <Header>
@@ -48,16 +62,23 @@ export default function MultipleAddress() {
               document
             </p>
             <img src={Download} alt="download file" id="img" />
-            <FileButton>Download</FileButton>
+            <FileButton
+              onClick={() => {
+                download(XLSX_FILE);
+              }}
+            >
+              Download
+            </FileButton>
           </div>
 
-          <div>
+          <UploadImage>
+            <input type="file" name="file" className="uploadInput" />
             <p id="text">
               Upload your <br /> document file
             </p>
             <img src={Upload} alt="upload file" id="img" />
             <FileButton id="filebtn">Download</FileButton>
-          </div>
+          </UploadImage>
         </FileBox>
       </FileWrapper>
     </MultipleAddressContainer>

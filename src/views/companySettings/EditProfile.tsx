@@ -3,7 +3,7 @@ import changeProfileImage from "../../assets/changeProfileImage.png";
 import Tabulate from "./components/Tabulate";
 import { NavLink } from "react-router-dom";
 
-const Settings = () => {
+const EditProfile = () => {
   // Some dummy user data
   const userData = {
     firstName: "Thomas",
@@ -15,16 +15,8 @@ const Settings = () => {
   return (
     <>
       {/* ----- The header component ----- */}
-      <LayoutHeading heading="Settings" />
-
-      {/* ----- The profile image section ----- */}
-      <div className="w-64 bg-gray-100 flex flex-col items-center justify-between mt-5 rounded-lg overflow-hidden">
-        <img alt="user profile" src={changeProfileImage} className="py-5" />
-        <div className="bg-white-50 w-full py-2 border-t-2 border-gray-800">
-          <button className="btn btn-tran border-0 w-full font-normal text-blue-100">
-            Change profile image
-          </button>
-        </div>
+      <div className="text-blue-100">
+        <LayoutHeading heading="Settings > Edit Profile" />
       </div>
 
       {/* ----- The tabulated user details section ----- */}
@@ -51,8 +43,8 @@ const Settings = () => {
           </div>
           <div className="py-8 bg-[white]"></div>
         </Tabulate>
-        <NavLink to="company/editProfile" className="w-[80%]">
-          <button className="btn btn-blue w-full mt-8 cursor-pointer">
+        <NavLink to="/company/editProfile" className="w-full">
+          <button className="btn btn-blue w-[80%] mt-8 cursor-pointer">
             Edit Profile Settings
           </button>
         </NavLink>
@@ -61,4 +53,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default EditProfile;

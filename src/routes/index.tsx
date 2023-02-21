@@ -1,6 +1,7 @@
 // ----------- import external dependencies -------------
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
+import EditProfile from "../views/companySettings/EditProfile";
 
 // ---------- import internal dependencies ----------
 const Home = lazy(() => import("../views/homepage"));
@@ -68,8 +69,14 @@ export const router = createBrowserRouter([
       },
       {
         path: "settings",
-        index: true,
         element: <Settings />,
+        children: [
+          {
+            path: "editProfile",
+            index: true,
+            element: <EditProfile />,
+          },
+        ],
       },
     ],
   },

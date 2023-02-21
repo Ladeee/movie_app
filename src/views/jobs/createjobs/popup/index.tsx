@@ -23,6 +23,10 @@ export default function JobPopup() {
   const next = () => {
     navigate("/company/jobs");
   };
+
+  const csv = () => {
+    navigate("/company/csv");
+  };
   return (
     <PopContainer>
       <PopWrapper>
@@ -68,7 +72,7 @@ export default function JobPopup() {
               <Select>
                 <Dropdown>
                   <p>Create Multiple Jobs Using Excel/CSV</p>
-                  <i>
+                  <i onClick={csv}>
                     <MdOutlineKeyboardArrowRight id="rightArrow" />
                   </i>
                 </Dropdown>

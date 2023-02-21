@@ -24,6 +24,10 @@ const Verifications = lazy(
   () => import("../views/jobs/createjobs/verification")
 );
 
+const MultipleAddress = lazy(
+  () => import("../views/jobs/createjobs/popup/multipleAddress")
+);
+
 const JobPopup = lazy(() => import("../views/jobs/createjobs/popup"));
 export const router = createBrowserRouter([
   {
@@ -78,6 +82,11 @@ export const router = createBrowserRouter([
         path: "popup",
         index: true,
         element: <JobPopup />,
+      },
+      {
+        path: "csv",
+        index: true,
+        element: <MultipleAddress />,
       },
     ],
   },

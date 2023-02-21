@@ -39,7 +39,7 @@ function JobsOverview() {
         </div>
       </ContainerWrapper>
 
-      {/* ------- jobs status filter -------- */}
+      {/* ------- jobs status tables -------- */}
       <ContainerWrapper className="mt-8">
         <div className="border-0 border-solid border-b border-ash-50 py-5 pr-5 flex justify-end items-center gap-6">
           <button className="btn btn-blue">CSV Download</button>
@@ -58,14 +58,169 @@ function JobsOverview() {
               <StyledTab className="btn">REJECTED</StyledTab>
             </TabList>
 
-            <TabPanels className="mt-7">
+            <TabPanels className="my-7">
+              {/* -------- all job status table -------- */}
               <TabPanel>
                 <TableWrapper>
                   <thead>
                     <tr>
                       <th>Job ID</th>
+                      <th>Date Created</th>
+                      <th>Entity Verified</th>
+                      <th>Job Type</th>
+                      <th>Created By</th>
+                      <th>Job Status</th>
+                      <th>Verification Status</th>
+                      <th>Payment Status</th>
                     </tr>
                   </thead>
+                  <tbody>
+                    <tr>
+                      <td>210</td>
+                      <td>23 - 08 - 2021</td>
+                      <td>NIN</td>
+                      <td>ID Verification</td>
+                      <td>Paul Kagame</td>
+                      <td>Completed</td>
+                      <td>Verified</td>
+                      <td>Paid</td>
+                    </tr>
+                  </tbody>
+                </TableWrapper>
+              </TabPanel>
+
+              {/* -------- pending job tables -------- */}
+              <TabPanel>
+                <TableWrapper>
+                  <thead>
+                    <tr>
+                      <th>
+                        <div>
+                          <span id="job" className="hidden">
+                            Job Checkbox
+                          </span>
+                          <input type="checkbox" aria-labelledby="job" />
+                        </div>
+                      </th>
+                      <th>Job ID</th>
+                      <th>Date Created</th>
+                      <th>Entity Verified</th>
+                      <th>Job Type</th>
+                      <th>Created By</th>
+                      <th>Status</th>
+                      <th>TAT(hours)</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div>
+                          <span id="job-1" className="hidden">
+                            Job Checkbox
+                          </span>
+                          <input type="checkbox" aria-labelledby="job-1" />
+                        </div>
+                      </td>
+                      <td>210</td>
+                      <td>23 - 08 - 2021</td>
+                      <td>NIN</td>
+                      <td>ID Verification</td>
+                      <td>Paul Kagame</td>
+                      <td>Completed</td>
+                      <td>24 </td>
+                      <td>
+                        <button className="btn btn-blue-tran">Edit</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </TableWrapper>
+              </TabPanel>
+              <TabPanel></TabPanel>
+              <TabPanel></TabPanel>
+              <TabPanel></TabPanel>
+
+              {/* -------- all completed jobs table -------- */}
+              <TabPanel>
+                <TableWrapper>
+                  <thead>
+                    <tr>
+                      <th>Job ID</th>
+                      <th>Date Created</th>
+                      <th>Entity Verified</th>
+                      <th>Job Type</th>
+                      <th>Created By</th>
+                      <th>Job Status</th>
+                      <th>Verification Status</th>
+                      <th>Payment Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>210</td>
+                      <td>23 - 08 - 2021</td>
+                      <td>NIN</td>
+                      <td>ID Verification</td>
+                      <td>Paul Kagame</td>
+                      <td>Completed</td>
+                      <td>Verified</td>
+                      <td>Paid</td>
+                    </tr>
+                  </tbody>
+                </TableWrapper>
+              </TabPanel>
+              <TabPanel></TabPanel>
+
+              {/* -------- rejected job tables -------- */}
+              <TabPanel>
+                <TableWrapper>
+                  <thead>
+                    <tr>
+                      <th>
+                        <div>
+                          <span id="job" className="hidden">
+                            Job Checkbox
+                          </span>
+                          <input type="checkbox" aria-labelledby="job" />
+                        </div>
+                      </th>
+                      <th>Job ID</th>
+                      <th>Date Created</th>
+                      <th>Entity Verified</th>
+                      <th>Job Type</th>
+                      <th>Created By</th>
+                      <th>Status</th>
+                      <th>TAT(hours)</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div>
+                          <span id="job-1" className="hidden">
+                            Job Checkbox
+                          </span>
+                          <input type="checkbox" aria-labelledby="job-1" />
+                        </div>
+                      </td>
+                      <td>210</td>
+                      <td>23 - 08 - 2021</td>
+                      <td>NIN</td>
+                      <td>ID Verification</td>
+                      <td>Paul Kagame</td>
+                      <td>Completed</td>
+                      <td>24 </td>
+                      <td>
+                        <div className="flex gap-5">
+                          <button className="btn btn-blue-tran">
+                            Re-Assign job
+                          </button>
+                          <button className="btn btn-blue-tran">Edit</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
                 </TableWrapper>
               </TabPanel>
             </TabPanels>

@@ -4,7 +4,6 @@ import AuthLayout from "../../../components/authLayout";
 import {
   Container,
   Heading,
-  Addresses,
   FormContainer,
   RememberPassword,
   Check,
@@ -12,6 +11,7 @@ import {
   Forgot,
   Button,
   Account,
+  InputWrapper,
 } from "./login.styled";
 
 export default function Login() {
@@ -19,15 +19,15 @@ export default function Login() {
     <AuthLayout color="#007C23">
       <Container>
         <Heading>Welcome Back!</Heading>
-        <Addresses>
-          With Nester Verify, you are able to verify addresses <br />
-          easily, from anywhere in the world
-        </Addresses>
         <FormContainer>
-          <label>Email Address</label>
-          <input type="text" required />
-          <label id="create">Password</label>
-          <input type="text" required />
+          <InputWrapper>
+            <label htmlFor="email">Email Address</label>
+            <input type="email" required id="email" />
+          </InputWrapper>
+          <InputWrapper>
+            <label htmlFor="password">Password</label>
+            <input type="password" required id="password" minLength={6} />
+          </InputWrapper>
         </FormContainer>
 
         <RememberPassword>

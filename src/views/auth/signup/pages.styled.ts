@@ -6,36 +6,30 @@ import { AuthButton } from "../../../css/reuseableStyles/button.styled";
 export const SignupContainer = styled.div`
   margin-top: 9.3125rem;
   white-space: nowrap;
+  width: 44vw;
+
+  @media (max-width: 768px) {
+    width: 62vw;
+  }
 `;
 
-export const Heading = styled.header`
+export const Heading = styled.h1`
   font-family: "Inter", sans-serif;
   color: #090914;
   font-weight: 600;
   font-size: 2.25rem;
   line-height: 2.75rem;
 
+  @media (max-width: 1024px) {
+    font-size: 1.75rem;
+  }
+
   @media (max-width: 768px) {
-    font-size: 18px;
-    text-align: center;
+    font-size: 1.425rem;
   }
 `;
 
-export const Addresses = styled.p`
-  font-family: "Poppins", sans-serif;
-  color: #52525b;
-  font-weight: 400;
-  font-size: 1.125rem;
-  line-height: 1.875rem;
-  margin-top: 2.0625rem;
-
-  @media (max-width: 398px) {
-    text-align: center;
-    font-size: 11px;
-  }
-`;
-
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
@@ -58,8 +52,13 @@ export const FormContainer = styled.div`
     margin-top: 0.6875rem;
     padding-left: 2.375rem;
 
+    @media (max-width: 1024px) {
+      width: 90%;
+    }
+
     @media (max-width: 768px) {
       width: 100%;
+      padding-left: 0.375rem;
     }
   }
 
@@ -121,6 +120,11 @@ export const BoxWrapper = styled.div`
     right: 1rem;
   }
 
+  @media (max-width: 1024px) {
+    /* width: 22.875rem; */
+    width: 90%;
+  }
+
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -137,7 +141,7 @@ export const Icon = styled.div`
   height: 1.4581rem;
 `;
 
-// exclusive for page three
+// exclusive for company details page
 
 export const Industry = styled.div`
   position: relative;
@@ -147,7 +151,16 @@ export const IndustryIcon = styled.div`
   cursor: pointer;
   position: absolute;
   top: 2.4002rem;
-  right: 1.4087rem;
+  /* right: 1.4087rem; */
+  right: 25%;
   width: 0.5981rem;
   height: 0.3825rem;
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    right: 15%;
+  }
+
+  @media (max-width: 768px) {
+    right: 8%;
+  }
 `;

@@ -3,7 +3,6 @@ import {
   Industry,
   IndustryIcon,
   Heading,
-  Addresses,
   FormContainer,
   InputWrapper,
   Btn,
@@ -18,40 +17,53 @@ export default function CompanyDetails({
 }) {
   return (
     <SignupContainer>
-      <Heading>Input Your Company Details</Heading>
-      <Addresses>
-        With Nester Verify, you are able to verify addresses <br />
-        easily, from anywhere in the world
-      </Addresses>
-
+      <Heading className="sm:text-center md:text-left">
+        Input Your Company Details
+      </Heading>
       <FormContainer>
         <InputWrapper>
-          <label>Company Name</label>
-          <input type="text" required />
+          <label htmlFor="company_name">Company Name</label>
+          <input
+            type="text"
+            required
+            id="company_name"
+            data-testid="company_name"
+          />
         </InputWrapper>
         <InputWrapper>
-          <label>CAC Registration Number</label>
-          <input type="text" required />
+          <label htmlFor="reg_number">CAC Registration Number</label>
+          <input
+            type="number"
+            required
+            id="reg_number"
+            data-testid="reg_number"
+          />
         </InputWrapper>
-        <label>Industry</label>
+        <label htmlFor="industry">Industry</label>
         <Industry>
-          <input type="text" required />
+          <input type="text" required id="industry" data-testid="industry" />
           <IndustryIcon>
             <img src={Indust} alt="" />
           </IndustryIcon>
         </Industry>
         <InputWrapper>
-          <label id="create">Company Address</label>
-          <input type="text" required />
+          <label htmlFor="company_address">Company Address</label>
+          <input
+            type="text"
+            required
+            id="company_address"
+            data-testid="company_address"
+          />
         </InputWrapper>
         <InputWrapper>
-          <label>Role</label>
-          <input type="text" required />
+          <label htmlFor="role">Role</label>
+          <input type="text" required id="role" data-testid="role" />
         </InputWrapper>
       </FormContainer>
-
       <Btn>
-        <Button onClick={goToNextPage}>Create Account</Button>
+        <Button type="submit" onClick={goToNextPage}>
+          Create Account
+        </Button>
       </Btn>
     </SignupContainer>
   );

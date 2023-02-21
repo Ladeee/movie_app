@@ -4,44 +4,34 @@ import { AuthButton } from "../../../css/reuseableStyles/button.styled";
 // login / recover password
 
 export const Container = styled.div`
-  margin-top: 9.3125rem;
+  margin-top: 4.3125rem;
   white-space: nowrap;
+  width: 44vw;
 
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 62vw;
   }
 `;
 
-export const Heading = styled.header`
+export const Heading = styled.h1`
   font-family: "Inter", sans-serif;
   color: #090914;
   font-weight: 600;
-  font-size: 2.25rem;
+  font-size: 1.6rem;
   line-height: 2.75rem;
+  margin-top: 9.313rem;
 
   @media (max-width: 768px) {
-    font-size: 18px;
+    font-size: 1.425rem;
     text-align: center;
+    margin-top: 3.3125rem;
   }
 `;
 
-export const Addresses = styled.p`
-  font-family: "Poppins", sans-serif;
-  color: #52525b;
-  font-weight: 400;
-  font-size: 1.125rem;
-  line-height: 1.875rem;
-  margin-top: 2.0625rem;
-
-  @media (max-width: 398px) {
-    text-align: center;
-    font-size: 11px;
-  }
-`;
-
-export const FormContainer = styled.section`
+export const FormContainer = styled.form`
   width: 100%;
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -50,9 +40,9 @@ export const FormContainer = styled.section`
 
   label {
     color: #000000;
-    font-size: 1rem;
+    font-size: 0.825rem;
     line-height: 1.5rem;
-    margin-top: 16px;
+    margin-top: 5px;
   }
 
   input {
@@ -65,8 +55,14 @@ export const FormContainer = styled.section`
     border-radius: 0.75rem;
     padding-left: 2.375rem;
 
+    @media (max-width: 1024px) {
+      /* width: 22.875rem; */
+      width: 90%;
+    }
+
     @media (max-width: 768px) {
       width: 100%;
+      padding-left: 0.375rem;
     }
   }
 `;
@@ -82,6 +78,10 @@ export const RememberPassword = styled.section`
   justify-content: space-between;
   align-items: center;
   margin-top: 1.25rem;
+
+  @media (max-width: 1024px) {
+    margin-right: 10%;
+  }
 
   @media (max-width: 768px) {
     display: flex;
@@ -111,7 +111,7 @@ export const Forgot = styled.a`
 `;
 
 export const Button = styled(AuthButton)`
-  margin-top: 4.0625rem;
+  margin-top: 3.0625rem;
 `;
 
 export const Account = styled.p`
@@ -122,8 +122,12 @@ export const Account = styled.p`
   font-weight: 400;
   font-size: 1rem;
   line-height: 1rem;
-  margin-top: 11.4375rem;
-  margin-bottom: 4.4375rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.4375rem;
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    text-align: unset;
+  }
 `;
 
 // exclusive for forget password
@@ -132,13 +136,15 @@ export const Acc = styled.p`
   font-family: "Poppins", sans-serif;
   color: #333333;
   text-align: right;
-  margin-top: 21rem;
-  margin-bottom: 4.4375rem;
+  margin-top: 8rem;
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    text-align: unset;
+  }
 `;
 
 // exclusive for set password
 
 export const Reset = styled(AuthButton)`
   margin-top: 6.6875rem;
-  margin-bottom: 16.875rem;
 `;

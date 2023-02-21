@@ -12,6 +12,8 @@ const RecoverPassword = lazy(
   () => import("../views/auth/login/recoverPassword")
 );
 const SetPassword = lazy(() => import("../views/auth/login/setPassword"));
+const AcceptJobs = lazy(() => import("../views/jobs/acceptJobs"));
+const RejectJobs = lazy(() => import("../views/jobs/rejectJobs"));
 const CompanyAdminLayout = lazy(() => import("../layouts/CompanyAdminLayout"));
 const CompanyAccountLayout = lazy(
   () => import("../layouts/CompanyAdminLayout/accountLayout")
@@ -56,6 +58,14 @@ export const router = createBrowserRouter([
   {
     path: "/emailsuccessful",
     element: <Successful />,
+  },
+  {
+    path: "/acceptjob",
+    element: <AcceptJobs />,
+  },
+  {
+    path: "/rejectjob",
+    element: <RejectJobs />,
   },
   {
     path: "/company",

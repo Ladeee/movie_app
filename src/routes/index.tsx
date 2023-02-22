@@ -24,6 +24,9 @@ const CompanyAccountDashboard = lazy(
   () => import("../views/companyAccountDashboard")
 );
 const JobsOverview = lazy(() => import("../views/jobs"));
+const IdentityVerification = lazy(
+  () => import("../views/jobs/identityVerification")
+);
 
 export const router = createBrowserRouter([
   {
@@ -77,9 +80,14 @@ export const router = createBrowserRouter([
         index: true,
         element: <CompanyDashboard />,
       },
+      // ------- jobs path ------
       {
         path: "jobs",
         element: <JobsOverview />,
+      },
+      {
+        path: "jobs/identity-verification",
+        element: <IdentityVerification />,
       },
       {
         path: "settings",

@@ -94,7 +94,7 @@ export const router = createBrowserRouter([
         element: <Settings />,
       },
       {
-        path: "popup",
+        path: "jobs/popup",
         element: <JobPopup />,
       },
       {

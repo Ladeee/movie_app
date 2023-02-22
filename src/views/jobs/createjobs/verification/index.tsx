@@ -16,6 +16,7 @@ import IdentityVerification from "./identity";
 import { Link } from "react-router-dom";
 import Checkmark from "../../../../assets/images/verification/vercheckmark.png";
 import styled from "styled-components";
+import { sizes } from "../../../../utils/screenSizes";
 
 export default function Verifications() {
   const [verificationPage, setVerificationPage] = useState(0);
@@ -122,13 +123,13 @@ export const VerificationNavContainer = styled.div`
     line-height: 1.25rem;
     border-radius: 0.1875rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${sizes.tablet}) {
       width: 28%;
       font-size: 0.625rem;
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     width: 90%;
     gap: 0;
     justify-content: space-between;
@@ -140,7 +141,7 @@ export const Image = styled.div`
     width: 1.25rem;
     height: 1.25rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${sizes.tablet}) {
       width: 0.75rem;
       height: 0.75rem;
     }

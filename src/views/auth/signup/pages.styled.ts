@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { AuthButton } from "../../../css/reuseableStyles/button.styled";
+import { sizes } from "../../../utils/screenSizes";
 
 // page one/ two & three
 
@@ -8,7 +9,7 @@ export const SignupContainer = styled.div`
   white-space: nowrap;
   width: 44vw;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     width: 62vw;
   }
 `;
@@ -20,11 +21,11 @@ export const Heading = styled.h1`
   font-size: 2.25rem;
   line-height: 2.75rem;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${sizes.tabletL}) {
     font-size: 1.75rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     font-size: 1.425rem;
   }
 `;
@@ -52,11 +53,11 @@ export const FormContainer = styled.form`
     margin-top: 0.6875rem;
     padding-left: 2.375rem;
 
-    @media (max-width: 1024px) {
+    @media (max-width: ${sizes.tabletL}) {
       width: 90%;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: ${sizes.tablet}) {
       width: 100%;
       padding-left: 0.375rem;
     }
@@ -78,7 +79,7 @@ export const Button = styled(AuthButton)`
 `;
 
 export const Btn = styled.div`
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     display: flex;
     justify-content: center;
   }
@@ -93,7 +94,7 @@ export const FormTwoContainer = styled.section`
   gap: 3.1875rem;
   margin-top: 4.375rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     display: flex;
   }
 `;
@@ -120,12 +121,12 @@ export const BoxWrapper = styled.div`
     right: 1rem;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${sizes.tabletL}) {
     /* width: 22.875rem; */
     width: 90%;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     width: 100%;
   }
 `;
@@ -156,11 +157,11 @@ export const IndustryIcon = styled.div`
   width: 0.5981rem;
   height: 0.3825rem;
 
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: ${sizes.tablet}) and (max-width: ${sizes.tabletL}) {
     right: 15%;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     right: 8%;
   }
 `;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { sizes } from "../../../../utils/screenSizes";
 import { VerificationTopButtons } from "../verification/button";
 
 export const PopContainer = styled.div`
@@ -16,6 +17,15 @@ export const PopWrapper = styled.div`
 
   #headerline {
     width: 100%;
+  }
+
+  @media (max-width: ${sizes.tabletL}) {
+    width: 80%;
+  }
+
+  @media (max-width: ${sizes.tablet}) {
+    position: relative;
+    width: 92%;
   }
 `;
 
@@ -35,6 +45,18 @@ export const PopBox = styled.section`
   line-height: 1.5rem;
   margin-top: 0.9375rem;
   margin-bottom: 6%;
+
+  @media (max-width: ${sizes.tablet}) {
+    border: none;
+    margin-bottom: 0;
+  }
+
+  #boxline {
+    @media (max-width: ${sizes.tablet}) {
+      width: 100%;
+      position: absolute;
+    }
+  }
 `;
 
 export const JobType = styled.p`
@@ -42,21 +64,38 @@ export const JobType = styled.p`
   font-weight: 600;
   margin-top: 3.3125rem;
   margin-bottom: 0.625rem;
+
+  @media (max-width: ${sizes.tablet}) {
+    margin-left: 1.25rem;
+  }
 `;
 
 export const Select = styled.div`
   margin-top: 5.25rem;
-  /* margin-left: 4.875rem; */
 
   p {
     cursor: pointer;
     margin-left: 4.875rem;
+
+    @media (max-width: ${sizes.tablet}) {
+      margin-left: 1.25rem;
+    }
   }
 
   #textline {
     width: 90%;
     margin-right: inherit;
     margin-top: 1rem;
+
+    @media (max-width: ${sizes.tablet}) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: ${sizes.tablet}) {
+    position: absolute;
+    width: 100%;
+    margin-top: 4rem;
   }
 `;
 
@@ -85,9 +124,13 @@ export const MultipleAddressContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${sizes.tabletL}) {
     width: 80%;
     margin: auto;
+  }
+
+  @media (max-width: ${sizes.tabletL}) {
+    width: 100%;
   }
 `;
 
@@ -97,14 +140,28 @@ export const FileWrapper = styled.section`
   border-radius: 0.625rem;
   margin-top: 2rem;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${sizes.tabletL}) {
     margin-top: 4rem;
+  }
+
+  @media (max-width: ${sizes.tablet}) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  h2 {
+    @media (max-width: ${sizes.tablet}) {
+      margin-left: 0 !important;
+    }
   }
 `;
 
 export const FileBox = styled.div`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 6.1875rem;
@@ -137,6 +194,10 @@ export const FileBox = styled.div`
     width: 5rem;
     height: 5rem;
     margin-top: 1.9375rem;
+  }
+
+  @media (max-width: ${sizes.tablet}) {
+    gap: 4rem;
   }
 `;
 

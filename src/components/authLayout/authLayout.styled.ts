@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import TopIcon from "../../assets/images/authentification/shapeOne.png";
 import BottomIcon from "../../assets/images/authentification/shapeTwo.png";
+import { sizes } from "../../utils/screenSizes";
 
 // layout
 export const AuthContainer = styled.div`
   position: relative;
   max-width: 100%;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${sizes.tabletL}) {
     flex: 1;
   }
 `;
@@ -16,7 +17,7 @@ export const AuthWrapper = styled.div`
   display: flex;
   gap: 8.375rem;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${sizes.tabletL}) {
     justify-content: space-between;
     gap: 0;
     margin-right: 5%;
@@ -60,11 +61,11 @@ export const Welcome = styled.section<{ color: string; bottom: any }>`
     bottom: ${(props) => props.bottom};
     z-index: 1;
 
-    @media (max-width: 1024px) {
+    @media (max-width: ${sizes.tabletL}) {
       display: none;
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     display: none;
   }
 `;
@@ -72,14 +73,14 @@ export const Welcome = styled.section<{ color: string; bottom: any }>`
 export const BottomIconImg = styled.div`
   display: none;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${sizes.tabletL}) {
     display: block;
     position: absolute;
     width: inherit;
   }
 
   img {
-    @media (max-width: 1024px) {
+    @media (max-width: ${sizes.tabletL}) {
       position: fixed;
       width: inherit;
       object-fit: contain;
@@ -98,7 +99,7 @@ export const Contents = styled.div`
   margin-left: 8.5rem;
   position: fixed;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${sizes.tabletL}) {
     display: grid;
     place-content: center;
     margin-left: 0;
@@ -120,9 +121,9 @@ export const Greetings = styled.header`
   font-size: 3.75rem;
   line-height: 5.375rem;
   margin-top: 1.5625rem;
-  color: #ffffff;
+  color: var(--white50);
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${sizes.tabletL}) {
     font-size: 2.063rem;
     line-height: 3rem;
   }
@@ -135,7 +136,7 @@ export const Clarity = styled.p`
   margin-top: 0.5625rem;
   color: #cbd5e1;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${sizes.tabletL}) {
     font-size: 0.825rem;
   }
 `;
@@ -144,7 +145,7 @@ export const Forms = styled.section`
   z-index: 1;
   max-width: 44%;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -178,7 +179,7 @@ export const AuthNavbarContainer = styled.ul`
 export const Company = styled.li`
   cursor: pointer;
   transition: ease-in 0.5s;
-  color: #ffffff;
+  color: var(--white50);
   display: flex;
   flex-direction: column;
 
@@ -186,17 +187,17 @@ export const Company = styled.li`
     content: "";
     width: 5.625rem;
     height: 0.375rem;
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
+    background-color: var(--white50);
+    border: 1px solid var(--white50);
     border-radius: 0.1875rem;
     margin-top: 0.3125rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${sizes.tablet}) {
       display: none;
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     color: #000000;
     font-size: 0.875rem;
   }
@@ -206,7 +207,7 @@ export const Individual = styled.li`
   cursor: pointer;
   padding: 0 0.8125rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     font-size: 0.875rem;
   }
 `;
@@ -214,7 +215,7 @@ export const Individual = styled.li`
 export const Agent = styled.li`
   cursor: pointer;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     font-size: 0.875rem;
   }
 `;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { AuthButton } from "../../../css/reuseableStyles/button.styled";
+import { sizes } from "../../../utils/screenSizes";
 
 // confirm email / email successful
 
@@ -8,7 +9,7 @@ export const EmailContainer = styled.article`
   white-space: nowrap;
   width: 44vw;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     width: auto;
   }
 `;
@@ -21,7 +22,7 @@ export const ConfirmEmail = styled.header`
   font-size: 2.25rem;
   line-height: 2.75rem;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${sizes.tabletL}) {
     font-size: 1.45rem;
   }
 
@@ -38,7 +39,7 @@ export const ConfirmText = styled.p`
   line-height: 1.875rem;
   margin-top: 2.0625rem;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${sizes.tabletL}) {
     font-size: 1rem;
   }
 
@@ -50,7 +51,7 @@ export const ConfirmText = styled.p`
 export const ConfirmButton = styled(AuthButton)`
   margin-top: 3.625rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     width: 147px;
     font-size: 14px;
   }
@@ -66,7 +67,7 @@ export const ConfirmSuccess = styled.p`
   line-height: 1.875rem;
   margin-top: 2.0625rem;
 
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: ${sizes.tablet}) and (max-width: ${sizes.tabletL}) {
     font-size: 1rem;
   }
 
@@ -83,7 +84,7 @@ export const SignIn = styled.a`
   line-height: 1.875rem;
   margin-top: 1.25rem;
 
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: ${sizes.tablet}) and (max-width: ${sizes.tabletL}) {
     font-size: 1rem;
   }
 
@@ -95,7 +96,7 @@ export const SignIn = styled.a`
 export const SuccessButton = styled(AuthButton)`
   margin-top: 2.875rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     width: 147px;
   }
 `;

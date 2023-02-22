@@ -13,7 +13,7 @@ import { MdStar } from "react-icons/md";
 
 const colors = {
   gray: "#808080",
-  blue: "#1f2041",
+  blue: "var(--blue100)",
 };
 
 export default function AcceptJobs() {

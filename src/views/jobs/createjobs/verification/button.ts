@@ -5,10 +5,10 @@ export const VerificationTopButtons = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #1f2041;
+  border: 1px solid var(--blue100);
   border-radius: 0.25rem;
-  background-color: #1f2041;
-  color: #ffffff;
+  background-color: var(--blue100);
+  color: var(--white50);
   width: 8.8125rem;
   height: 2.7388rem;
 `;
@@ -18,7 +18,7 @@ export const VerificationDownButtons = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #1f2041;
+  border: 1px solid var(--blue100);
   border-radius: 0.5rem;
   width: 30rem;
   height: 2.75rem;
@@ -28,7 +28,7 @@ export const VerificationDownButtons = styled.button`
 
 export const VerificationInput = styled.input`
   outline: none;
-  background-color: #ffffff;
+  background-color: var(--white50);
   border: 1px solid #d0d5dd;
   border-radius: 8px;
   width: 30rem;

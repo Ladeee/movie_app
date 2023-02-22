@@ -21,11 +21,11 @@ export default function JobPopup() {
   const navigate = useNavigate();
 
   const next = () => {
-    navigate("/company/jobs");
+    navigate("/company/verifications");
   };
 
   const csv = () => {
-    navigate("/company/csv");
+    navigate("csv");
   };
   return (
     <PopContainer>

@@ -15,7 +15,7 @@ export default function Signup() {
 
   const CurrentPage = SIGNUP_TABS[page];
 
-  const color = page === 1 ? "#A96644" : "#1F2041";
+  const color = page === 1 ? "#A96644" : "var(--blue100)";
 
   const goToNextPage = async () => {
     if (page === 2) {

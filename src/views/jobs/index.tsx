@@ -6,12 +6,15 @@ import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
 import LayoutHeading from "../../components/LayoutHeading";
 import Filter from "../../components/Filter";
 import TableWrapper from "../../components/TableWrapper";
+import { Link } from "react-router-dom";
 
 function JobsOverview() {
   return (
     <>
       <LayoutHeading heading="Jobs Overview">
-        <button className="btn btn-blue">Create Job</button>
+        <Link to="popup">
+          <button className="btn btn-blue">Create Job</button>
+        </Link>
       </LayoutHeading>
 
       {/* -------- jobs metric summary -------- */}

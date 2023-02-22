@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { sizes } from "../../../../utils/screenSizes";
 import {
   VerificationTopButtons,
   VerificationDownButtons,
@@ -12,12 +13,12 @@ export const VerificationContainer = styled.div`
   font-family: "Inter", sans-serif;
   white-space: nowrap;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${sizes.tabletL}) {
     width: 80%;
     margin: 2.164rem auto;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     width: 100%;
     align-items: center;
   }
@@ -33,7 +34,7 @@ export const Header = styled.section`
     font-size: 1.5rem;
     line-height: 2.25rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${sizes.tablet}) {
       font-size: 1.2rem;
     }
   }
@@ -51,7 +52,7 @@ export const LeftHeader = styled.div`
   margin-top: 1.4375rem;
 
   #job-text {
-    @media (max-width: 768px) {
+    @media (max-width: ${sizes.tablet}) {
       display: none;
     }
   }
@@ -63,7 +64,7 @@ export const RightHeader = styled.div`
   gap: 1.25rem;
   margin-top: 2.2844rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     display: none;
   }
 `;
@@ -84,34 +85,34 @@ export const VerificationButtons = styled.div`
 
 export const AddGuarantor = styled(VerificationDownButtons)`
   background-color: #fefefe;
-  color: #1f2041;
+  color: var(--blue100);
   width: 26rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     width: 60%;
   }
 `;
 
 export const Submit = styled(VerificationDownButtons)`
-  background-color: #1f2041;
-  color: #ffffff;
+  background-color: var(--blue100);
+  color: var(--white50);
   width: 26rem;
   margin-top: 1.625rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     width: 60%;
   }
 `;
 
 export const PageDisplay = styled.div`
   margin-top: 1.625rem;
-  background: #ffffff;
+  background: var(--white50);
   border: 1px solid #e4e4e7;
   border-radius: 0.625rem;
   padding-bottom: 3.8125rem;
   padding-left: 4.25rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     padding-left: 2.25rem;
     width: 100%;
   }
@@ -125,7 +126,7 @@ export const FormWrapper = styled.div`
   margin-top: 1.6875rem;
 
   #reverse {
-    @media (max-width: 768px) {
+    @media (max-width: ${sizes.tablet}) {
       display: flex;
       flex-wrap: wrap-reverse;
     }
@@ -137,7 +138,7 @@ export const Info = styled.div`
   flex-wrap: wrap;
   gap: 3.0625rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     gap: 0;
   }
 `;
@@ -162,11 +163,11 @@ export const InputWrapper = styled.div`
     border-radius: 0.5rem;
     margin-top: 0.375rem;
 
-    @media (max-width: 1024px) {
+    @media (max-width: ${sizes.tabletL}) {
       width: 30rem;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: ${sizes.tablet}) {
       width: 80%;
     }
   }
@@ -177,7 +178,7 @@ export const InputWrapper = styled.div`
     right: 1.3438rem;
     bottom: 0.5rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${sizes.tablet}) {
       margin-right: 20%;
     }
   }
@@ -185,12 +186,12 @@ export const InputWrapper = styled.div`
     position: absolute;
     top: 40%;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${sizes.tablet}) {
       top: 64%;
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     width: 100%;
   }
 `;
@@ -200,11 +201,11 @@ export const Input = styled(VerificationInput)`
   padding-left: 1rem;
   width: 26rem;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${sizes.tabletL}) {
     width: 30rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     width: 80%;
   }
 `;

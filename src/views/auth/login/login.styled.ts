@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import { AuthButton } from "../../../css/reuseableStyles/button.styled";
+import { sizes } from "../../../utils/screenSizes";
 
 // login / recover password
 
 export const Container = styled.div`
   margin-top: 4.3125rem;
   white-space: nowrap;
-  width: 44vw;
+  /* width: 44vw; */
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,7 +25,7 @@ export const Heading = styled.h1`
   line-height: 2.75rem;
   margin-top: 9.313rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     font-size: 1.425rem;
     text-align: center;
     margin-top: 3.3125rem;
@@ -55,12 +56,12 @@ export const FormContainer = styled.form`
     border-radius: 0.75rem;
     padding-left: 2.375rem;
 
-    @media (max-width: 1024px) {
+    @media (max-width: ${sizes.tabletL}) {
       /* width: 22.875rem; */
       width: 90%;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: ${sizes.tablet}) {
       width: 100%;
       padding-left: 0.375rem;
     }
@@ -79,11 +80,11 @@ export const RememberPassword = styled.section`
   align-items: center;
   margin-top: 1.25rem;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${sizes.tabletL}) {
     margin-right: 10%;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -125,7 +126,7 @@ export const Account = styled.p`
   margin-top: 2.5rem;
   margin-bottom: 0.4375rem;
 
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: ${sizes.tablet}) and (max-width: ${sizes.tabletL}) {
     text-align: unset;
   }
 `;
@@ -138,7 +139,7 @@ export const Acc = styled.p`
   text-align: right;
   margin-top: 8rem;
 
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: ${sizes.tablet}) and (max-width: ${sizes.tabletL}) {
     text-align: unset;
   }
 `;

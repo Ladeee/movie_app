@@ -87,23 +87,23 @@ export const router = createBrowserRouter([
       },
       {
         path: "jobs",
-        index: true,
-        element: <Verifications />,
-      },
-      {
-        path: "popup",
-        index: true,
-        element: <JobPopup />,
-      },
-      {
-        path: "csv",
-        index: true,
-        element: <MultipleAddress />,
         element: <JobsOverview />,
       },
       {
         path: "settings",
         element: <Settings />,
+      },
+      {
+        path: "popup",
+        element: <JobPopup />,
+      },
+      {
+        path: "csv",
+        element: <MultipleAddress />,
+      },
+      {
+        path: "verifications",
+        element: <Verifications />,
       },
     ],
   },
@@ -117,9 +117,5 @@ export const router = createBrowserRouter([
         element: <CompanyAccountDashboard />,
       },
     ],
-  },
-  {
-    path: "/verifications",
-    element: <Verifications />,
   },
 ]);

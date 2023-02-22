@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { sizes } from "../../utils/screenSizes";
 
 // accept job styles
 
@@ -22,7 +23,7 @@ export const AcceptJobWrapper = styled.section`
   height: 30.375rem;
   padding-top: 7rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     width: 80%;
     height: 50%;
     padding-top: 3rem;
@@ -68,7 +69,7 @@ export const Star = styled.span`
     width: 2rem;
     height: 2rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${sizes.tablet}) {
       width: 1.25rem;
       height: 1.25rem;
     }
@@ -82,15 +83,15 @@ export const Button = styled.button`
   align-items: center;
   text-transform: uppercase;
   border: none;
-  background: #1f2041;
-  color: #ffffff;
-  border: 1px solid #1f2041;
+  background: var(--blue100);
+  color: var(--white50);
+  border: 1px solid var(--blue100);
   border-radius: 0.5rem;
   width: 17rem;
   height: 2.75rem;
   margin-top: 7.125rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     width: 40%;
     margin-top: 3.125rem;
   }
@@ -118,7 +119,7 @@ export const RejectJobWrapper = styled.div`
   height: 34.5rem;
   padding-top: 7rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     width: 85%;
     height: 70%;
     padding-top: 3rem;
@@ -141,7 +142,7 @@ export const RejectText = styled.p`
 export const InputWrapper = styled.div`
   margin-top: 0.875rem;
   textarea {
-    background: #ffffff;
+    background: var(--white50);
     outline: none;
     resize: none;
     width: 39.1875rem;
@@ -150,12 +151,12 @@ export const InputWrapper = styled.div`
     border-radius: 4px;
     padding-left: 0.3125rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${sizes.tablet}) {
       width: 100%;
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     width: 80%;
   }
 `;
@@ -176,7 +177,7 @@ export const Buttons = styled.div`
   gap: 1.875rem;
   margin-top: 4rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${sizes.tablet}) {
     display: flex;
     margin-top: 2rem;
   }
@@ -188,7 +189,7 @@ export const Cancel = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  color: var(--white50);
   width: 14.9375rem;
   height: 4.25rem;
   background-color: #939393;
@@ -206,10 +207,10 @@ export const Reject = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  color: var(--white50);
   width: 14.9375rem;
   height: 4.25rem;
-  background-color: #1f2041;
+  background-color: var(--blue100);
   border: 1px solid #939393;
   border-radius: 8px;
 

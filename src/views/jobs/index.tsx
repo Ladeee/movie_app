@@ -1,14 +1,167 @@
 // ------------- import external dependencies ------------
+import { useState } from "react";
 import styled from "styled-components";
-import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
+import { Table, Dropdown, Space, Select } from "antd";
+import { DownOutlined } from "@ant-design/icons";
 
 // --------------- import internal dependencies ----------------
 import LayoutHeading from "../../components/LayoutHeading";
 import Filter from "../../components/Filter";
-import TableWrapper from "../../components/TableWrapper";
+import { allJobs, pendingJobs } from "../../utils/data";
 import { Link } from "react-router-dom";
 
+const columns = [
+  {
+    title: "Job ID",
+    dataIndex: "id",
+  },
+  {
+    title: "Date Created",
+    dataIndex: "date",
+  },
+  {
+    title: "Entity to be verified",
+    dataIndex: "entity",
+  },
+  {
+    title: "Job Type",
+    dataIndex: "type",
+  },
+  {
+    title: "Created By",
+    dataIndex: "created",
+  },
+  {
+    title: "Job Status",
+    dataIndex: "status",
+  },
+  {
+    title: "Verification Status",
+    dataIndex: "verificationStatus",
+  },
+  {
+    title: "Payment Status",
+    dataIndex: "paymentStatus",
+  },
+];
+
+const pendingColumns = [
+  {
+    title: "Job ID",
+    dataIndex: "id",
+  },
+  {
+    title: "Date Created",
+    dataIndex: "date",
+  },
+  {
+    title: "Entity to be verified",
+    dataIndex: "entity",
+  },
+  {
+    title: "Job Type",
+    dataIndex: "type",
+  },
+  {
+    title: "Created By",
+    dataIndex: "created",
+  },
+  {
+    title: "Job Status",
+    dataIndex: "status",
+  },
+  {
+    title: "TAT (hours)",
+    dataIndex: "hours",
+  },
+  {
+    title: "",
+    dataIndex: "",
+    render: (text: string) => (
+      <button className="btn btn-blue-tran">Edit</button>
+    ),
+  },
+];
+
+const items = [
+  {
+    key: "1",
+    label: (
+      <a target="_blank" rel="noopener noreferrer" href="#">
+        Re-Assign job
+      </a>
+    ),
+  },
+  {
+    key: "2",
+    label: (
+      <a target="_blank" rel="noopener noreferrer" href="#">
+        Edit job
+      </a>
+    ),
+  },
+];
+
+const rejectedColumns = [
+  {
+    title: "Job ID",
+    dataIndex: "id",
+  },
+  {
+    title: "Date Created",
+    dataIndex: "date",
+  },
+  {
+    title: "Entity to be verified",
+    dataIndex: "entity",
+  },
+  {
+    title: "Job Type",
+    dataIndex: "type",
+  },
+  {
+    title: "Created By",
+    dataIndex: "created",
+  },
+  {
+    title: "Job Status",
+    dataIndex: "status",
+  },
+
+  {
+    title: "",
+    dataIndex: "",
+    render: (text: string) => (
+      <Dropdown menu={{ items }}>
+        <button className="btn btn-blue">
+          <Space>
+            Edit
+            <DownOutlined />
+          </Space>
+        </button>
+      </Dropdown>
+    ),
+  },
+];
+
+// rowSelection object indicates the need for row selection
+const rowSelection = {
+  onChange: (selectedRowKeys: React.Key[], selectedRows: any[]) => {
+    console.log(
+      `selectedRowKeys: ${selectedRowKeys}`,
+      "selectedRows: ",
+      selectedRows
+    );
+  },
+  getCheckboxProps: (record: any) => ({
+    disabled: record.name === "Disabled User", // Column configuration not to be checked
+    name: record.name,
+  }),
+};
+
 function JobsOverview() {
+  // ------- component state managers --------
+  const [filter, setfilter] = useState("all");
   return (
     <>
       <LayoutHeading heading="Jobs Overview">
@@ -49,185 +202,143 @@ function JobsOverview() {
           <Filter />
         </div>
         <div className="mt-8 px-5">
-          <Tabs>
-            <TabList className="gap-5 flex">
-              <StyledTab className="btn">ALL</StyledTab>
-              <StyledTab className="btn">PENDING</StyledTab>
-              <StyledTab className="btn">ACCEPTED</StyledTab>
-              <StyledTab className="btn">ONGOING</StyledTab>
-              <StyledTab className="btn">TIME-OUT</StyledTab>
-              <StyledTab className="btn">COMPLETED</StyledTab>
-              <StyledTab className="btn">FAILED</StyledTab>
-              <StyledTab className="btn">REJECTED</StyledTab>
-            </TabList>
+          <div className="flex mb-5 justify-end">
+            <Select
+              value={filter}
+              className="min-w-[120px]"
+              onChange={(val) => setfilter(val)}
+              options={[
+                { value: "all", label: "All" },
+                { value: "pending", label: "Pending" },
+                { value: "accepted", label: "Accepted" },
+                { value: "ongoing", label: "ONGOING" },
+                { value: "timeout", label: "TIME-OUT" },
+                { value: "completed", label: "COMPLETED" },
+                { value: "failed", label: "FAILED" },
+                { value: "rejected", label: "REJECTED" },
+              ]}
+            />
+          </div>
 
-            <TabPanels className="my-7">
-              {/* -------- all job status table -------- */}
-              <TabPanel>
-                <TableWrapper>
-                  <thead>
-                    <tr>
-                      <th>Job ID</th>
-                      <th>Date Created</th>
-                      <th>Entity Verified</th>
-                      <th>Job Type</th>
-                      <th>Created By</th>
-                      <th>Job Status</th>
-                      <th>Verification Status</th>
-                      <th>Payment Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>210</td>
-                      <td>23 - 08 - 2021</td>
-                      <td>NIN</td>
-                      <td>ID Verification</td>
-                      <td>Paul Kagame</td>
-                      <td>Completed</td>
-                      <td>Verified</td>
-                      <td>Paid</td>
-                    </tr>
-                  </tbody>
-                </TableWrapper>
-              </TabPanel>
+          {/* -------- all job status table -------- */}
 
-              {/* -------- pending job tables -------- */}
-              <TabPanel>
-                <TableWrapper>
-                  <thead>
-                    <tr>
-                      <th>
-                        <div>
-                          <span id="job" className="hidden">
-                            Job Checkbox
-                          </span>
-                          <input type="checkbox" aria-labelledby="job" />
-                        </div>
-                      </th>
-                      <th>Job ID</th>
-                      <th>Date Created</th>
-                      <th>Entity Verified</th>
-                      <th>Job Type</th>
-                      <th>Created By</th>
-                      <th>Status</th>
-                      <th>TAT(hours)</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div>
-                          <span id="job-1" className="hidden">
-                            Job Checkbox
-                          </span>
-                          <input type="checkbox" aria-labelledby="job-1" />
-                        </div>
-                      </td>
-                      <td>210</td>
-                      <td>23 - 08 - 2021</td>
-                      <td>NIN</td>
-                      <td>ID Verification</td>
-                      <td>Paul Kagame</td>
-                      <td>Completed</td>
-                      <td>24 </td>
-                      <td>
-                        <button className="btn btn-blue-tran">Edit</button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </TableWrapper>
-              </TabPanel>
-              <TabPanel></TabPanel>
-              <TabPanel></TabPanel>
-              <TabPanel></TabPanel>
+          {filter === "all" && (
+            <Table
+              columns={columns}
+              dataSource={allJobs}
+              pagination={{
+                showSizeChanger: true,
+                pageSize: 10,
+                defaultCurrent: 1,
+                total: 10,
+              }}
+            />
+          )}
 
-              {/* -------- all completed jobs table -------- */}
-              <TabPanel>
-                <TableWrapper>
-                  <thead>
-                    <tr>
-                      <th>Job ID</th>
-                      <th>Date Created</th>
-                      <th>Entity Verified</th>
-                      <th>Job Type</th>
-                      <th>Created By</th>
-                      <th>Job Status</th>
-                      <th>Verification Status</th>
-                      <th>Payment Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>210</td>
-                      <td>23 - 08 - 2021</td>
-                      <td>NIN</td>
-                      <td>ID Verification</td>
-                      <td>Paul Kagame</td>
-                      <td>Completed</td>
-                      <td>Verified</td>
-                      <td>Paid</td>
-                    </tr>
-                  </tbody>
-                </TableWrapper>
-              </TabPanel>
-              <TabPanel></TabPanel>
+          {/* -------- pending job tables -------- */}
 
-              {/* -------- rejected job tables -------- */}
-              <TabPanel>
-                <TableWrapper>
-                  <thead>
-                    <tr>
-                      <th>
-                        <div>
-                          <span id="job" className="hidden">
-                            Job Checkbox
-                          </span>
-                          <input type="checkbox" aria-labelledby="job" />
-                        </div>
-                      </th>
-                      <th>Job ID</th>
-                      <th>Date Created</th>
-                      <th>Entity Verified</th>
-                      <th>Job Type</th>
-                      <th>Created By</th>
-                      <th>Status</th>
-                      <th>TAT(hours)</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div>
-                          <span id="job-1" className="hidden">
-                            Job Checkbox
-                          </span>
-                          <input type="checkbox" aria-labelledby="job-1" />
-                        </div>
-                      </td>
-                      <td>210</td>
-                      <td>23 - 08 - 2021</td>
-                      <td>NIN</td>
-                      <td>ID Verification</td>
-                      <td>Paul Kagame</td>
-                      <td>Completed</td>
-                      <td>24 </td>
-                      <td>
-                        <div className="flex gap-5">
-                          <button className="btn btn-blue-tran">
-                            Re-Assign job
-                          </button>
-                          <button className="btn btn-blue-tran">Edit</button>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </TableWrapper>
-              </TabPanel>
-            </TabPanels>
-          </Tabs>
+          {filter === "pending" && (
+            <Table
+              rowSelection={{
+                type: "checkbox",
+                ...rowSelection,
+              }}
+              columns={pendingColumns}
+              dataSource={pendingJobs}
+              pagination={{
+                showSizeChanger: true,
+                pageSize: 10,
+                defaultCurrent: 1,
+                total: 10,
+              }}
+            />
+          )}
+
+          {filter === "accepted" && (
+            <Table
+              columns={columns}
+              dataSource={allJobs}
+              pagination={{
+                showSizeChanger: true,
+                pageSize: 10,
+                defaultCurrent: 1,
+                total: 10,
+              }}
+            />
+          )}
+
+          {filter === "ongoing" && (
+            <Table
+              columns={columns}
+              dataSource={allJobs}
+              pagination={{
+                showSizeChanger: true,
+                pageSize: 10,
+                defaultCurrent: 1,
+                total: 10,
+              }}
+            />
+          )}
+
+          {filter === "timeout" && (
+            <Table
+              columns={columns}
+              dataSource={allJobs}
+              pagination={{
+                showSizeChanger: true,
+                pageSize: 10,
+                defaultCurrent: 1,
+                total: 10,
+              }}
+            />
+          )}
+
+          {/* -------- all completed jobs table -------- */}
+
+          {filter === "completed" && (
+            <Table
+              columns={columns}
+              dataSource={allJobs}
+              pagination={{
+                showSizeChanger: true,
+                pageSize: 10,
+                defaultCurrent: 1,
+                total: 10,
+              }}
+            />
+          )}
+
+          {filter === "failed" && (
+            <Table
+              columns={columns}
+              dataSource={allJobs}
+              pagination={{
+                showSizeChanger: true,
+                pageSize: 10,
+                defaultCurrent: 1,
+                total: 10,
+              }}
+            />
+          )}
+
+          {/* -------- rejected job tables -------- */}
+
+          {filter === "rejected" && (
+            <Table
+              rowSelection={{
+                type: "checkbox",
+                ...rowSelection,
+              }}
+              columns={rejectedColumns}
+              dataSource={pendingJobs}
+              pagination={{
+                showSizeChanger: true,
+                pageSize: 10,
+                defaultCurrent: 1,
+                total: 10,
+              }}
+            />
+          )}
         </div>
       </ContainerWrapper>
     </>
@@ -259,16 +370,16 @@ const MetricWraper = styled.div`
   }
 `;
 
-const StyledTab = styled(Tab)`
-  min-width: 95px;
-  min-height: 36px;
-  background: transparent;
-  border: 1px solid var(--purple300);
-  color: var(--purple300);
-  font-weight: 500;
+// const StyledTab = styled(Tab)`
+//   min-width: 95px;
+//   min-height: 36px;
+//   background: transparent;
+//   border: 1px solid var(--purple300);
+//   color: var(--purple300);
+//   font-weight: 500;
 
-  &[data-selected] {
-    background: var(--purple300);
-    color: var(--white50);
-  }
-`;
+//   &[data-selected] {
+//     background: var(--purple300);
+//     color: var(--white50);
+//   }
+// `;

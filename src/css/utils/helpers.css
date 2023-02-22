@@ -29,3 +29,22 @@ btn:active {
   color: var(--grey900);
   border: 1px solid var(--grey300);
 }
+
+/* -------- input style classes -------- */
+/* .input-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.input-wrapper label {
+  font-family: "Inter";
+  font-size: 0.875rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input-control {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid var(--ash200);
+} */

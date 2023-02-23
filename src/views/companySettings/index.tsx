@@ -51,7 +51,7 @@ const Settings = () => {
           </div>
           <div className="py-8 bg-[white]"></div>
         </Tabulate>
-        <NavLink to="company/editProfile" className="w-[80%]">
+        <NavLink to="/company/settings/edit" className="w-[80%]">
           <button className="btn btn-blue w-full mt-8 cursor-pointer">
             Edit Profile Settings
           </button>

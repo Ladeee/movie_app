@@ -146,12 +146,17 @@ export const Forms = styled.section`
   max-width: 44%;
 
   @media (max-width: ${sizes.tablet}) {
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    left: 50%;
-    right: 50%;
+    /* left: 50%;
+    right: 50%; */
+    width: 100%;
+  }
+
+  @media (max-width: ${sizes.tabletL}) {
+    max-width: 100%;
   }
 `;
 

@@ -106,7 +106,7 @@ export const router = createBrowserRouter([
         element: <JobPopup />,
       },
       {
-        path: "csv",
+        path: "jobs/popup/csv",
         element: <MultipleAddress />,
       },
       {

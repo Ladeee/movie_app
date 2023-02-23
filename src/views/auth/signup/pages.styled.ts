@@ -9,8 +9,37 @@ export const SignupContainer = styled.div`
   white-space: nowrap;
   width: 44vw;
 
-  @media (max-width: ${sizes.tablet}) {
-    width: 62vw;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #form {
+    .ant-select-selector {
+      display: flex;
+      align-items: center;
+      height: 3.75rem;
+      background-color: #f8fafc;
+      border: 1px solid #cbd5e1;
+    }
+  }
+  Input {
+    @media (min-width: 768px) {
+      width: 38vw !important;
+    }
+  }
+
+  .ant-input-affix-wrapper {
+    @media (min-width: 768px) {
+      width: 38vw !important;
+    }
+  }
+
+  .ant-select.ant-select-in-form-item {
+    @media (min-width: 768px) {
+      width: 38vw !important;
+    }
   }
 `;
 
@@ -28,49 +57,6 @@ export const Heading = styled.h1`
   @media (max-width: ${sizes.tablet}) {
     font-size: 1.425rem;
   }
-`;
-
-export const FormContainer = styled.form`
-  font-family: "Poppins", sans-serif;
-  display: flex;
-  flex-direction: column;
-  margin-top: 1.1875rem;
-
-  label {
-    font-size: 1rem;
-    line-height: 24px;
-    margin-top: 1rem;
-  }
-
-  input {
-    background-color: #f8fafc;
-    outline: none;
-    position: relative;
-    border: 1px solid #cbd5e1;
-    border-radius: 12px;
-    width: 32.875rem;
-    height: 3.75rem;
-    margin-top: 0.6875rem;
-    padding-left: 2.375rem;
-
-    @media (max-width: ${sizes.tabletL}) {
-      width: 90%;
-    }
-
-    @media (max-width: ${sizes.tablet}) {
-      width: 100%;
-      padding-left: 0.375rem;
-    }
-  }
-
-  #create {
-    margin-top: 1.125rem;
-  }
-`;
-
-export const InputWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
 `;
 
 export const Button = styled(AuthButton)`
@@ -101,7 +87,6 @@ export const FormTwoContainer = styled.section`
 
 export const BoxWrapper = styled.div`
   position: relative;
-
   display: flex;
   align-items: center;
   background-color: #f8fafc;
@@ -119,15 +104,15 @@ export const BoxWrapper = styled.div`
     position: absolute;
     top: 1.25rem;
     right: 1rem;
+    width: unset !important;
   }
 
   @media (max-width: ${sizes.tabletL}) {
-    /* width: 22.875rem; */
     width: 90%;
   }
 
   @media (max-width: ${sizes.tablet}) {
-    width: 100%;
+    width: 60vw;
   }
 `;
 
@@ -143,25 +128,3 @@ export const Icon = styled.div`
 `;
 
 // exclusive for company details page
-
-export const Industry = styled.div`
-  position: relative;
-`;
-
-export const IndustryIcon = styled.div`
-  cursor: pointer;
-  position: absolute;
-  top: 2.4002rem;
-  /* right: 1.4087rem; */
-  right: 25%;
-  width: 0.5981rem;
-  height: 0.3825rem;
-
-  @media (min-width: ${sizes.tablet}) and (max-width: ${sizes.tabletL}) {
-    right: 15%;
-  }
-
-  @media (max-width: ${sizes.tablet}) {
-    right: 8%;
-  }
-`;

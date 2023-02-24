@@ -1,5 +1,5 @@
 import Tabulate from "./components/Tabulate";
-import { NavLink } from "react-router-dom";
+import LayoutHeading from "../../components/LayoutHeading";
 import { Input } from "antd";
 import { useState } from "react";
 
@@ -12,14 +12,8 @@ const ChangePassword = () => {
   return (
     <>
       {/* ----- The header component ----- */}
-      <div className="text-blue-100 flex gap-2 font-montserrat">
-        <NavLink to="/company/settings">
-          <h2>Settings</h2>
-        </NavLink>
-        <h2>{">"}</h2>
-        <NavLink to="../" className="text-blue-100">
-          <h2>Edit Profile</h2>
-        </NavLink>
+      <div className="text-blue-100">
+        <LayoutHeading heading="Setting > Edit Profile" />
       </div>
 
       {/* ----- The tabulated user details section ----- */}
@@ -30,8 +24,9 @@ const ChangePassword = () => {
         >
           <div>
             <div className="bg-white-50 px-8 py-4 flex flex-col gap-2 text-blue-100">
-              <span>Enter New Password:</span>
+              <label htmlFor="new">Enter New Password:</label>
               <Input
+                id="new"
                 type="password"
                 value={password.new}
                 onChange={(e: any) =>
@@ -40,8 +35,9 @@ const ChangePassword = () => {
               />
             </div>
             <div className="bg-white-50 px-8 py-4 flex flex-col gap-2 text-blue-100">
-              <span>Enter New Password:</span>
+              <label htmlFor="cnfNew">Enter New Password:</label>
               <Input
+                id="cnfNew"
                 type="password"
                 value={password.cnfNew}
                 onChange={(e: any) =>

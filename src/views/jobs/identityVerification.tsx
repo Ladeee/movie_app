@@ -18,10 +18,10 @@ function IdntityVerification() {
         </div>
       </LayoutHeading>
 
-      {/* ------- identity ferification form ------- */}
+      {/* ------- identity verification form ------- */}
       <Card className="py-12 md:px-8 px-5 mt-8">
         <Form form={form} name="identity-form" layout="vertical">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 md:gap-12">
             <div>
               <Form.Item name="firstname" label="First name">
                 <Input placeholder="First name" size="large" />

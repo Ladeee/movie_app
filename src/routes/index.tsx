@@ -30,6 +30,9 @@ const JobsOverview = lazy(() => import("../views/jobs"));
 const IdentityVerification = lazy(
   () => import("../views/jobs/identityVerification")
 );
+const IdentityVerificationDetails = lazy(
+  () => import("../views/jobs/identityVerificationDetails")
+);
 
 const MultipleAddress = lazy(
   () => import("../views/jobs/createjobs/popup/multipleAddress")
@@ -96,6 +99,10 @@ export const router = createBrowserRouter([
       {
         path: "jobs/identity-verification",
         element: <IdentityVerification />,
+      },
+      {
+        path: "jobs/identity-details",
+        element: <IdentityVerificationDetails />,
       },
       {
         path: "settings",

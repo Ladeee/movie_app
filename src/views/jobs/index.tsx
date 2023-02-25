@@ -2,7 +2,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { Table, Dropdown, Space, Select } from "antd";
-import { DownOutlined } from "@ant-design/icons";
+import { DownOutlined, UpOutlined } from "@ant-design/icons";
 
 // --------------- import internal dependencies ----------------
 import LayoutHeading from "../../components/LayoutHeading";
@@ -162,6 +162,8 @@ const rowSelection = {
 function JobsOverview() {
   // ------- component state managers --------
   const [filter, setfilter] = useState("all");
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <LayoutHeading heading="Jobs Overview">
@@ -172,27 +174,32 @@ function JobsOverview() {
 
       {/* -------- jobs metric summary -------- */}
       <ContainerWrapper className="mt-8">
-        <div className="border-0 border-solid border-b border-ash-50 py-5 pl-5">
+        <div className="border-0 border-solid border-b border-ash-50 py-5 px-5 flex items-center justify-between">
           <h2 className="font-inter font-bold text-sm">Metrics</h2>
+          <div onClick={() => setOpen(!open)}>
+            {open ? <UpOutlined /> : <DownOutlined />}{" "}
+          </div>
         </div>
-        <div className="p-5 grid md:grid-cols-4 grid-cols-1 gap-6">
-          <MetricWraper className="bg-[#e3f5ff]">
-            <span className="title">Total Jobs</span>
-            <span className="metric-count">12,400</span>
-          </MetricWraper>
-          <MetricWraper className="bg-[#e5ecf6]">
-            <span className="title">Pending Jobs</span>
-            <span className="metric-count">11,400</span>
-          </MetricWraper>
-          <MetricWraper className="bg-[#adffce]">
-            <span className="title">Verified Jobs</span>
-            <span className="metric-count">11,400</span>
-          </MetricWraper>
-          <MetricWraper className="bg-[#ffb6b6]">
-            <span className="title">Timed-Out </span>
-            <span className="metric-count">400</span>
-          </MetricWraper>
-        </div>
+        {open && (
+          <div className="p-5 grid md:grid-cols-4 grid-cols-1 gap-6">
+            <MetricWraper className="bg-[#e3f5ff]">
+              <span className="title">Total Jobs</span>
+              <span className="metric-count">12,400</span>
+            </MetricWraper>
+            <MetricWraper className="bg-[#e5ecf6]">
+              <span className="title">Pending Jobs</span>
+              <span className="metric-count">11,400</span>
+            </MetricWraper>
+            <MetricWraper className="bg-[#adffce]">
+              <span className="title">Verified Jobs</span>
+              <span className="metric-count">11,400</span>
+            </MetricWraper>
+            <MetricWraper className="bg-[#ffb6b6]">
+              <span className="title">Timed-Out </span>
+              <span className="metric-count">400</span>
+            </MetricWraper>
+          </div>
+        )}
       </ContainerWrapper>
 
       {/* ------- jobs status tables -------- */}
@@ -220,125 +227,130 @@ function JobsOverview() {
             />
           </div>
 
-          {/* -------- all job status table -------- */}
+          <div
+            className="overflow-x-auto w-fu
+          "
+          >
+            {/* -------- all job status table -------- */}
 
-          {filter === "all" && (
-            <Table
-              columns={columns}
-              dataSource={allJobs}
-              pagination={{
-                showSizeChanger: true,
-                pageSize: 10,
-                defaultCurrent: 1,
-                total: 10,
-              }}
-            />
-          )}
+            {filter === "all" && (
+              <Table
+                columns={columns}
+                dataSource={allJobs}
+                pagination={{
+                  showSizeChanger: true,
+                  pageSize: 10,
+                  defaultCurrent: 1,
+                  total: 10,
+                }}
+              />
+            )}
 
-          {/* -------- pending job tables -------- */}
+            {/* -------- pending job tables -------- */}
 
-          {filter === "pending" && (
-            <Table
-              rowSelection={{
-                type: "checkbox",
-                ...rowSelection,
-              }}
-              columns={pendingColumns}
-              dataSource={pendingJobs}
-              pagination={{
-                showSizeChanger: true,
-                pageSize: 10,
-                defaultCurrent: 1,
-                total: 10,
-              }}
-            />
-          )}
+            {filter === "pending" && (
+              <Table
+                rowSelection={{
+                  type: "checkbox",
+                  ...rowSelection,
+                }}
+                columns={pendingColumns}
+                dataSource={pendingJobs}
+                pagination={{
+                  showSizeChanger: true,
+                  pageSize: 10,
+                  defaultCurrent: 1,
+                  total: 10,
+                }}
+              />
+            )}
 
-          {filter === "accepted" && (
-            <Table
-              columns={columns}
-              dataSource={allJobs}
-              pagination={{
-                showSizeChanger: true,
-                pageSize: 10,
-                defaultCurrent: 1,
-                total: 10,
-              }}
-            />
-          )}
+            {filter === "accepted" && (
+              <Table
+                columns={columns}
+                dataSource={allJobs}
+                pagination={{
+                  showSizeChanger: true,
+                  pageSize: 10,
+                  defaultCurrent: 1,
+                  total: 10,
+                }}
+              />
+            )}
 
-          {filter === "ongoing" && (
-            <Table
-              columns={columns}
-              dataSource={allJobs}
-              pagination={{
-                showSizeChanger: true,
-                pageSize: 10,
-                defaultCurrent: 1,
-                total: 10,
-              }}
-            />
-          )}
+            {filter === "ongoing" && (
+              <Table
+                columns={columns}
+                dataSource={allJobs}
+                pagination={{
+                  showSizeChanger: true,
+                  pageSize: 10,
+                  defaultCurrent: 1,
+                  total: 10,
+                }}
+              />
+            )}
 
-          {filter === "timeout" && (
-            <Table
-              columns={columns}
-              dataSource={allJobs}
-              pagination={{
-                showSizeChanger: true,
-                pageSize: 10,
-                defaultCurrent: 1,
-                total: 10,
-              }}
-            />
-          )}
+            {filter === "timeout" && (
+              <Table
+                columns={columns}
+                dataSource={allJobs}
+                pagination={{
+                  showSizeChanger: true,
+                  pageSize: 10,
+                  defaultCurrent: 1,
+                  total: 10,
+                }}
+              />
+            )}
 
-          {/* -------- all completed jobs table -------- */}
+            {/* -------- all completed jobs table -------- */}
 
-          {filter === "completed" && (
-            <Table
-              columns={columns}
-              dataSource={allJobs}
-              pagination={{
-                showSizeChanger: true,
-                pageSize: 10,
-                defaultCurrent: 1,
-                total: 10,
-              }}
-            />
-          )}
+            {filter === "completed" && (
+              <Table
+                columns={columns}
+                dataSource={allJobs}
+                pagination={{
+                  showSizeChanger: true,
+                  pageSize: 10,
+                  defaultCurrent: 1,
+                  total: 10,
+                }}
+              />
+            )}
 
-          {filter === "failed" && (
-            <Table
-              columns={columns}
-              dataSource={allJobs}
-              pagination={{
-                showSizeChanger: true,
-                pageSize: 10,
-                defaultCurrent: 1,
-                total: 10,
-              }}
-            />
-          )}
+            {filter === "failed" && (
+              <Table
+                columns={columns}
+                dataSource={allJobs}
+                pagination={{
+                  showSizeChanger: true,
+                  pageSize: 10,
+                  defaultCurrent: 1,
+                  total: 10,
+                }}
+              />
+            )}
 
-          {/* -------- rejected job tables -------- */}
+            {/* -------- rejected job tables -------- */}
 
-          {filter === "rejected" && (
-            <Table
-              rowSelection={{
-                type: "checkbox",
-                ...rowSelection,
-              }}
-              columns={rejectedColumns}
-              dataSource={pendingJobs}
-              pagination={{
-                showSizeChanger: true,
-                pageSize: 10,
-                defaultCurrent: 1,
-                total: 10,
-              }}
-            />
-          )}
+            {filter === "rejected" && (
+              <Table
+                rowSelection={{
+                  type: "checkbox",
+                  ...rowSelection,
+                }}
+                columns={rejectedColumns}
+                dataSource={pendingJobs}
+                pagination={{
+                  showSizeChanger: true,
+                  pageSize: 10,
+                  defaultCurrent: 1,
+                  total: 10,
+                }}
+              />
+            )}
+          </div>
         </div>
       </ContainerWrapper>
     </>

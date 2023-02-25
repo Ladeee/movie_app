@@ -1,29 +1,20 @@
 // import { useState } from "react";
 import {
+  FormWrapper,
+  Input,
+  InputWrapper,
   VerificationButtons,
   Submit,
+  Info,
   IdentityContainer,
 } from "../verifications.styled";
-import { Col, Row, Form, Input, Select } from "antd";
+
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 export default function IdentityVerification() {
-  const { TextArea } = Input;
-
-  const handleChange = (value: string) => {
-    console.log(`selected ${value}`);
-  };
-
-  const layout = {
-    labelCol: { span: 8 },
-    wrapperCol: { span: 16 },
-  };
-
-  const onFinish = (values: any) => {
-    console.log(values);
-  };
   return (
     <IdentityContainer>
-      {/* <FormWrapper>
+      <FormWrapper>
         <Info>
           <InputWrapper>
             <label>First Name</label>
@@ -82,148 +73,7 @@ export default function IdentityVerification() {
             <Submit>Submit and Pay</Submit>
           </VerificationButtons>
         </Info>
-      </FormWrapper> */}
-
-      <Form
-        className="mt-8"
-        id="form"
-        {...layout}
-        name="nest-messages"
-        onFinish={onFinish}
-        // style={{ maxWidth: 600 }}
-      >
-        <Row className="flex gap-64">
-          <Col xs={{ span: 5 }} lg={{ span: 6 }}>
-            <Form.Item
-              name={["user", "firstname"]}
-              label="First Name"
-              labelCol={{ span: 24 }}
-              // rules={[{ required: true }]}
-            >
-              <Input
-                style={{ width: "28vw" }}
-                placeholder="John"
-                className="h-12 bg-[#F8FAFC] border-[#CBD5E1]"
-              />
-            </Form.Item>
-          </Col>
-          <Col xs={{ span: 5 }} lg={{ span: 6 }}>
-            <Form.Item
-              name={["user", "lastname"]}
-              label="Last Name"
-              labelCol={{ span: 24 }}
-              // rules={[{ required: true }]}
-            >
-              <Input
-                style={{ width: "28vw" }}
-                placeholder="Doe"
-                className="h-12 bg-[#F8FAFC] border-[#CBD5E1]"
-              />
-            </Form.Item>
-          </Col>
-        </Row>
-
-        <Row className="flex gap-64">
-          <Col xs={{ span: 5 }} lg={{ span: 6 }}>
-            <Form.Item
-              name={["user", "email"]}
-              label="Email Address"
-              labelCol={{ span: 24 }}
-              rules={[{ type: "email" }]}
-            >
-              <Input
-                style={{ width: "28vw" }}
-                placeholder="johndoe@gmail.com"
-                className="h-12 bg-[#F8FAFC] border-[#CBD5E1]"
-              />
-            </Form.Item>
-          </Col>
-          <Col xs={{ span: 5 }} lg={{ span: 6 }}>
-            <Form.Item
-              name="phone"
-              label="Phone Number"
-              labelCol={{ span: 24 }}
-            >
-              <Input
-                style={{ width: "28vw" }}
-                placeholder="+234"
-                className="h-12 bg-[#F8FAFC] border-[#CBD5E1]"
-              />
-            </Form.Item>
-          </Col>
-        </Row>
-
-        <Row className="flex gap-64">
-          <Col xs={{ span: 5 }} lg={{ span: 6 }}>
-            <Form.Item
-              name={["user", "idType"]}
-              label="ID Type"
-              labelCol={{ span: 24 }}
-              // rules={[{ required: true }]}
-            >
-              <Input
-                style={{ width: "28vw" }}
-                className="h-12 bg-[#F8FAFC] border-[#CBD5E1]"
-              />
-            </Form.Item>
-          </Col>
-          <Col xs={{ span: 5 }} lg={{ span: 6 }}>
-            <Form.Item
-              name={["user", "idNumber"]}
-              label="ID Number"
-              labelCol={{ span: 24 }}
-              // rules={[{ required: true }]}
-            >
-              <Input
-                type="number"
-                style={{ width: "28vw" }}
-                className="h-12 bg-[#F8FAFC] border-[#CBD5E1]"
-              />
-            </Form.Item>
-          </Col>
-        </Row>
-        <Row className="flex gap-64" id="reverse">
-          <Col xs={{ span: 5 }} lg={{ span: 6 }}>
-            <Form.Item
-              name={["user", "information"]}
-              label="Additional Information"
-              labelCol={{ span: 24 }}
-            >
-              <TextArea
-                style={{ width: "28vw", maxWidth: "unset", resize: "none" }}
-                className="h-28 bg-[#F8FAFC] border-[#CBD5E1]"
-              />
-            </Form.Item>
-          </Col>
-          <Col xs={{ span: 5 }} lg={{ span: 6 }}>
-            <Form.Item
-              name={["user", "gender"]}
-              label="Gender"
-              labelCol={{ span: 24 }}
-              rules={[
-                { required: true, message: "Please choose your gender!" },
-              ]}
-            >
-              <Select
-                defaultValue="Male"
-                style={{ width: "28vw" }}
-                onChange={handleChange}
-                options={[
-                  { value: "Male", label: "Male" },
-                  { value: "Female", label: "Female" },
-                  { value: "disabled", label: "Disabled", disabled: true },
-                ]}
-              />
-            </Form.Item>
-          </Col>
-        </Row>
-
-        <Row className="flex gap-64">
-          <VerificationButtons>
-            <Submit>Submit and Pay</Submit>
-          </VerificationButtons>
-        </Row>
-      </Form>
+      </FormWrapper>
     </IdentityContainer>
   );
 }

@@ -22,16 +22,6 @@ export const VerificationContainer = styled.div`
     width: 100%;
     align-items: center;
   }
-
-  #form {
-    .ant-select-selector {
-      display: flex;
-      align-items: center;
-      height: 3rem;
-      background-color: #f8fafc;
-      border: 1px solid #cbd5e1;
-    }
-  }
 `;
 
 export const Header = styled.section`

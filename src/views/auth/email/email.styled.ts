@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { AuthButton } from "../../../css/reuseableStyles/button.styled";
 import { sizes } from "../../../utils/screenSizes";
 
 // confirm email / email successful
@@ -48,8 +47,12 @@ export const ConfirmText = styled.p`
   }
 `;
 
-export const ConfirmButton = styled(AuthButton)`
+export const ConfirmButton = styled.button`
+  outline: none;
+  background-color: var(--blue100);
+  color: var(--white100);
   margin-top: 3.625rem;
+  display: block;
 
   @media (max-width: ${sizes.tablet}) {
     width: 147px;
@@ -88,15 +91,7 @@ export const SignIn = styled.a`
     font-size: 1rem;
   }
 
-  @media (max-width: 367px) {
-    font-size: 11px;
-  }
-`;
-
-export const SuccessButton = styled(AuthButton)`
-  margin-top: 2.875rem;
-
-  @media (max-width: ${sizes.tablet}) {
-    width: 147px;
+  @media (max-width: 467px) {
+    font-size: 0.75rem;
   }
 `;

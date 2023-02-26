@@ -1,31 +1,51 @@
 import { SignupContainer, Heading } from "../../pages.styled";
-import { Button, Form, Input, Select } from "antd";
+import { Form, Input, Button, Select } from "antd";
+import { Rule } from "antd/lib/form";
+import { useForm } from "react-hook-form";
+
+interface FormValues {
+  companyName: string;
+  regNumber: string;
+  industry: string;
+  companyAddress: string;
+  role: string;
+}
+
+const nameRules: Rule[] = [
+  { required: true, message: "Please enter your company name" },
+];
+const regNumberRules: Rule[] = [
+  { required: true, message: "Please enter your registration number" },
+];
+const selectRules: Rule[] = [
+  { required: true, message: "Select your industry" },
+];
+const companyAddressRules: Rule[] = [
+  { required: true, message: "Please enter your company address" },
+];
+const roleRules: Rule[] = [
+  { required: true, message: "Please enter your role" },
+];
 
 export default function CompanyDetails({
   goToNextPage,
 }: {
   goToNextPage: () => void;
 }) {
+  const { register, handleSubmit } = useForm<FormValues>();
+
   const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
-  };
-
-  /* eslint-disable no-template-curly-in-string */
-  const validateMessages = {
-    required: "${label} is required!",
-    types: {
-      email: "${label} is not a valid email!",
-      number: "${label} is not a valid number!",
-    },
   };
 
   const handleChange = (value: string) => {
     console.log(`selected ${value}`);
   };
 
-  const onFinish = (values: any) => {
-    console.log(values);
+  const onSubmit = (data: FormValues) => {
+    console.log(data);
+    goToNextPage();
   };
   return (
     <SignupContainer>
@@ -38,41 +58,41 @@ export default function CompanyDetails({
         id="form"
         {...layout}
         name="nest-messages"
-        onFinish={onFinish}
+        onFinish={handleSubmit(onSubmit)}
         style={{ maxWidth: 600 }}
-        validateMessages={validateMessages}
       >
         <Form.Item
-          name={["user", "name"]}
+          name="companyName"
           label="Company Name"
           labelCol={{ span: 24 }}
-          rules={[{ required: true }]}
+          rules={nameRules}
         >
           <Input
+            {...register("companyName")}
             style={{ width: "60vw" }}
             className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
           />
         </Form.Item>
         <Form.Item
-          name={["user", "regNumber"]}
+          name="regNumber"
           label="CAC Registration Number"
           labelCol={{ span: 24 }}
-          rules={[
-            { required: true, message: "Please input your CAC reg number!" },
-          ]}
+          rules={regNumberRules}
         >
           <Input
+            {...register("regNumber")}
             style={{ width: "60vw" }}
             className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
           />
         </Form.Item>
         <Form.Item
-          name={["user", "industry"]}
+          name="industry"
           label="Industry"
           labelCol={{ span: 24 }}
-          rules={[{ required: true, message: "Please choose your industry!" }]}
+          rules={selectRules}
         >
           <Select
+            {...register("industry")}
             defaultValue="Industry"
             style={{ width: "60vw" }}
             onChange={handleChange}
@@ -85,36 +105,34 @@ export default function CompanyDetails({
           />
         </Form.Item>
         <Form.Item
-          name={["user", "companyAddress"]}
+          name="companyAddress"
           label="Company Address"
           labelCol={{ span: 24 }}
-          rules={[
-            { required: true, message: "Please input your Company address!" },
-          ]}
+          rules={companyAddressRules}
         >
           <Input
+            {...register("companyAddress")}
             style={{ width: "60vw" }}
             className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
           />
         </Form.Item>
         <Form.Item
-          name={["user", "role"]}
+          name="role"
           label="Role"
           labelCol={{ span: 24 }}
-          rules={[{ required: true, message: "Please choose your Role!" }]}
+          rules={roleRules}
         >
           <Input
+            {...register("role")}
             style={{ width: "60vw" }}
             className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
           />
         </Form.Item>
-        <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-          <Button
-            onClick={goToNextPage}
-            className="btn"
-            type="primary"
-            htmlType="submit"
-          >
+        <Form.Item
+          className="mt-14 flex justify-start"
+          wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
+        >
+          <Button className="btn" type="primary" htmlType="submit">
             Create Account
           </Button>
         </Form.Item>

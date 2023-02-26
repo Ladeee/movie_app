@@ -1,9 +1,28 @@
-import {
-  SignupContainer,
-  Heading,
-  // Button,
-} from "../../pages.styled";
-import { Button, Form, Input } from "antd";
+import { SignupContainer, Heading } from "../../pages.styled";
+import { Rule } from "antd/lib/form";
+import { useForm } from "react-hook-form";
+import { Form, Input, Button } from "antd";
+
+interface FormValues {
+  fullName: string;
+  phoneNumber: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
+const nameRules: Rule[] = [
+  { required: true, message: "Please enter your full name" },
+];
+const phoneNumberRules: Rule[] = [
+  { required: true, message: "Please enter your phone number" },
+];
+const emailRules: Rule[] = [
+  { required: true, message: "Please enter your email" },
+];
+const passwordRules: Rule[] = [
+  { required: true, message: "Please enter your password" },
+];
 
 export default function GetStarted({
   goToNextPage,
@@ -15,18 +34,11 @@ export default function GetStarted({
     wrapperCol: { span: 16 },
   };
 
-  /* eslint-disable no-template-curly-in-string */
-  const validateMessages = {
-    required: "${label} is required!",
-    types: {
-      email: "${label} is not a valid email!",
-      number: "${label} is not a valid number!",
-    },
-  };
-  /* eslint-enable no-template-curly-in-string */
+  const { register, handleSubmit } = useForm<FormValues>();
 
-  const onFinish = (values: any) => {
-    console.log(values);
+  const onSubmit = (data: FormValues) => {
+    console.log(data);
+    goToNextPage();
   };
 
   return (
@@ -37,43 +49,44 @@ export default function GetStarted({
           className="mt-8"
           {...layout}
           name="nest-messages"
-          onFinish={onFinish}
+          onFinish={handleSubmit(onSubmit)}
           style={{ maxWidth: 600 }}
-          validateMessages={validateMessages}
+          id="form"
         >
           <Form.Item
-            name={["user", "name"]}
             label="Full Name"
             labelCol={{ span: 24 }}
-            rules={[{ required: true }]}
+            name="fullName"
+            rules={nameRules}
           >
             <Input
+              {...register("fullName")}
               style={{ width: "60vw" }}
               placeholder="John Doe"
               className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
             />
           </Form.Item>
           <Form.Item
-            name="phone"
+            name="phoneNumber"
             label="Phone Number"
             labelCol={{ span: 24 }}
-            rules={[
-              { required: true, message: "Please input your phone number!" },
-            ]}
+            rules={phoneNumberRules}
           >
             <Input
+              {...register("phoneNumber")}
               style={{ width: "60vw" }}
               placeholder="+234"
               className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
             />
           </Form.Item>
           <Form.Item
-            name={["user", "email"]}
+            name="email"
             label="Email Address"
             labelCol={{ span: 24 }}
-            rules={[{ type: "email" }]}
+            rules={emailRules}
           >
             <Input
+              {...register("email")}
               style={{ width: "60vw" }}
               className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
             />
@@ -82,15 +95,11 @@ export default function GetStarted({
             name="password"
             label="Password"
             labelCol={{ span: 24 }}
-            rules={[
-              {
-                required: true,
-                message: "Please input your password!",
-              },
-            ]}
             hasFeedback
+            rules={passwordRules}
           >
             <Input.Password
+              {...register("password")}
               style={{ width: "60vw" }}
               className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
             />
@@ -126,13 +135,11 @@ export default function GetStarted({
               className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
             />
           </Form.Item>
-          <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-            <Button
-              onClick={goToNextPage}
-              className="btn"
-              type="primary"
-              htmlType="submit"
-            >
+          <Form.Item
+            wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
+            className="mt-14 flex justify-start"
+          >
+            <Button type="primary" htmlType="submit" className="btn">
               Next
             </Button>
           </Form.Item>

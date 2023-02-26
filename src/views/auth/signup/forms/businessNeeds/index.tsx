@@ -4,7 +4,6 @@ import {
   FormTwoContainer,
   BoxWrapper,
   Button,
-  Btn,
   Box,
 } from "../../pages.styled";
 
@@ -45,9 +44,11 @@ export default function BusinessNeeds({
         </BoxWrapper>
       </FormTwoContainer>
 
-      <Btn>
-        <Button onClick={goToNextPage}>Continue</Button>
-      </Btn>
+      <div className="flex justify-start">
+        <Button className="btn" onClick={goToNextPage}>
+          Continue
+        </Button>
+      </div>
     </SignupContainer>
   );
 }

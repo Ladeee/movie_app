@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { AuthButton } from "../../../css/reuseableStyles/button.styled";
 import { sizes } from "../../../utils/screenSizes";
 
 // page one/ two & three
@@ -23,7 +22,12 @@ export const SignupContainer = styled.div`
       background-color: #f8fafc;
       border: 1px solid #cbd5e1;
     }
+
+    .ant-btn-primary {
+      background: var(--blue100) !important;
+    }
   }
+
   Input {
     @media (min-width: 768px) {
       width: 38vw !important;
@@ -59,9 +63,12 @@ export const Heading = styled.h1`
   }
 `;
 
-export const Button = styled(AuthButton)`
+export const Button = styled.button`
+  border: none;
   margin-top: 3.4375rem;
   margin-bottom: 2.8125rem;
+  background-color: var(--blue100);
+  color: var(--white100);
 `;
 
 export const Btn = styled.div`

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthLayout from "../../../components/authLayout";
 import {
   Container,
@@ -8,10 +8,23 @@ import {
   Check,
   Remember,
   Forgot,
-  // Button,
   Account,
 } from "./login.styled";
-import { Button, Form, Input } from "antd";
+import { Rule } from "antd/lib/form";
+import { useForm } from "react-hook-form";
+import { Form, Input, Button } from "antd";
+
+interface FormValues {
+  email: string;
+  password: string;
+}
+
+const emailRules: Rule[] = [
+  { required: true, message: "Please enter your email" },
+];
+const passwordRules: Rule[] = [
+  { required: true, message: "Please enter your password" },
+];
 
 export default function Login() {
   const layout = {
@@ -19,17 +32,13 @@ export default function Login() {
     wrapperCol: { span: 16 },
   };
 
-  /* eslint-disable no-template-curly-in-string */
-  const validateMessages = {
-    required: "${label} is required!",
-    types: {
-      email: "${label} is not a valid email!",
-    },
-  };
-  /* eslint-enable no-template-curly-in-string */
+  const { register, handleSubmit } = useForm<FormValues>();
 
-  const onFinish = (values: any) => {
-    console.log(values);
+  const navigate = useNavigate();
+
+  const onSubmit = (data: FormValues) => {
+    console.log(data);
+    navigate("/company/dashboard");
   };
 
   return (
@@ -41,17 +50,17 @@ export default function Login() {
           id="form"
           {...layout}
           name="nest-messages"
-          onFinish={onFinish}
+          onFinish={handleSubmit(onSubmit)}
           style={{ maxWidth: 600 }}
-          validateMessages={validateMessages}
         >
           <Form.Item
-            name={["user", "email"]}
+            name="email"
             label="Email Address"
             labelCol={{ span: 24 }}
-            rules={[{ type: "email" }]}
+            rules={emailRules}
           >
             <Input
+              {...register("email")}
               style={{ width: "60vw" }}
               className="h-14 bg-[#F8FAFC] border-[#CBD5E1] "
             />
@@ -60,15 +69,11 @@ export default function Login() {
             name="password"
             label="Password"
             labelCol={{ span: 24 }}
-            rules={[
-              {
-                required: true,
-                message: "Please input your password!",
-              },
-            ]}
             hasFeedback
+            rules={passwordRules}
           >
             <Input.Password
+              {...register("password")}
               style={{ width: "60vw" }}
               className="h-14 bg-[#F8FAFC] border-[#CBD5E1] "
             />
@@ -83,14 +88,17 @@ export default function Login() {
               <Forgot>Forgot password</Forgot>
             </Link>
           </RememberPassword>
-          <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+          <Form.Item
+            wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
+            className="mt-12 flex justify-start"
+          >
             <Button className="btn" type="primary" htmlType="submit">
               Login
             </Button>
           </Form.Item>
         </Form>
         <Link to="/signup">
-          <Account>Create Account</Account>
+          <Account className="mr-14">Create Account</Account>
         </Link>
       </Container>
     </AuthLayout>

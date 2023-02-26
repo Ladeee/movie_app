@@ -5,7 +5,7 @@ import {
   ConfirmEmail,
   ConfirmSuccess,
   SignIn,
-  SuccessButton,
+  ConfirmButton,
 } from "../email.styled";
 
 export default function Successful() {
@@ -20,7 +20,7 @@ export default function Successful() {
         </SignIn>
 
         <Link to="/login">
-          <SuccessButton>Login</SuccessButton>
+          <ConfirmButton className="btn">Login</ConfirmButton>
         </Link>
       </EmailContainer>
     </AuthLayout>

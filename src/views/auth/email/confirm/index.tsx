@@ -18,8 +18,8 @@ export default function Confirm() {
           link contained in the email you just received!
         </ConfirmText>
 
-        <Link to="/emailsuccessful">
-          <ConfirmButton>Login</ConfirmButton>
+        <Link to="/emailsuccessful" className="mt-12">
+          <ConfirmButton className="btn">Login</ConfirmButton>
         </Link>
       </EmailContainer>
     </AuthLayout>

@@ -1,6 +1,18 @@
 import AuthLayout from "../../../../components/authLayout";
 import { Container, Heading } from "../login.styled";
-import { Button, Form, Input } from "antd";
+import { Rule } from "antd/lib/form";
+import { useForm } from "react-hook-form";
+import { Form, Input, Button } from "antd";
+import { useNavigate } from "react-router";
+
+interface FormValues {
+  email: string;
+  password: string;
+}
+
+const passwordRules: Rule[] = [
+  { required: true, message: "Please enter your password" },
+];
 
 export default function SetPassword() {
   const layout = {
@@ -8,8 +20,13 @@ export default function SetPassword() {
     wrapperCol: { span: 16 },
   };
 
-  const onFinish = (values: any) => {
-    console.log(values);
+  const { register, handleSubmit } = useForm<FormValues>();
+
+  const navigate = useNavigate();
+
+  const onSubmit = (data: FormValues) => {
+    console.log(data);
+    navigate("/login");
   };
 
   return (
@@ -22,22 +39,18 @@ export default function SetPassword() {
           id="form"
           {...layout}
           name="nest-messages"
-          onFinish={onFinish}
+          onFinish={handleSubmit(onSubmit)}
           style={{ maxWidth: 600 }}
         >
           <Form.Item
             name="password"
             label="New Password"
             labelCol={{ span: 24 }}
-            rules={[
-              {
-                required: true,
-                message: "Please input your new password!",
-              },
-            ]}
             hasFeedback
+            rules={passwordRules}
           >
             <Input.Password
+              {...register("password")}
               style={{ width: "60vw" }}
               className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
             />
@@ -73,7 +86,10 @@ export default function SetPassword() {
               className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
             />
           </Form.Item>
-          <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+          <Form.Item
+            wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
+            className="mt-12"
+          >
             <Button className="btn" type="primary" htmlType="submit">
               Reset
             </Button>

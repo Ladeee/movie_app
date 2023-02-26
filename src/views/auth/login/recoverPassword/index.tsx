@@ -1,23 +1,34 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthLayout from "../../../../components/authLayout";
-import {
-  Container,
-  Heading,
-  // Button,
-  Acc,
-} from "../login.styled";
-import { Button, Form, Input } from "antd";
+import { Container, Heading, Acc } from "../login.styled";
+import { Rule } from "antd/lib/form";
+import { useForm } from "react-hook-form";
+import { Form, Input, Button } from "antd";
+
+interface FormValues {
+  email: string;
+  password: string;
+}
+
+const emailRules: Rule[] = [
+  { required: true, message: "Please enter your email" },
+];
 
 export default function RecoverPassword() {
   const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
   };
-  /* eslint-enable no-template-curly-in-string */
 
-  const onFinish = (values: any) => {
-    console.log(values);
+  const { register, handleSubmit } = useForm<FormValues>();
+
+  const navigate = useNavigate();
+
+  const onSubmit = (data: FormValues) => {
+    console.log(data);
+    navigate("/setpassword");
   };
+
   return (
     <AuthLayout color="#2C2F6D">
       <Container>
@@ -27,30 +38,32 @@ export default function RecoverPassword() {
           id="form"
           {...layout}
           name="nest-messages"
-          onFinish={onFinish}
+          onFinish={handleSubmit(onSubmit)}
           style={{ maxWidth: 600 }}
         >
           <Form.Item
-            name={["user", "email"]}
+            name="email"
             label="Email Address"
             labelCol={{ span: 24 }}
-            rules={[{ required: true, message: "Please input your email!" }]}
+            rules={emailRules}
           >
             <Input
+              {...register("email")}
               style={{ width: "60vw" }}
               className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
             />
           </Form.Item>
-          <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-            <Link to="/setpassword">
-              <Button className="btn" type="primary" htmlType="submit">
-                Reset
-              </Button>
-            </Link>
+          <Form.Item
+            wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
+            className="mt-12"
+          >
+            <Button className="btn" type="primary" htmlType="submit">
+              Reset
+            </Button>
           </Form.Item>
 
           <Link to="/signup">
-            <Acc>Create Account</Acc>
+            <Acc className="mr-14">Create Account</Acc>
           </Link>
         </Form>
       </Container>

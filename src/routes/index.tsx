@@ -1,6 +1,8 @@
 // ----------- import external dependencies -------------
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
+import ChangePassword from "../views/companySettings/ChangePassword";
+import EditProfile from "../views/companySettings/EditProfile";
 
 // ---------- import internal dependencies ----------
 const Home = lazy(() => import("../views/homepage"));
@@ -98,7 +100,28 @@ export const router = createBrowserRouter([
       },
       {
         path: "settings",
-        element: <Settings />,
+        children: [
+          {
+            path: "",
+            index: true,
+            element: <Settings />,
+          },
+          {
+            path: "edit",
+            children: [
+              {
+                path: "",
+                index: true,
+                element: <EditProfile />,
+              },
+              {
+                path: "password",
+                index: true,
+                element: <ChangePassword />,
+              },
+            ],
+          },
+        ],
       },
     ],
   },

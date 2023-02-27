@@ -1,6 +1,7 @@
 import LayoutHeading from "../../components/LayoutHeading";
 import changeProfileImage from "../../assets/changeProfileImage.png";
 import Tabulate from "./components/Tabulate";
+import { NavLink } from "react-router-dom";
 
 const Settings = () => {
   // Some dummy user data
@@ -50,9 +51,12 @@ const Settings = () => {
           </div>
           <div className="py-8 bg-[white]"></div>
         </Tabulate>
-        <button className="btn btn-blue w-[80%] mt-8 font-montserrat">
+        <NavLink
+          to="/company/settings/edit"
+          className="w-[80%] btn btn-blue text-center mt-8 cursor-pointer"
+        >
           Edit Profile Settings
-        </button>
+        </NavLink>
       </div>
     </>
   );

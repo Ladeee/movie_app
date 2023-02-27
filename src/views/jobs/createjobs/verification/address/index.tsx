@@ -289,7 +289,7 @@ export default function AddressVerification({
                 // {...register("date")}
                 style={{ width: "28vw" }}
                 placeholder="Date"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+                className="h-14 bg-[#F8FAFC] border-[#CBD5E1] cursor-pointer"
               />
             </Form.Item>
           </Col>
@@ -304,7 +304,7 @@ export default function AddressVerification({
             Add Guarantor
           </Button>
           <Submit className="btn bg-[var(--blue100)] text-[var(--white100)] cursor-pointer">
-            Submit and Pay
+            SUBMIT AND PAY
           </Submit>
         </VerificationButtons>
       </Form>

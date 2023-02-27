@@ -93,7 +93,7 @@ export default function CompanyDetails({
         >
           <Select
             {...register("industry")}
-            defaultValue="Industry"
+            placeholder="Industry"
             style={{ width: "60vw" }}
             onChange={handleChange}
             options={[

@@ -282,7 +282,7 @@ export default function GuarantorVerification() {
                 // {...register("date")}
                 style={{ width: "28vw" }}
                 placeholder="Date"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+                className="h-14 bg-[#F8FAFC] border-[#CBD5E1] cursor-pointer"
               />
             </Form.Item>
           </Col>

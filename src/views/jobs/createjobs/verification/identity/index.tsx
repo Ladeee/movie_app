@@ -2,8 +2,7 @@ import {
   IdentityContainer,
   VerificationButtons,
 } from "../verifications.styled";
-import { Button, DatePickerProps } from "antd";
-import { Col, Row, Form, Input, Select, DatePicker } from "antd";
+import { Col, Row, Form, Input, Button, Select } from "antd";
 import { Rule } from "antd/lib/form";
 import { useForm } from "react-hook-form";
 
@@ -35,12 +34,8 @@ const phoneNumberRules: Rule[] = [
   { required: true, message: "Please enter your phone number" },
 ];
 
-const stateRules: Rule[] = [
-  { required: true, message: "Select your your state" },
-];
-const lgaRules: Rule[] = [{ required: true, message: "Please enter your lga" }];
-const dateRules: Rule[] = [
-  { required: true, message: "Please choose the due date" },
+const genderRules: Rule[] = [
+  { required: true, message: "Please choose your gender" },
 ];
 
 export default function IdentityVerification() {
@@ -56,10 +51,6 @@ export default function IdentityVerification() {
   };
 
   const onSubmit = (data: FormValues) => {};
-
-  const onChange: DatePickerProps["onChange"] = (date, dateString) => {
-    console.log(date, dateString);
-  };
 
   return (
     <IdentityContainer>
@@ -140,76 +131,31 @@ export default function IdentityVerification() {
         <Row className="row flex gap-80">
           <Col xs={{ span: 5 }} lg={{ span: 6 }}>
             <Form.Item
-              label="Address"
+              name="idtype"
+              label="ID Type"
               labelCol={{ span: 24 }}
-              name="address"
-              // rules={nameRules}
-            >
-              <Input
-                // {...register("address")}
-                style={{ width: "28vw" }}
-                placeholder="Will street"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
-              />
-            </Form.Item>
-          </Col>
-          <Col xs={{ span: 5 }} lg={{ span: 6 }}>
-            <Form.Item
-              name="state"
-              label="State"
-              labelCol={{ span: 24 }}
-              rules={stateRules}
+              // rules={stateRules}
             >
               <Select
-                {...register("state")}
-                defaultValue="Lagos"
+                // {...register("id")}
                 style={{ width: "28vw" }}
                 onChange={handleChange}
-                options={[
-                  { value: "Lagos", label: "Lagos" },
-                  { value: "Ondo", label: "Ondo" },
-                  { value: "Abuja", label: "Abuja" },
-                  { value: "Oyo", label: "Oyo", disabled: true },
-                ]}
+                options={[{}]}
               />
             </Form.Item>
           </Col>
-        </Row>
-
-        <Row className="row flex gap-80">
           <Col xs={{ span: 5 }} lg={{ span: 6 }}>
             <Form.Item
-              name="lga"
-              label="L.G.A"
+              name="idnumber"
+              label="ID Number"
               labelCol={{ span: 24 }}
-              rules={lgaRules}
+              // rules={stateRules}
             >
               <Select
-                {...register("lga")}
-                defaultValue="Ikeja"
+                // {...register("state")}
                 style={{ width: "28vw" }}
                 onChange={handleChange}
-                options={[
-                  { value: "Ikeja", label: "Ikeja" },
-                  { value: "Ilaje", label: "Ilaje" },
-                  { value: "Ikorodu", label: "Ikorodu" },
-                  { value: "Mushin", label: "Mushin", disabled: true },
-                ]}
-              />
-            </Form.Item>
-          </Col>
-          <Col xs={{ span: 5 }} lg={{ span: 6 }}>
-            <Form.Item
-              label="Closest Landmark"
-              labelCol={{ span: 24 }}
-              name="landmark"
-              // rules={landmarkRules}
-            >
-              <Input
-                // {...register("landmark")}
-                style={{ width: "28vw" }}
-                placeholder="Daniel street"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+                options={[{}]}
               />
             </Form.Item>
           </Col>
@@ -230,17 +176,20 @@ export default function IdentityVerification() {
           </Col>
           <Col xs={{ span: 5 }} lg={{ span: 6 }}>
             <Form.Item
-              label="Verification Due Date"
+              label="Gender"
               labelCol={{ span: 24 }}
-              name="date"
-              rules={dateRules}
+              name="gender"
+              rules={genderRules}
             >
-              <DatePicker
-                onChange={onChange}
-                // {...register("date")}
+              <Select
+                // {...register("gender")}
+                placeholder="Gender"
                 style={{ width: "28vw" }}
-                placeholder="Date"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+                onChange={handleChange}
+                options={[
+                  { value: "Male", label: "Male" },
+                  { value: "Female", label: "Female" },
+                ]}
               />
             </Form.Item>
           </Col>
@@ -248,7 +197,7 @@ export default function IdentityVerification() {
 
         <VerificationButtons className="row flex flex-col">
           <Button className="btn bg-[var(--blue100)] text-[var(--white100)] cursor-pointer">
-            Submit and Pay
+            SUBMIT AND PAY
           </Button>
         </VerificationButtons>
       </Form>

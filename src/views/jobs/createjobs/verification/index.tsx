@@ -114,6 +114,7 @@ export const VerificationNavContainer = styled.div`
   margin-top: 2.313rem;
 
   hr {
+    background-color: #979797;
     width: 5.5rem;
     height: 0.0625rem;
     border: 1px solid #979797;

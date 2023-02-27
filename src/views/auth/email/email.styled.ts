@@ -14,7 +14,7 @@ export const EmailContainer = styled.article`
 `;
 
 export const ConfirmEmail = styled.header`
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #090914;
   white-space: nowrap;
   font-weight: 600;

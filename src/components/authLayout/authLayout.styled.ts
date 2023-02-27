@@ -163,7 +163,7 @@ export const Forms = styled.section`
 // signup navbar
 
 export const AuthNavbarContainer = styled.ul`
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: flex;
   list-style-type: none;
   gap: 2.5rem;

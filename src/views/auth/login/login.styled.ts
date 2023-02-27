@@ -34,7 +34,7 @@ export const Container = styled.div`
 `;
 
 export const Heading = styled.h1`
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #090914;
   font-weight: 600;
   font-size: 1.6rem;

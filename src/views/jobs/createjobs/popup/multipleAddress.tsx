@@ -1,10 +1,14 @@
 import React from "react";
+// Importing external dependencies
+
+import { IoIosArrowForward } from "react-icons/io";
+
+// Importing internal dependencies
 import {
   FileBox,
   FileWrapper,
   MultipleAddressContainer,
   UploadImage,
-  // Templates,
 } from "./popup.styled";
 import {
   Header,
@@ -12,7 +16,6 @@ import {
   RightHeader,
 } from "../verification/verifications.styled";
 
-import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Download from "../../../../assets/images/verification/download.png";
 import Upload from "../../../../assets/images/verification/upload.png";
@@ -32,6 +35,7 @@ export default function MultipleAddress() {
 
   return (
     <MultipleAddressContainer>
+      {/* Header section */}
       <Header>
         <LeftHeader>
           <p className="font-semibold font-montserrat" id="job-text">

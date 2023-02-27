@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+// Importing external dependencies
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+
+// Importing internal dependencies
+
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Dropdown,

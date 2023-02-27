@@ -12,6 +12,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 62vw;
   }
 
   #form {
@@ -41,7 +42,11 @@ export const Heading = styled.h1`
   line-height: 2.75rem;
   margin-top: 9.313rem;
 
+<<<<<<< HEAD
   @media (max-width: ${sizes.tablet}) {
+=======
+  @media (max-width: 768px) {
+>>>>>>> 8da1382ee74407a93d75880f8405f506f0e3d526
     font-size: 1.425rem;
     text-align: center;
     margin-top: 3.3125rem;
@@ -72,11 +77,20 @@ export const FormContainer = styled.form`
     border-radius: 0.75rem;
     padding-left: 2.375rem;
 
+<<<<<<< HEAD
     @media (max-width: ${sizes.tabletL}) {
       width: 90%;
     }
 
     @media (max-width: ${sizes.tablet}) {
+=======
+    @media (max-width: 1024px) {
+      /* width: 22.875rem; */
+      width: 90%;
+    }
+
+    @media (max-width: 768px) {
+>>>>>>> 8da1382ee74407a93d75880f8405f506f0e3d526
       width: 100%;
       padding-left: 0.375rem;
     }
@@ -96,11 +110,19 @@ export const RememberPassword = styled.section`
   margin-top: 1.25rem;
   width: 70%;
 
+<<<<<<< HEAD
   @media (max-width: ${sizes.tabletL}) {
     margin-right: 10%;
   }
 
   @media (max-width: ${sizes.tablet}) {
+=======
+  @media (max-width: 1024px) {
+    margin-right: 10%;
+  }
+
+  @media (max-width: 768px) {
+>>>>>>> 8da1382ee74407a93d75880f8405f506f0e3d526
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -146,7 +168,11 @@ export const Account = styled.p`
   margin-top: 2.5rem;
   margin-bottom: 0.4375rem;
 
+<<<<<<< HEAD
   @media (min-width: 768px) and (max-width: ${sizes.tabletL}) {
+=======
+  @media (min-width: 768px) and (max-width: 1024px) {
+>>>>>>> 8da1382ee74407a93d75880f8405f506f0e3d526
     text-align: unset;
   }
 `;
@@ -159,7 +185,11 @@ export const Acc = styled.p`
   text-align: right;
   margin-top: 8rem;
 
+<<<<<<< HEAD
   @media (min-width: 768px) and (max-width: ${sizes.tabletL}) {
+=======
+  @media (min-width: 768px) and (max-width: 1024px) {
+>>>>>>> 8da1382ee74407a93d75880f8405f506f0e3d526
     text-align: unset;
   }
 `;

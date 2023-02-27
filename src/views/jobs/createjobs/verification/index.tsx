@@ -147,7 +147,7 @@ export const VerificationNavContainer = styled.div`
   }
 
   @media (max-width: ${sizes.tablet}) {
-    width: 90%;
+    width: 80%;
     gap: 0;
     justify-content: space-between;
   }

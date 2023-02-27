@@ -125,7 +125,7 @@ export const VerificationButtons = styled.div`
     border: 1px solid var(--blue100);
 
     @media (max-width: ${sizes.tablet}) {
-      width: 60%;
+      width: 50%;
     }
   }
 `;
@@ -137,7 +137,7 @@ export const Submit = styled.button`
   margin-top: 1.625rem;
 
   @media (max-width: ${sizes.tablet}) {
-    width: 60%;
+    width: 50%;
   }
 `;
 

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { sizes } from "../../../../utils/screenSizes";
-import { VerificationTopButtons } from "../verification/button";
 
 export const PopContainer = styled.div`
   display: flex;
@@ -27,11 +26,6 @@ export const PopWrapper = styled.div`
     position: relative;
     width: 92%;
   }
-`;
-
-export const CreateBtn = styled(VerificationTopButtons)`
-  background-color: #333382;
-  border: 1px solid #333382;
 `;
 
 export const PopBox = styled.section`
@@ -124,6 +118,10 @@ export const MultipleAddressContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
+  /* button{
+    min-width: 10px !important;
+  } */
+
   @media (max-width: ${sizes.tabletL}) {
     width: 80%;
     margin: auto;
@@ -188,6 +186,16 @@ export const FileBox = styled.div`
 
   #filebtn {
     margin-top: 3.5rem;
+
+    @media (max-width: ${sizes.tabletL}) {
+      margin-top: 2.5rem;
+    }
+  }
+
+  #download {
+    @media (max-width: ${sizes.tabletL}) {
+      margin-top: 1.25rem !important;
+    }
   }
 
   #img {
@@ -199,11 +207,6 @@ export const FileBox = styled.div`
   @media (max-width: ${sizes.tablet}) {
     gap: 4rem;
   }
-`;
-
-export const FileButton = styled(VerificationTopButtons)`
-  background-color: #333382;
-  margin-top: 2.3125rem;
 `;
 
 export const UploadImage = styled.div`

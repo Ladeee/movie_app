@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import {
-  Continue,
-  CreateBtn,
   Header,
   LeftHeader,
   RightHeader,
@@ -48,7 +46,7 @@ export default function Verifications() {
     setVerificationPage((currentValue: number) => currentValue + 1);
     setIsActive(name);
     if (verificationPage === VerificationTitles.length - 1) {
-      return VerificationTitles;
+      setVerificationPage(0);
     }
   };
 
@@ -66,11 +64,13 @@ export default function Verifications() {
           </p>
         </LeftHeader>
         <RightHeader>
-          <Continue className="text-sm font-semibold font-inter">
+          <button className="btn text-sm font-semibold font-inter bg-[var(--blue100)] text-[var(--white100)]">
             Continue
-          </Continue>
+          </button>
           <Link to="popup">
-            <CreateBtn>Create Job</CreateBtn>
+            <button className="btn bg-[var(--blue100)] text-[var(--white100)]">
+              Create Job
+            </button>
           </Link>
         </RightHeader>
       </Header>
@@ -78,19 +78,23 @@ export default function Verifications() {
       <PageDisplay>
         <VerificationNavContainer>
           {buttons.map((name: string) => (
-            <button
-              name={name}
-              style={{
-                backgroundColor: isActive === name ? "#333382" : "#FFFFFF",
-                color: isActive === name ? "#FFFFFF" : "#333382",
-              }}
-              onClick={() => clickedButtonHandler(name)}
-            >
-              <p>{name}</p>
-              <Image>
-                {isActive === name ? <img src={Checkmark} alt="" /> : null}
-              </Image>
-            </button>
+            <>
+              <button
+                name={name}
+                style={{
+                  backgroundColor:
+                    isActive === name ? "var(--blue100)" : "#FFFFFF",
+                  color: isActive === name ? "#FFFFFF" : "var(--blue100)",
+                }}
+                onClick={() => clickedButtonHandler(name)}
+              >
+                <p>{name}</p>
+                <Image>
+                  {isActive === name ? <img src={Checkmark} alt="" /> : null}
+                </Image>
+              </button>
+              <hr />
+            </>
           ))}
         </VerificationNavContainer>
 
@@ -103,10 +107,22 @@ export default function Verifications() {
 // verification navbar styles
 
 export const VerificationNavContainer = styled.div`
+  font-family: "Montserrat", sans-serif;
   display: flex;
   align-items: center;
-  gap: 5.1875rem;
+  /* gap: 5.1875rem; */
   margin-top: 2.313rem;
+
+  hr {
+    width: 5.5rem;
+    height: 0.0625rem;
+    border: 1px solid #979797;
+    margin: 0;
+
+    &:last-child {
+      display: none;
+    }
+  }
 
   button {
     cursor: pointer;

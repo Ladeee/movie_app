@@ -1,15 +1,12 @@
 import React from "react";
 import {
   FileBox,
-  FileButton,
   FileWrapper,
   MultipleAddressContainer,
   UploadImage,
   // Templates,
 } from "./popup.styled";
 import {
-  Continue,
-  CreateBtn,
   Header,
   LeftHeader,
   RightHeader,
@@ -44,11 +41,13 @@ export default function MultipleAddress() {
           <p className="font-semibold font-montserrat">Address Verification</p>
         </LeftHeader>
         <RightHeader>
-          <Continue className="text-sm font-semibold font-inter bg-[#333382]">
+          <button className="btn text-sm font-semibold font-inter bg-[var(--blue100)] text-[var(--white100)]">
             Continue
-          </Continue>
-          <Link to="popup">
-            <CreateBtn className="bg-[#333382]">Create Job</CreateBtn>
+          </button>
+          <Link to="/company/jobs/popup">
+            <button className="btn bg-[var(--blue100)] text-[var(--white100)] cursor-pointer">
+              Create Job
+            </button>
           </Link>
         </RightHeader>
       </Header>
@@ -62,13 +61,15 @@ export default function MultipleAddress() {
               document
             </p>
             <img src={Download} alt="download file" id="img" />
-            <FileButton
+            <button
+              className="btn bg-[var(--blue100)] text-[var(--white100)] mt-8 min-w-0 w-2/3"
               onClick={() => {
                 download(XLSX_FILE);
               }}
+              id="download"
             >
               Download
-            </FileButton>
+            </button>
           </div>
 
           <UploadImage>
@@ -77,7 +78,12 @@ export default function MultipleAddress() {
               Upload your <br /> document file
             </p>
             <img src={Upload} alt="upload file" id="img" />
-            <FileButton id="filebtn">Download</FileButton>
+            <button
+              className="btn bg-[var(--blue100)] text-[var(--white100)] min-w-0 w-2/3"
+              id="filebtn"
+            >
+              Download
+            </button>
           </UploadImage>
         </FileBox>
       </FileWrapper>

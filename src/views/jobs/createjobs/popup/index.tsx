@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import {
-  CreateBtn,
   Dropdown,
   JobType,
   PopBox,
@@ -31,7 +30,9 @@ export default function JobPopup() {
     <PopContainer>
       <PopWrapper>
         <div className="flex justify-end mr-9 mt-5 mb-5">
-          <CreateBtn>Create Job</CreateBtn>
+          <button className="btn bg-[var(--blue100)] text-[var(--white100)] cursor-pointer">
+            Create Job
+          </button>
         </div>
         <hr id="headerline" />
 
@@ -42,7 +43,7 @@ export default function JobPopup() {
               <hr id="boxline" />
               <Select>
                 <Dropdown>
-                  <p>Address Verification</p>
+                  <p onClick={click}>Address Verification</p>
                   <i onClick={click}>
                     <MdOutlineKeyboardArrowRight id="rightArrow" />
                   </i>
@@ -71,7 +72,7 @@ export default function JobPopup() {
               <hr id="boxline" />
               <Select>
                 <Dropdown>
-                  <p>Create Multiple Jobs Using Excel/CSV</p>
+                  <p onClick={csv}>Create Multiple Jobs Using Excel/CSV</p>
                   <i onClick={csv}>
                     <MdOutlineKeyboardArrowRight id="rightArrow" />
                   </i>

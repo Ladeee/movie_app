@@ -22,7 +22,7 @@ import { Line, Doughnut } from "react-chartjs-2";
 import Pill from "../../components/Pills";
 import LayoutHeading from "../../components/LayoutHeading";
 import { jobsSummary, jobStat } from "../../utils/chartData";
-import { ReactComponent as Filter } from "../../assets/svg/filter.svg";
+import Filter from "../../components/Filter";
 
 // ------- initialize chartjs -------
 ChartJS.register(
@@ -170,9 +170,7 @@ function CompanyDashbaord() {
                 Lorem ipsum dolor sit amet, consectetur adipis.
               </p>
             </article>
-            <button className="btn btn-tran font-jakarta text-sm font-semibold justify-between flex items-center">
-              Filter <Filter />
-            </button>
+            <Filter />
           </div>
 
           {/* ------ Transaction list ------ */}

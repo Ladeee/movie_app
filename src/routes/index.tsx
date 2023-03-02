@@ -3,9 +3,9 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import ChangePassword from "../views/companySettings/ChangePassword";
 import EditProfile from "../views/companySettings/EditProfile";
-
+// import Users from "../views/management/users";
 // ---------- import internal dependencies ----------
-// const Home = lazy(() => import("../views/homepage"));
+const Home = lazy(() => import("../views/homepage"));
 const GetStarted = lazy(() => import("../views/auth/signup"));
 const Confirm = lazy(() => import("../views/auth/email/confirm"));
 const Successful = lazy(() => import("../views/auth/email/successful"));
@@ -35,43 +35,40 @@ const IdentityVerification = lazy(
 const IdentityVerificationDetails = lazy(
   () => import("../views/jobs/identityVerificationDetails")
 );
-
 const MultipleAddress = lazy(
   () => import("../views/jobs/createjobs/popup/multipleAddress")
 );
-
 const JobPopup = lazy(() => import("../views/jobs/createjobs/popup"));
-export const router = createBrowserRouter([
-  // {
-  //   path: "/",
-  //   element: <Home />,
-  // },
+const Users = lazy(() => import("../views/management/users"));
+const SubUser = lazy(() => import("../views/management/subuser"));
+const SubDetail = lazy(() => import("../views/management/subdetail"));
+const Permissions = lazy(() => import("../views/management/permission"));
 
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
   {
     path: "/signup",
     element: <GetStarted />,
   },
-
   {
     path: "/confirmemail",
     element: <Confirm />,
   },
-
   {
     path: "/login",
     element: <Login />,
   },
-
   {
     path: "/recoverpassword",
     element: <RecoverPassword />,
   },
-
   {
     path: "/setpassword",
     element: <SetPassword />,
   },
-
   {
     path: "/emailsuccessful",
     element: <Successful />,
@@ -143,10 +140,23 @@ export const router = createBrowserRouter([
         path: "verifications",
         element: <Verifications />,
       },
+
+      // user management path
       {
-        path: "popup",
-        index: true,
-        element: <JobPopup />,
+        path: "users",
+        element: <Users />,
+      },
+      {
+        path: "users/subuser",
+        element: <SubUser />,
+      },
+      {
+        path: "users/permissions",
+        element: <Permissions />,
+      },
+      {
+        path: "users/subdetail",
+        element: <SubDetail />,
       },
     ],
   },

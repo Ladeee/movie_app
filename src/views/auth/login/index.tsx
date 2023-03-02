@@ -62,7 +62,7 @@ export default function Login() {
             <Input
               {...register("email")}
               style={{ width: "60vw" }}
-              className="h-14 bg-[#F8FAFC] border-[#CBD5E1] "
+              className="h-14 bg-[var(--slate50))] border-[var(--slate300)] "
             />
           </Form.Item>
           <Form.Item
@@ -75,7 +75,7 @@ export default function Login() {
             <Input.Password
               {...register("password")}
               style={{ width: "60vw" }}
-              className="h-14 bg-[#F8FAFC] border-[#CBD5E1] "
+              className="h-14 bg-[var(--slate50))] border-[var(--slate300)] "
             />
           </Form.Item>
           <RememberPassword>

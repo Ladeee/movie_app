@@ -32,6 +32,7 @@
   /* -------- red color config ------- */
   --red100: #cf1010;
   --red500: #ef4444;
+  --red600: #dc2626;
 
   /* ------ green color confi ------- */
   --green100: #dcfce7;
@@ -60,4 +61,11 @@
   --brown100: #db6f08;
 
   --black100: #121212;
+
+  /* ------- slate color config ------ */
+  --slate50: #f8fafc;
+  --slate300: #cbd5e1;
+
+  /* ------- zinc color config ------ */
+  --zinc600: #52525b;
 }

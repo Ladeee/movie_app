@@ -32,8 +32,10 @@ export default function Verifications() {
       return <AddressVerification nextPage={nextPage} />;
     } else if (verificationPage === 1 || isActive === "Guarantor") {
       return <GuarantorVerification />;
-    } else {
+    } else if (verificationPage === 2 || isActive === "Identity") {
       return <IdentityVerification />;
+    } else {
+      return null;
     }
   };
 
@@ -42,12 +44,9 @@ export default function Verifications() {
     setIsActive("Guarantor");
   };
 
-  const clickedButtonHandler = (name: any) => {
-    setVerificationPage((currentValue: number) => currentValue + 1);
+  const clickedButtonHandler = (index: number, name: string) => {
     setIsActive(name);
-    if (verificationPage === VerificationTitles.length - 1) {
-      setVerificationPage(0);
-    }
+    setVerificationPage(index);
   };
 
   return (
@@ -77,16 +76,18 @@ export default function Verifications() {
 
       <PageDisplay>
         <VerificationNavContainer>
-          {buttons.map((name: string) => (
+          {buttons.map((name, index) => (
             <>
               <button
-                name={name}
+                // name={name}
                 style={{
                   backgroundColor:
-                    isActive === name ? "var(--blue100)" : "#FFFFFF",
-                  color: isActive === name ? "#FFFFFF" : "var(--blue100)",
+                    isActive === name ? "var(--blue100)" : "var(--white50)",
+                  color:
+                    isActive === name ? "var(--white50)" : "var(--blue100)",
                 }}
-                onClick={() => clickedButtonHandler(name)}
+                key={name}
+                onClick={() => clickedButtonHandler(index, name)}
               >
                 <p>{name}</p>
                 <Image>
@@ -110,14 +111,12 @@ export const VerificationNavContainer = styled.div`
   font-family: "Montserrat", sans-serif;
   display: flex;
   align-items: center;
-  /* gap: 5.1875rem; */
   margin-top: 2.313rem;
 
   hr {
     background-color: #979797;
     width: 5.5rem;
     height: 0.0625rem;
-    border: 1px solid #979797;
     margin: 0;
 
     &:last-child {
@@ -132,7 +131,7 @@ export const VerificationNavContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: 0.25rem;
-    border: 1px solid #333382;
+    border: 1px solid var(--blue100);
     width: 9.125rem;
     height: 2.3125rem;
     font-weight: 600;
@@ -147,7 +146,7 @@ export const VerificationNavContainer = styled.div`
   }
 
   @media (max-width: ${sizes.tablet}) {
-    width: 80%;
+    width: 90%;
     gap: 0;
     justify-content: space-between;
   }

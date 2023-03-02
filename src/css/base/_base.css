@@ -11,10 +11,6 @@ a:hover {
   text-decoration: none;
 }
 
-.ant-col-offset-8 {
-  margin-inline-start: unset !important;
-}
-
 /* .select__menu {
   z-index: 1000;
 } */

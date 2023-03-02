@@ -111,9 +111,8 @@ export default function GuarantorVerification() {
         {...layout}
         name="nest-messages"
         onFinish={handleSubmit(onSubmit)}
-        style={{ maxWidth: 600 }}
       >
-        <Row className="row flex gap-80">
+        <Row className="row flex gap-64">
           <Col xs={{ span: 5 }} lg={{ span: 6 }}>
             <Form.Item
               label="First Name"
@@ -125,7 +124,7 @@ export default function GuarantorVerification() {
                 {...register("firstName")}
                 style={{ width: "28vw" }}
                 placeholder="John"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+                className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
               />
             </Form.Item>
           </Col>
@@ -140,13 +139,13 @@ export default function GuarantorVerification() {
                 {...register("lastName")}
                 style={{ width: "28vw" }}
                 placeholder="Doe"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+                className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
               />
             </Form.Item>
           </Col>
         </Row>
 
-        <Row className="row flex gap-80">
+        <Row className="row flex gap-64">
           <Col xs={{ span: 5 }} lg={{ span: 6 }}>
             <Form.Item
               label="Email"
@@ -158,7 +157,7 @@ export default function GuarantorVerification() {
                 {...register("email")}
                 style={{ width: "28vw" }}
                 placeholder="John@gmai.com"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+                className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
               />
             </Form.Item>
           </Col>
@@ -173,13 +172,13 @@ export default function GuarantorVerification() {
                 {...register("phoneNumber")}
                 style={{ width: "28vw" }}
                 placeholder="+234"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+                className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
               />
             </Form.Item>
           </Col>
         </Row>
 
-        <Row className="row flex gap-80">
+        <Row className="row flex gap-64">
           <Col xs={{ span: 5 }} lg={{ span: 6 }}>
             <Form.Item
               label="Address"
@@ -191,7 +190,7 @@ export default function GuarantorVerification() {
                 // {...register("address")}
                 style={{ width: "28vw" }}
                 placeholder="Will street"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+                className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
               />
             </Form.Item>
           </Col>
@@ -218,7 +217,7 @@ export default function GuarantorVerification() {
           </Col>
         </Row>
 
-        <Row className="row flex gap-80">
+        <Row className="row flex gap-64">
           <Col xs={{ span: 5 }} lg={{ span: 6 }}>
             <Form.Item
               name="lga"
@@ -251,13 +250,13 @@ export default function GuarantorVerification() {
                 // {...register("landmark")}
                 style={{ width: "28vw" }}
                 placeholder="Daniel street"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+                className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
               />
             </Form.Item>
           </Col>
         </Row>
 
-        <Row className="row flex gap-80" id="reverse">
+        <Row className="row flex gap-64" id="reverse">
           <Col xs={{ span: 5 }} lg={{ span: 6 }}>
             <Form.Item
               name="info"
@@ -266,7 +265,7 @@ export default function GuarantorVerification() {
             >
               <TextArea
                 style={{ width: "28vw", resize: "none" }}
-                className="h-28 bg-[#F8FAFC] border-[#CBD5E1]"
+                className="h-28 bg-[var(--slate50)] border-[var(--slate300)]"
               />
             </Form.Item>
           </Col>
@@ -282,7 +281,7 @@ export default function GuarantorVerification() {
                 // {...register("date")}
                 style={{ width: "28vw" }}
                 placeholder="Date"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1] cursor-pointer"
+                className="h-14 bg-[var(--slate50)] border-[] cursor-pointer"
               />
             </Form.Item>
           </Col>

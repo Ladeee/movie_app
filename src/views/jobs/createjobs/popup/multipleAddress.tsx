@@ -38,9 +38,11 @@ export default function MultipleAddress() {
       {/* Header section */}
       <Header>
         <LeftHeader>
-          <p className="font-semibold font-montserrat" id="job-text">
-            Create Job
-          </p>
+          <Link to="popup">
+            <p className="font-semibold font-montserrat" id="job-text">
+              Create Job
+            </p>
+          </Link>
           <IoIosArrowForward id="job-text" />
           <p className="font-semibold font-montserrat">Address Verification</p>
         </LeftHeader>
@@ -66,7 +68,7 @@ export default function MultipleAddress() {
             </p>
             <img src={Download} alt="download file" id="img" />
             <button
-              className="btn bg-[var(--blue100)] text-[var(--white100)] mt-8 min-w-0 w-2/3"
+              className="btn bg-[var(--blue100)] text-[var(--white100)] mt-8 min-w-0 w-2/3 cursor-pointer"
               onClick={() => {
                 download(XLSX_FILE);
               }}
@@ -83,7 +85,7 @@ export default function MultipleAddress() {
             </p>
             <img src={Upload} alt="upload file" id="img" />
             <button
-              className="btn bg-[var(--blue100)] text-[var(--white100)] min-w-0 w-2/3"
+              className="btn bg-[var(--blue100)] text-[var(--white100)] min-w-0 w-2/3 cursor-pointer"
               id="filebtn"
             >
               Download

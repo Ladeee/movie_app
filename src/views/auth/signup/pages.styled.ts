@@ -19,8 +19,8 @@ export const SignupContainer = styled.div`
       display: flex;
       align-items: center;
       height: 3.75rem;
-      background-color: #f8fafc;
-      border: 1px solid #cbd5e1;
+      background-color: var(--slate50);
+      border: 1px solid var(--slate300);
     }
 
     .ant-btn-primary {
@@ -96,9 +96,9 @@ export const BoxWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  background-color: #f8fafc;
+  background-color: var(--slate50);
   color: #828282;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--slate300);
   border-radius: 12px;
   width: 32.875rem;
   height: 3.75rem;

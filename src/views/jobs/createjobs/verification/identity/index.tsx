@@ -60,9 +60,8 @@ export default function IdentityVerification() {
         {...layout}
         name="nest-messages"
         onFinish={handleSubmit(onSubmit)}
-        style={{ maxWidth: 600 }}
       >
-        <Row className="row flex gap-80">
+        <Row className="row flex gap-64">
           <Col xs={{ span: 5 }} lg={{ span: 6 }}>
             <Form.Item
               label="First Name"
@@ -74,7 +73,7 @@ export default function IdentityVerification() {
                 {...register("firstName")}
                 style={{ width: "28vw" }}
                 placeholder="John"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+                className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
               />
             </Form.Item>
           </Col>
@@ -89,13 +88,13 @@ export default function IdentityVerification() {
                 {...register("lastName")}
                 style={{ width: "28vw" }}
                 placeholder="Doe"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+                className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
               />
             </Form.Item>
           </Col>
         </Row>
 
-        <Row className="row flex gap-80">
+        <Row className="row flex gap-64">
           <Col xs={{ span: 5 }} lg={{ span: 6 }}>
             <Form.Item
               label="Email"
@@ -107,7 +106,7 @@ export default function IdentityVerification() {
                 {...register("email")}
                 style={{ width: "28vw" }}
                 placeholder="John@gmai.com"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+                className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
               />
             </Form.Item>
           </Col>
@@ -122,13 +121,13 @@ export default function IdentityVerification() {
                 {...register("phoneNumber")}
                 style={{ width: "28vw" }}
                 placeholder="+234"
-                className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+                className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
               />
             </Form.Item>
           </Col>
         </Row>
 
-        <Row className="row flex gap-80">
+        <Row className="row flex gap-64">
           <Col xs={{ span: 5 }} lg={{ span: 6 }}>
             <Form.Item
               name="idtype"
@@ -140,7 +139,10 @@ export default function IdentityVerification() {
                 // {...register("id")}
                 style={{ width: "28vw" }}
                 onChange={handleChange}
-                options={[{}]}
+                options={[
+                  { value: "NIN", label: "NIN" },
+                  { value: "Passport", label: "Passport" },
+                ]}
               />
             </Form.Item>
           </Col>
@@ -161,7 +163,7 @@ export default function IdentityVerification() {
           </Col>
         </Row>
 
-        <Row className="row flex gap-80" id="reverse">
+        <Row className="row flex gap-64" id="reverse">
           <Col xs={{ span: 5 }} lg={{ span: 6 }}>
             <Form.Item
               name="info"
@@ -170,7 +172,7 @@ export default function IdentityVerification() {
             >
               <TextArea
                 style={{ width: "28vw", resize: "none" }}
-                className="h-28 bg-[#F8FAFC] border-[#CBD5E1]"
+                className="h-28 bg-[var(--slate50)] border-[var(--slate300)]"
               />
             </Form.Item>
           </Col>

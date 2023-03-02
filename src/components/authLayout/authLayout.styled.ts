@@ -134,7 +134,7 @@ export const Clarity = styled.p`
   font-size: 1.125rem;
   line-height: 1.875rem;
   margin-top: 0.5625rem;
-  color: #cbd5e1;
+  color: var(--slate300);
 
   @media (max-width: ${sizes.tabletL}) {
     font-size: 0.825rem;
@@ -203,7 +203,7 @@ export const Company = styled.li`
   }
 
   @media (max-width: ${sizes.tablet}) {
-    color: #000000;
+    color: black;
     font-size: 0.875rem;
   }
 `;

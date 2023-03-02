@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { sizes } from "../../../../utils/screenSizes";
-import { VerificationInput } from "./button";
+import { VerificationInput } from "./input";
 
 // verifications
 export const VerificationContainer = styled.div`
@@ -24,8 +24,8 @@ export const VerificationContainer = styled.div`
       display: flex;
       align-items: center;
       height: 3.75rem;
-      background-color: #f8fafc;
-      border: 1px solid #cbd5e1;
+      background-color: var(--slate50);
+      border: 1px solid var(--slate300);
     }
 
     .ant-select.ant-select-in-form-item,
@@ -66,7 +66,7 @@ export const VerificationContainer = styled.div`
   #reverse {
     @media (max-width: ${sizes.tablet}) {
       display: flex;
-      flex-wrap: wrap-reverse;
+      flex-direction: column-reverse !important;
     }
   }
 `;
@@ -122,10 +122,11 @@ export const VerificationButtons = styled.div`
 
   Button {
     width: 26rem;
+    height: 3rem;
     border: 1px solid var(--blue100);
 
     @media (max-width: ${sizes.tablet}) {
-      width: 50%;
+      width: 60%;
     }
   }
 `;
@@ -134,10 +135,11 @@ export const Submit = styled.button`
   background-color: var(--blue100);
   color: var(--white50);
   width: 26rem;
+  height: 3rem;
   margin-top: 1.625rem;
 
   @media (max-width: ${sizes.tablet}) {
-    width: 50%;
+    width: 60%;
   }
 `;
 
@@ -170,6 +172,7 @@ export const Input = styled(VerificationInput)`
   margin-top: 0.375rem;
   padding-left: 1rem;
   width: 26rem;
+  height: 0.25rem;
 
   @media (max-width: ${sizes.tabletL}) {
     width: 30rem;
@@ -187,7 +190,7 @@ export const Upload = styled.div`
 export const ImageWrapper = styled.div`
   cursor: pointer;
   position: relative;
-  background-color: #f1f1f1;
+  background-color: var(--white300);
   display: flex;
   justify-content: center;
   align-items: center;

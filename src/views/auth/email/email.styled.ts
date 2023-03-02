@@ -32,7 +32,7 @@ export const ConfirmEmail = styled.header`
 
 export const ConfirmText = styled.p`
   font-family: "Poppins", sans-serif;
-  color: #52525b;
+  color: var(--zinc600);
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 1.875rem;
@@ -64,7 +64,7 @@ export const ConfirmButton = styled.button`
 
 export const ConfirmSuccess = styled.p`
   font-family: "Poppins", sans-serif;
-  color: #52525b;
+  color: var(--zinc600);
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 1.875rem;
@@ -81,7 +81,7 @@ export const ConfirmSuccess = styled.p`
 
 export const SignIn = styled.a`
   font-family: "Poppins", sans-serif;
-  color: #52525b;
+  color: var(--zinc600);
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 1.875rem;

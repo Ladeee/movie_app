@@ -50,7 +50,7 @@ export default function RecoverPassword() {
             <Input
               {...register("email")}
               style={{ width: "60vw" }}
-              className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+              className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
             />
           </Form.Item>
           <Form.Item

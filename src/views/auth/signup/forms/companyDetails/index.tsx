@@ -70,7 +70,7 @@ export default function CompanyDetails({
           <Input
             {...register("companyName")}
             style={{ width: "60vw" }}
-            className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+            className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
           />
         </Form.Item>
         <Form.Item
@@ -82,7 +82,7 @@ export default function CompanyDetails({
           <Input
             {...register("regNumber")}
             style={{ width: "60vw" }}
-            className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+            className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
           />
         </Form.Item>
         <Form.Item
@@ -113,7 +113,7 @@ export default function CompanyDetails({
           <Input
             {...register("companyAddress")}
             style={{ width: "60vw" }}
-            className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+            className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
           />
         </Form.Item>
         <Form.Item
@@ -125,7 +125,7 @@ export default function CompanyDetails({
           <Input
             {...register("role")}
             style={{ width: "60vw" }}
-            className="h-14 bg-[#F8FAFC] border-[#CBD5E1]"
+            className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
           />
         </Form.Item>
         <Form.Item

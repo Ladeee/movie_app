@@ -33,18 +33,18 @@ export default function JobPopup() {
   return (
     <PopContainer>
       <PopWrapper>
-        <div className="flex justify-end mr-9 mt-5 mb-5">
-          <button className="btn bg-[var(--blue100)] text-[var(--white100)] cursor-pointer">
+        <div className="flex justify-end mr-9 mt-5 mb-5" id="headerline">
+          <button className="btn bg-[var(--blue100)] text-[var(--white100)] mr-9 cursor-pointer">
             Create Job
           </button>
         </div>
-        <hr id="headerline" />
 
         <PopBox>
           {!open ? (
             <>
-              <JobType>Select Job Type</JobType>
-              <hr id="boxline" />
+              <JobType>
+                <p className="boxline">Select Job Type</p>
+              </JobType>
               <Select>
                 <Dropdown>
                   <p onClick={click}>Address Verification</p>
@@ -52,28 +52,25 @@ export default function JobPopup() {
                     <MdOutlineKeyboardArrowRight id="rightArrow" />
                   </i>
                 </Dropdown>
-                <hr id="textline" />
                 <Dropdown>
                   <p>Business Verification</p>
                 </Dropdown>
-                <hr id="textline" />
                 <Dropdown>
                   <p>Identity Verification</p>
                 </Dropdown>
-                <hr id="textline" />
                 <Dropdown>
                   <p>Business Address Verification</p>
                   <i>
                     <MdOutlineKeyboardArrowRight id="rightArrow" />
                   </i>
                 </Dropdown>
-                <hr id="textline" />
               </Select>
             </>
           ) : (
             <>
-              <JobType>Select an Open to Continue</JobType>
-              <hr id="boxline" />
+              <JobType>
+                <p className="boxline">Select an Open to Continue</p>
+              </JobType>
               <Select>
                 <Dropdown>
                   <p onClick={csv}>Create Multiple Jobs Using Excel/CSV</p>
@@ -81,11 +78,9 @@ export default function JobPopup() {
                     <MdOutlineKeyboardArrowRight id="rightArrow" />
                   </i>
                 </Dropdown>
-                <hr id="textline" />
                 <Dropdown onClick={next}>
                   <p>Create single job using web form</p>
                 </Dropdown>
-                <hr id="textline" />
               </Select>
             </>
           )}

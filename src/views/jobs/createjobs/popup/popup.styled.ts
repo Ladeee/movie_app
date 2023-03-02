@@ -15,6 +15,8 @@ export const PopWrapper = styled.div`
   margin-top: 2%;
 
   #headerline {
+    border-bottom: 1px solid #e4e4e7;
+    padding-bottom: 1.14rem;
     width: 100%;
   }
 
@@ -25,6 +27,7 @@ export const PopWrapper = styled.div`
   @media (max-width: ${sizes.tablet}) {
     position: relative;
     width: 92%;
+    margin-top: 8%;
   }
 `;
 
@@ -33,39 +36,40 @@ export const PopBox = styled.section`
   height: 26rem;
   border: 1px solid #e2e2e2;
   border-radius: 0.5rem;
-  color: #333382;
+  color: var(--blue100);
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 0.9375rem;
   margin-bottom: 6%;
+  margin-left: 3%;
 
   @media (max-width: ${sizes.tablet}) {
     border: none;
     margin-bottom: 0;
-  }
-
-  #boxline {
-    @media (max-width: ${sizes.tablet}) {
-      width: 100%;
-      position: absolute;
-    }
+    margin-left: 0;
+    width: auto;
   }
 `;
 
 export const JobType = styled.p`
-  margin-left: 4.875rem;
   font-weight: 600;
   margin-top: 3.3125rem;
   margin-bottom: 0.625rem;
+  width: 100%;
+  border-bottom: 1px solid #e2e2e2;
 
-  @media (max-width: ${sizes.tablet}) {
-    margin-left: 1.25rem;
+  .boxline {
+    margin-left: 4.875rem;
+    margin-bottom: 1.25rem;
+    @media (max-width: ${sizes.tablet}) {
+      margin-left: 1.25rem;
+    }
   }
 `;
 
 export const Select = styled.div`
-  margin-top: 5.25rem;
+  margin-top: 3rem;
 
   p {
     cursor: pointer;
@@ -74,15 +78,10 @@ export const Select = styled.div`
     @media (max-width: ${sizes.tablet}) {
       margin-left: 1.25rem;
     }
-  }
 
-  #textline {
-    width: 90%;
-    margin-right: inherit;
-    margin-top: 1rem;
-
-    @media (max-width: ${sizes.tablet}) {
-      width: 100%;
+    @media (max-width: ${sizes.mobileM}) {
+      margin-left: 0.7rem;
+      font-size: 0.8rem;
     }
   }
 
@@ -94,15 +93,35 @@ export const Select = styled.div`
 `;
 
 export const Dropdown = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+
+  &::after {
+    content: "";
+    width: 90%;
+    height: 1px;
+    background-color: #e2e2e2;
+    position: absolute;
+    top: 95%;
+    right: 0;
+
+    @media (max-width: ${sizes.tablet}) {
+      width: 98%;
+    }
+  }
 
   #rightArrow {
     cursor: pointer;
     display: inline-block;
-    width: 0.6rem;
-    height: 1.05rem;
+    font-size: 1.825rem;
     margin-right: 1.4375rem;
+
+    @media (max-width: ${sizes.mobileS}) {
+      font-size: 1.25rem;
+    }
   }
 `;
 
@@ -113,7 +132,7 @@ export const SelectionBox = styled.section``;
 // multiple address
 
 export const MultipleAddressContainer = styled.div`
-  color: #333382;
+  color: var(--blue100);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -166,7 +185,7 @@ export const FileBox = styled.div`
   margin: 2rem 0;
   div {
     box-sizing: border-box;
-    background: #f8f8f8;
+    background: var(--white200);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -212,7 +231,7 @@ export const FileBox = styled.div`
 export const UploadImage = styled.div`
   position: relative;
   box-sizing: border-box;
-  background: #f8f8f8;
+  background: var(--white200);
   border: 1px solid #d0d0d0;
   width: 16.3125rem;
   height: 22.625rem;

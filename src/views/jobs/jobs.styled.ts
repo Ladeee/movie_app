@@ -127,7 +127,7 @@ export const RejectJobWrapper = styled.div`
 `;
 
 export const RejectText = styled.p`
-  color: #000000;
+  color: black;
   text-align: center;
   font-weight: 400;
   font-size: 1.25rem;
@@ -162,7 +162,7 @@ export const InputWrapper = styled.div`
 `;
 
 export const Label = styled.p`
-  color: #000000;
+  color: black;
   font-weight: 400;
   font-size: 1rem;
   line-height: 2.75rem;

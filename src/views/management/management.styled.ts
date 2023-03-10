@@ -177,10 +177,6 @@ export const SubuserWrapper = styled.div`
     .btn {
       width: 50vw !important;
       font-size: 0.75rem;
-
-      @media (max-width: ${sizes.mobileM}) {
-        font-size: 0.625rem;
-      }
     }
   }
 

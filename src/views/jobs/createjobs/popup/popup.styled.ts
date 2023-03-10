@@ -81,7 +81,7 @@ export const Select = styled.div`
 
     @media (max-width: ${sizes.mobileM}) {
       margin-left: 0.7rem;
-      font-size: 0.8rem;
+      font-size: 0.875rem;
     }
   }
 
@@ -93,10 +93,11 @@ export const Select = styled.div`
 `;
 
 export const Dropdown = styled.div`
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #e2e2e2;
+  border-width: 90%;
   padding: 1rem 0;
 
   &::after {

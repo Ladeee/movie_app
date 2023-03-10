@@ -43,6 +43,11 @@ const Users = lazy(() => import("../views/management/users"));
 const SubUser = lazy(() => import("../views/management/subuser"));
 const SubDetail = lazy(() => import("../views/management/subdetail"));
 const Permissions = lazy(() => import("../views/management/permission"));
+const Account = lazy(() => import("../views/accountOpening/account"));
+const PaymentStatus = lazy(
+  () => import("../views/accountOpening/paymentStatus")
+);
+const CustomerInfo = lazy(() => import("../views/accountOpening/customerInfo"));
 
 export const router = createBrowserRouter([
   {
@@ -157,6 +162,20 @@ export const router = createBrowserRouter([
       {
         path: "users/subdetail",
         element: <SubDetail />,
+      },
+
+      // account-opening
+      {
+        path: "accounts",
+        element: <Account />,
+      },
+      {
+        path: "accounts/payment-status",
+        element: <PaymentStatus />,
+      },
+      {
+        path: "accounts/customer-info",
+        element: <CustomerInfo />,
       },
     ],
   },

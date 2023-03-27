@@ -9,7 +9,7 @@ export default function Permissions() {
   return (
     <PermissionContainer>
       <Headers>
-        <div className="flex items-center gap-2 text-[var(--grey900)]">
+        <div className="flex items-center gap-2 text-grey-900">
           <h2 className="text-lg md:text-2xl font-semibold">User Management</h2>
         </div>
         <div>
@@ -29,7 +29,7 @@ export default function Permissions() {
           <button className="btn btn-blue w-2/4 cursor-pointer">
             SET PERMISSION
           </button>
-          <button className="btn w-1/4 bg-[var(--grey400)] border-[var(--grey500)] text-[var(--white50)] cursor-pointer">
+          <button className="btn w-1/4 bg-gray-400 border-gray-500 text-[var(--white50)] cursor-pointer">
             BACK
           </button>
         </div>

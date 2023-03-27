@@ -19,6 +19,11 @@ btn:active {
   color: var(--white50);
 }
 
+.btn-red {
+  background: var(--red200);
+  color: var(--white50);
+}
+
 .btn-blue-tran {
   background: transparent;
   color: var(--blue100);
@@ -49,3 +54,8 @@ btn:active {
   min-height: 40px;
   border: 1px solid var(--ash200);
 } */
+
+/* ------- ant design overwrite styles ------- */
+.ant-upload {
+  width: 100%;
+}

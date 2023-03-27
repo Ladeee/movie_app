@@ -1,5 +1,11 @@
-import React from "react";
+// ---------- import external dependencies -----------
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Rule } from "antd/lib/form";
+import { useForm } from "react-hook-form";
+import { Form, Input, Button, notification } from "antd";
+
+// ------------ import internal dependencies ------------
 import AuthLayout from "../../../components/authLayout";
 import {
   Container,
@@ -10,9 +16,8 @@ import {
   Forgot,
   Account,
 } from "./login.styled";
-import { Rule } from "antd/lib/form";
-import { useForm } from "react-hook-form";
-import { Form, Input, Button } from "antd";
+import useAuth from "../hooks/useAuth";
+import { useStoreWrapper } from "../../../store";
 
 interface FormValues {
   email: string;
@@ -27,18 +32,65 @@ const passwordRules: Rule[] = [
 ];
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // ------- intialize custom hooks -------
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const updateUser = useStoreWrapper((store) => store.updateUser);
+
+  /**
+   * Handle login mutation
+   */
+  const { mutateAsync: callLogin, isLoading: submitting } = login;
+
+  /**
+   * Handle email change
+   * @param e
+   * @returns
+   */
+  const handleEmailChange = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => setEmail(e.target.value);
+
+  /**
+   * Handle password change
+   * @param e
+   * @returns
+   */
+  const handlePasswordChange = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => setPassword(e.target.value);
+
   const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
   };
 
-  const { register, handleSubmit } = useForm<FormValues>();
+  const { register } = useForm<FormValues>();
 
-  const navigate = useNavigate();
+  // TODO: This can be updated to use just mutate instead of mutateAsync
+  /**
+   * Handle form submission
+   * @returns
+   */
+  const handleLoginSubmit = async () => {
+    try {
+      const response = await callLogin({ email, password });
+      console.log(response);
 
-  const onSubmit = (data: FormValues) => {
-    console.log(data);
-    navigate("/company/dashboard");
+      // store token in
+      localStorage.setItem("accessToken", response.data.data.token);
+
+      updateUser(response.data.data.user);
+      navigate("/company/dashboard");
+    } catch (error: any) {
+      notification.error({
+        message: "Login Failed",
+        description: error?.response?.data?.error?.message,
+      });
+    }
   };
 
   return (
@@ -50,7 +102,7 @@ export default function Login() {
           id="form"
           {...layout}
           name="nest-messages"
-          onFinish={handleSubmit(onSubmit)}
+          onFinish={handleLoginSubmit}
           style={{ maxWidth: 600 }}
         >
           <Form.Item
@@ -63,6 +115,7 @@ export default function Login() {
               {...register("email")}
               style={{ width: "60vw" }}
               className="h-14 bg-[var(--slate50))] border-[var(--slate300)] "
+              onChange={handleEmailChange}
             />
           </Form.Item>
           <Form.Item
@@ -76,6 +129,7 @@ export default function Login() {
               {...register("password")}
               style={{ width: "60vw" }}
               className="h-14 bg-[var(--slate50))] border-[var(--slate300)] "
+              onChange={handlePasswordChange}
             />
           </Form.Item>
           <RememberPassword>
@@ -92,7 +146,12 @@ export default function Login() {
             wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
             className="mt-12 flex justify-start"
           >
-            <Button className="btn" type="primary" htmlType="submit">
+            <Button
+              className="btn"
+              type="primary"
+              htmlType="submit"
+              disabled={submitting}
+            >
               Login
             </Button>
           </Form.Item>

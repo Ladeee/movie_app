@@ -4,6 +4,12 @@ import { createBrowserRouter } from "react-router-dom";
 import ChangePassword from "../views/companySettings/ChangePassword";
 import EditProfile from "../views/companySettings/EditProfile";
 // import Users from "../views/management/users";
+import Messages from "../views/companyMessages";
+import CreateMessage from "../views/companyMessages/CreateMessage";
+import Chat from "../views/companyMessages/Chat";
+import Support from "../views/companySupport";
+import Request from "../views/companySupport/Request";
+
 // ---------- import internal dependencies ----------
 const Home = lazy(() => import("../views/homepage"));
 const GetStarted = lazy(() => import("../views/auth/signup"));
@@ -35,10 +41,30 @@ const IdentityVerification = lazy(
 const IdentityVerificationDetails = lazy(
   () => import("../views/jobs/identityVerificationDetails")
 );
+const BusinessIdentityVerification = lazy(
+  () => import("../views/jobs/businessAddressVerification")
+);
+const BusinessAddressVerificationView = lazy(
+  () => import("../views/jobs/businessAddressVerificationView")
+);
 const MultipleAddress = lazy(
   () => import("../views/jobs/createjobs/popup/multipleAddress")
 );
 const JobPopup = lazy(() => import("../views/jobs/createjobs/popup"));
+const BusinessVerification = lazy(
+  () => import("../views/jobs/businessVerification")
+);
+const BusinessVerificationDetails = lazy(
+  () => import("../views/jobs/businessVerificationDetails")
+);
+const BusinessVerificationReport = lazy(
+  () => import("../views/jobs/businessVerificationReport")
+);
+const BusinessVerificationUpload = lazy(
+  () => import("../views/jobs/businessVerificationUpload")
+);
+
+// ------- route configuration config -------
 const Users = lazy(() => import("../views/management/users"));
 const SubUser = lazy(() => import("../views/management/subuser"));
 const SubDetail = lazy(() => import("../views/management/subdetail"));
@@ -48,6 +74,15 @@ const PaymentStatus = lazy(
   () => import("../views/accountOpening/paymentStatus")
 );
 const CustomerInfo = lazy(() => import("../views/accountOpening/customerInfo"));
+// transactions
+const Transaction = lazy(() => import("../views/transactions/transaction"));
+const TransactionHistory = lazy(
+  () => import("../views/transactions/transactionHistory")
+);
+const TransactionDetail = lazy(
+  () => import("../views/transactions/transactionDetails")
+);
+const Invoice = lazy(() => import("../views/transactions/invoice"));
 
 export const router = createBrowserRouter([
   {
@@ -98,15 +133,60 @@ export const router = createBrowserRouter([
       // ------- jobs path ------
       {
         path: "jobs",
-        element: <JobsOverview />,
-      },
-      {
-        path: "jobs/identity-verification",
-        element: <IdentityVerification />,
-      },
-      {
-        path: "jobs/identity-details",
-        element: <IdentityVerificationDetails />,
+        children: [
+          {
+            path: "",
+            index: true,
+            element: <JobsOverview />,
+          },
+          {
+            path: "identity-verification",
+            element: <IdentityVerification />,
+          },
+          {
+            path: "identity-details",
+            element: <IdentityVerificationDetails />,
+          },
+          {
+            path: "business-address-verification",
+            element: <BusinessIdentityVerification />,
+          },
+          {
+            path: "business-address-verification-view",
+            element: <BusinessAddressVerificationView />,
+          },
+          { path: "business-verification", element: <BusinessVerification /> },
+          {
+            path: "business-verification-details",
+            element: <BusinessVerificationDetails />,
+          },
+          {
+            path: "business-verification-report",
+            element: <BusinessVerificationReport />,
+          },
+          {
+            path: "business-verification-upload",
+            element: <BusinessVerificationUpload />,
+          },
+          {
+            path: "popup",
+            children: [
+              {
+                path: "",
+                index: true,
+                element: <JobPopup />,
+              },
+              {
+                path: "csv",
+                element: <MultipleAddress />,
+              },
+            ],
+          },
+          {
+            path: "verifications",
+            element: <Verifications />,
+          },
+        ],
       },
       {
         path: "settings",
@@ -134,12 +214,39 @@ export const router = createBrowserRouter([
         ],
       },
       {
-        path: "jobs/popup",
-        element: <JobPopup />,
+        path: "messages",
+        children: [
+          {
+            path: "",
+            index: true,
+            element: <Messages />,
+          },
+          {
+            path: "create",
+            index: true,
+            element: <CreateMessage />,
+          },
+          {
+            path: "chat/:id",
+            index: true,
+            element: <Chat />,
+          },
+        ],
       },
       {
-        path: "jobs/popup/csv",
-        element: <MultipleAddress />,
+        path: "support",
+        children: [
+          {
+            path: "",
+            index: true,
+            element: <Support />,
+          },
+          {
+            path: "request",
+            index: true,
+            element: <Request />,
+          },
+        ],
       },
       {
         path: "verifications",
@@ -176,6 +283,24 @@ export const router = createBrowserRouter([
       {
         path: "accounts/customer-info",
         element: <CustomerInfo />,
+      },
+
+      // transactions
+      {
+        path: "transactions",
+        element: <Transaction />,
+      },
+      {
+        path: "transactions/transaction-history",
+        element: <TransactionHistory />,
+      },
+      {
+        path: "transactions/transaction-details",
+        element: <TransactionDetail />,
+      },
+      {
+        path: "transactions/invoice",
+        element: <Invoice />,
       },
     ],
   },

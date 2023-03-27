@@ -1,6 +1,28 @@
 import styled from "styled-components";
 import { sizes } from "../../../utils/screenSizes";
 
+export const FormContainer = styled.div`
+  #form {
+  }
+
+  /* Input {
+    @media (min-width: 768px) {
+      width: 38vw !important;
+    }
+  }
+
+  .ant-input-affix-wrapper {
+    @media (min-width: 768px) {
+      width: 38vw !important;
+    }
+  }
+
+  .ant-select.ant-select-in-form-item {
+    @media (min-width: 768px) {
+      width: 38vw !important;
+    }
+  } */
+`;
 // page one/ two & three
 
 export const SignupContainer = styled.div`
@@ -8,24 +30,27 @@ export const SignupContainer = styled.div`
   white-space: nowrap;
   width: 44vw;
 
+  .ant-select-single .ant-select-selector {
+    display: flex;
+    align-items: center;
+    height: 3.5rem !important;
+    background-color: var(--slate50);
+    border: 1px solid var(--slate300);
+    margin-bottom: 1rem !important;
+  }
+
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  #form {
-    .ant-select-selector {
-      display: flex;
-      align-items: center;
-      height: 3.75rem;
-      background-color: var(--slate50);
-      border: 1px solid var(--slate300);
-    }
+  .ant-form-item {
+    margin-bottom: 1rem !important;
+  }
 
-    .ant-btn-primary {
-      background: var(--blue100) !important;
-    }
+  .ant-btn-primary {
+    background: var(--blue100) !important;
   }
 
   Input {
@@ -109,7 +134,7 @@ export const BoxWrapper = styled.div`
   input {
     cursor: pointer;
     position: absolute;
-    top: 1.25rem;
+    top: 30%;
     right: 1rem;
     width: unset !important;
   }

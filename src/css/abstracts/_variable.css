@@ -20,6 +20,7 @@
   --ash50: #e4e4e4;
   --ash100: #f5f6f9;
   --ash200: #d0d5dd;
+  --ash300: #f7f7f7;
 
   /* ------ grey color config ------- */
   --grey200: #e4e4e7;
@@ -31,6 +32,7 @@
 
   /* -------- red color config ------- */
   --red100: #cf1010;
+  --red200: #cd0303;
   --red500: #ef4444;
   --red600: #dc2626;
 
@@ -47,6 +49,7 @@
   --purple100: #543bd2;
   --purple200: #542be7;
   --purple300: #7961f9;
+  --purple400: #635be8;
 
   /* ------- orange color config ------ */
   --orange100: #d97161;
@@ -61,6 +64,7 @@
   --brown100: #db6f08;
 
   --black100: #121212;
+  --black50: #000000;
 
   /* ------- slate color config ------ */
   --slate50: #f8fafc;

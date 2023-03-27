@@ -167,7 +167,7 @@ export default function Users() {
   return (
     <UsersContainer>
       <Headers>
-        <div className="flex items-center gap-2 text-[var(--grey900)]">
+        <div className="flex items-center gap-2 text-grey-900">
           <h2 className="text-lg md:text-2xl font-semibold">User Management</h2>
         </div>
         <div>

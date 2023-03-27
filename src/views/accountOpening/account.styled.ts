@@ -62,7 +62,7 @@ export const TableBox = styled.div`
 export const TableDisplay = styled.div`
   .ant-table-thead > tr > th {
     background: var(--ash100);
-    font-size: 1rem;
+    font-size: 0.625rem;
     font-weight: 700;
     line-height: 1rem;
   }

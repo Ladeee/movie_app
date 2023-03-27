@@ -57,4 +57,8 @@ const MainContent = styled.section`
   @media screen and (max-width: ${sizes.tabletL}) {
     margin-left: 0;
   }
+
+  @media print {
+    margin-left: 0;
+  }
 `;

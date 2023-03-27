@@ -1,7 +1,8 @@
 import { SignupContainer, Heading } from "../../pages.styled";
-import { Form, Input, Button, Select } from "antd";
+import { Form, Input, Select } from "antd";
 import { Rule } from "antd/lib/form";
 import { useForm } from "react-hook-form";
+import { Industry } from "../..";
 
 interface FormValues {
   companyName: string;
@@ -27,116 +28,128 @@ const roleRules: Rule[] = [
   { required: true, message: "Please enter your role" },
 ];
 
-export default function CompanyDetails({
-  goToNextPage,
-}: {
-  goToNextPage: () => void;
-}) {
-  const { register, handleSubmit } = useForm<FormValues>();
+export default function CompanyDetails({ formData, setFormData }: any) {
+  const { register } = useForm<FormValues>();
 
-  const layout = {
-    labelCol: { span: 8 },
-    wrapperCol: { span: 16 },
-  };
-
-  const handleChange = (value: string) => {
-    console.log(`selected ${value}`);
-  };
-
-  const onSubmit = (data: FormValues) => {
-    console.log(data);
-    goToNextPage();
-  };
   return (
     <SignupContainer>
       <Heading className="sm:text-center md:text-left">
         Input Your Company Details
       </Heading>
-
-      <Form
+      <Form.Item
+        name="companyName"
+        label="Company Name"
+        labelCol={{ span: 24 }}
+        rules={nameRules}
         className="mt-8"
-        id="form"
-        {...layout}
-        name="nest-messages"
-        onFinish={handleSubmit(onSubmit)}
-        style={{ maxWidth: 600 }}
       >
-        <Form.Item
-          name="companyName"
-          label="Company Name"
-          labelCol={{ span: 24 }}
-          rules={nameRules}
-        >
-          <Input
-            {...register("companyName")}
-            style={{ width: "60vw" }}
-            className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
-          />
-        </Form.Item>
-        <Form.Item
-          name="regNumber"
-          label="CAC Registration Number"
-          labelCol={{ span: 24 }}
-          rules={regNumberRules}
-        >
-          <Input
-            {...register("regNumber")}
-            style={{ width: "60vw" }}
-            className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
-          />
-        </Form.Item>
-        <Form.Item
-          name="industry"
-          label="Industry"
-          labelCol={{ span: 24 }}
-          rules={selectRules}
-        >
-          <Select
-            {...register("industry")}
-            placeholder="Industry"
-            style={{ width: "60vw" }}
-            onChange={handleChange}
-            options={[
-              { value: "Industry", label: "Industry" },
-              { value: "Factory", label: "Factory" },
-              { value: "Shop", label: "Shop" },
-              { value: "disabled", label: "Disabled", disabled: true },
-            ]}
-          />
-        </Form.Item>
-        <Form.Item
-          name="companyAddress"
-          label="Company Address"
-          labelCol={{ span: 24 }}
-          rules={companyAddressRules}
-        >
-          <Input
-            {...register("companyAddress")}
-            style={{ width: "60vw" }}
-            className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
-          />
-        </Form.Item>
-        <Form.Item
-          name="role"
-          label="Role"
-          labelCol={{ span: 24 }}
-          rules={roleRules}
-        >
-          <Input
-            {...register("role")}
-            style={{ width: "60vw" }}
-            className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
-          />
-        </Form.Item>
-        <Form.Item
-          className="mt-14 flex justify-start"
-          wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
-        >
-          <Button className="btn" type="primary" htmlType="submit">
-            Create Account
-          </Button>
-        </Form.Item>
-      </Form>
+        <Input
+          {...register("companyName")}
+          style={{ width: "60vw" }}
+          className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
+          value={formData.company.name}
+          onChange={(e) =>
+            setFormData({
+              ...formData,
+              company: {
+                ...formData.company,
+                name: e.target.value,
+              },
+            })
+          }
+        />
+      </Form.Item>
+      <Form.Item
+        name="regNumber"
+        label="CAC Registration Number"
+        labelCol={{ span: 24 }}
+        rules={regNumberRules}
+      >
+        <Input
+          {...register("regNumber")}
+          style={{ width: "60vw" }}
+          className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
+          value={formData.company.registrationNumber}
+          onChange={(e) =>
+            setFormData({
+              ...formData,
+              company: {
+                ...formData.company,
+                registrationNumber: e.target.value,
+              },
+            })
+          }
+        />
+      </Form.Item>
+      <Form.Item
+        name="industry"
+        label="Industry"
+        labelCol={{ span: 24 }}
+        rules={selectRules}
+      >
+        <Select
+          {...register("industry")}
+          placeholder="Industry"
+          style={{ width: "60vw" }}
+          value={formData.company.industry}
+          onChange={(value) =>
+            setFormData({
+              ...formData,
+              company: { ...formData.company, industry: value },
+            })
+          }
+          options={[
+            { value: Industry.Tech, label: "Tech" },
+            // { value: Industry.Factory, label: "Factory" },
+            // { value: Industry.Shop, label: "Shop" },
+            // { value: Industry.Disabled, label: "Disabled", disabled: true },
+          ]}
+        />
+      </Form.Item>
+      <Form.Item
+        name="companyAddress"
+        label="Company Address"
+        labelCol={{ span: 24 }}
+        rules={companyAddressRules}
+      >
+        <Input
+          {...register("companyAddress")}
+          style={{ width: "60vw" }}
+          className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
+          value={formData.company.address}
+          onChange={(e) =>
+            setFormData({
+              ...formData,
+              company: {
+                ...formData.company,
+                address: e.target.value,
+              },
+            })
+          }
+        />
+      </Form.Item>
+      <Form.Item
+        name="role"
+        label="Role"
+        labelCol={{ span: 24 }}
+        rules={roleRules}
+      >
+        <Input
+          {...register("role")}
+          style={{ width: "60vw" }}
+          className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
+          value={formData.company.role}
+          onChange={(e) =>
+            setFormData({
+              ...formData,
+              company: {
+                ...formData.company,
+                role: e.target.value,
+              },
+            })
+          }
+        />
+      </Form.Item>
     </SignupContainer>
   );
 }

@@ -4,6 +4,8 @@ import { Rule } from "antd/lib/form";
 import { useForm } from "react-hook-form";
 import { Form, Input, Button } from "antd";
 import { useNavigate } from "react-router";
+import { instance } from "../../../../api/instance";
+import { useMutation } from "@tanstack/react-query";
 
 interface FormValues {
   email: string;
@@ -20,13 +22,36 @@ export default function SetPassword() {
     wrapperCol: { span: 16 },
   };
 
-  const { register, handleSubmit } = useForm<FormValues>();
+  const { register } = useForm<FormValues>();
 
   const navigate = useNavigate();
 
-  const onSubmit = (data: FormValues) => {
-    console.log(data);
+  const handleChangePassword = async ({
+    newPassword,
+    token,
+  }: {
+    newPassword: string;
+    token: string;
+  }) => {
+    const response = await instance.post(
+      "/user/changepassword",
+      { newPassword, token }, // Include token in request body
+      { headers: { Authorization: `Bearer ${token}` } }
+    ); // Include token in headers
     navigate("/login");
+    return response.data;
+  };
+
+  const { mutate } = useMutation(handleChangePassword);
+
+  const handleSubmitSetPassword = async (event: {
+    target: HTMLFormElement | undefined;
+  }) => {
+    const formData = new FormData(event.target);
+    const newPassword = String(formData.get("newPassword")); // Convert to string
+    const token = localStorage.getItem("token") as string; // Retrieve token from local storage
+
+    await mutate({ newPassword, token });
   };
 
   return (
@@ -39,15 +64,16 @@ export default function SetPassword() {
           id="form"
           {...layout}
           name="nest-messages"
-          onFinish={handleSubmit(onSubmit)}
+          onFinish={handleSubmitSetPassword}
           style={{ maxWidth: 600 }}
         >
           <Form.Item
-            name="password"
+            name="newPassword"
             label="New Password"
             labelCol={{ span: 24 }}
             hasFeedback
             rules={passwordRules}
+            id="newPassword"
           >
             <Input.Password
               {...register("password")}
@@ -56,7 +82,7 @@ export default function SetPassword() {
             />
           </Form.Item>
 
-          <Form.Item
+          {/* <Form.Item
             name="confirm"
             label="Confirm Password"
             labelCol={{ span: 24 }}
@@ -85,7 +111,7 @@ export default function SetPassword() {
               style={{ width: "60vw" }}
               className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
             />
-          </Form.Item>
+          </Form.Item> */}
           <Form.Item
             wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
             className="mt-12"

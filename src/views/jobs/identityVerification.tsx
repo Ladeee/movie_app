@@ -4,7 +4,7 @@ import { Card, Form, Input, Select } from "antd";
 // ---------- import internal dependencies ------------
 import LayoutHeading from "../../components/LayoutHeading";
 
-function IdntityVerification() {
+function IdentityVerification() {
   const [form] = Form.useForm();
   const { Option } = Select;
 
@@ -71,4 +71,4 @@ function IdntityVerification() {
   );
 }
 
-export default IdntityVerification;
+export default IdentityVerification;

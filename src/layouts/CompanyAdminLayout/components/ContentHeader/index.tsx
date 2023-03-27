@@ -75,4 +75,8 @@ const ProfileWrapper = styled.div`
       width: 30px;
     }
   }
+
+  @media print {
+    display: none;
+  }
 `;

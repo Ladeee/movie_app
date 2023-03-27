@@ -15,7 +15,7 @@ export default function SubDetail() {
   return (
     <SubdetailContainer>
       <Headers>
-        <div className="flex items-center gap-1 text-[var(--grey900)]">
+        <div className="flex items-center gap-1 text-grey-900">
           <h2 className="text-lg md:text-2xl font-semibold">User Management</h2>
           <IoIosArrowForward className="icon" />
           <p className="text-lg md:text-2xl font-semibold">Sub Details</p>

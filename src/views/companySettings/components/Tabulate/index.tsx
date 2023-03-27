@@ -21,8 +21,14 @@ const Tabulate = (props: Props) => {
   );
 };
 
-const TableWrapper = styled.div`
+export const TableWrapper = styled.div`
   border: 1px solid var(--grey200);
+`;
+export const BottomLine = styled.div`
+  borderbottom: 1px solid var(--grey200);
+`;
+export const BottomLineText = styled.h2`
+  borderbottom: 1px solid var(--grey200);
 `;
 
 export default Tabulate;

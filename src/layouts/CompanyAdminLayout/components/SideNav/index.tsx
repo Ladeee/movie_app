@@ -40,7 +40,7 @@ const menus: MenuItem[] = [
   {
     title: "Transactions",
     icon: Transactions,
-    path: "trabsactions",
+    path: "transactions",
   },
   {
     title: "Messages",
@@ -136,6 +136,10 @@ const SideNavWrapper = styled.aside`
       font-size: 1.5rem;
       color: var(--white50);
     }
+  }
+
+  @media print {
+    display: none;
   }
 `;
 

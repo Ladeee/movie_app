@@ -4,11 +4,7 @@ import { Container, Heading, Acc } from "../login.styled";
 import { Rule } from "antd/lib/form";
 import { useForm } from "react-hook-form";
 import { Form, Input, Button } from "antd";
-
-interface FormValues {
-  email: string;
-  password: string;
-}
+import { instance } from "../../../../api/instance";
 
 const emailRules: Rule[] = [
   { required: true, message: "Please enter your email" },
@@ -20,13 +16,23 @@ export default function RecoverPassword() {
     wrapperCol: { span: 16 },
   };
 
-  const { register, handleSubmit } = useForm<FormValues>();
+  const { register } = useForm();
 
   const navigate = useNavigate();
 
-  const onSubmit = (data: FormValues) => {
-    console.log(data);
-    navigate("/setpassword");
+  const handleRecoverSubmit = async (data: any) => {
+    console.log("Form data:", data);
+    try {
+      const response = await instance.post("user/resetpassword", {
+        email: data.email,
+      });
+      console.log("API response:", response);
+      navigate("/setPassword");
+      return response;
+    } catch (error) {
+      console.log("API error:", error);
+      throw error;
+    }
   };
 
   return (
@@ -38,7 +44,7 @@ export default function RecoverPassword() {
           id="form"
           {...layout}
           name="nest-messages"
-          onFinish={handleSubmit(onSubmit)}
+          onFinish={handleRecoverSubmit}
           style={{ maxWidth: 600 }}
         >
           <Form.Item
@@ -51,6 +57,8 @@ export default function RecoverPassword() {
               {...register("email")}
               style={{ width: "60vw" }}
               className="h-14 bg-[var(--slate50)] border-[var(--slate300)]"
+              type="email"
+              {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
             />
           </Form.Item>
           <Form.Item

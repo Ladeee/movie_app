@@ -5,7 +5,7 @@ import { Card } from "antd";
 // ------------ import internal dependencies ------------
 import LayoutHeading from "../../components/LayoutHeading";
 import ImgPreview from "../../assets/images/preview.png";
-import { sizes } from "../../utils/screenSizes";
+import CirclePlaceholder from "../../components/CirclePlaceholder";
 
 function IdentityVerificationDetails() {
   return (
@@ -26,7 +26,7 @@ function IdentityVerificationDetails() {
           <Card>
             {/* ------- job credentials ------- */}
             <div className="flex gap-4 items-center">
-              <JobPlaceholder />
+              <CirclePlaceholder />
               <div>
                 <div className="font-inter text-lg">
                   JOB ID: <span className="font-semibold">33455</span>
@@ -105,19 +105,6 @@ function IdentityVerificationDetails() {
 export default IdentityVerificationDetails;
 
 // ------- component styles -------
-const JobPlaceholder = styled.div`
-  background: var(--white300);
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  border: 1px solid var(--grey300);
-
-  @media screen and (max-width: ${sizes.mobileL}) {
-    height: 80px;
-    width: 90px;
-  }
-`;
-
 const DetailsRow = styled.div`
   border-bottom: 1px solid var(--ash50);
   padding: 0.875rem;

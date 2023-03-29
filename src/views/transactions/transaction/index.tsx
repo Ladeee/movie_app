@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 // import internal dependencies
 import Filter from "../../../components/Filter";
+import MonthSelection from "../monthSelection";
 import {
   TransactionsContainer,
   Headers,
@@ -32,17 +33,12 @@ const columns: ColumnsType<DataType> = [
   {
     title: "Job ID",
     dataIndex: "jobId",
-    render: (text: string, record: DataType) => (
-      <Link className="link" to="transaction-history">
-        {text}
-      </Link>
-    ),
   },
   {
     title: "Date Created",
     dataIndex: "dateCreated",
     render: (text: string, record: DataType) => (
-      <Link className="link" to="transaction-history">
+      <Link className="link" to="transaction-details">
         {text}
       </Link>
     ),
@@ -51,7 +47,7 @@ const columns: ColumnsType<DataType> = [
     title: "Entity to be verified",
     dataIndex: "entityToBeVerified",
     render: (text: string, record: DataType) => (
-      <Link className="link" to="transaction-history">
+      <Link className="link" to="transaction-details">
         {text}
       </Link>
     ),
@@ -60,7 +56,7 @@ const columns: ColumnsType<DataType> = [
     title: "Job Type",
     dataIndex: "jobType",
     render: (text: string, record: DataType) => (
-      <Link className="link" to="transaction-history">
+      <Link className="link" to="transaction-details">
         {text}
       </Link>
     ),
@@ -69,7 +65,7 @@ const columns: ColumnsType<DataType> = [
     title: "Created By",
     dataIndex: "createdBy",
     render: (text: string, record: DataType) => (
-      <Link className="link" to="transaction-history">
+      <Link className="link" to="transaction-details">
         {text}
       </Link>
     ),
@@ -78,7 +74,7 @@ const columns: ColumnsType<DataType> = [
     title: "Status",
     dataIndex: "status",
     render: (text: string, record: DataType) => (
-      <Link className="link" to="transaction-history">
+      <Link className="link" to="transaction-details">
         {text}
       </Link>
     ),
@@ -87,7 +83,7 @@ const columns: ColumnsType<DataType> = [
     title: "Verification Status",
     dataIndex: "verificationStatus",
     render: (text: string, record: DataType) => (
-      <Link className="link" to="transaction-history">
+      <Link className="link" to="transaction-details">
         {text}
       </Link>
     ),
@@ -96,7 +92,7 @@ const columns: ColumnsType<DataType> = [
     title: "Payment Status",
     dataIndex: "paymentStatus",
     render: (text: string, record: DataType) => (
-      <Link className="link" to="transaction-history">
+      <Link className="link" to="transaction-details">
         {text}
       </Link>
     ),
@@ -120,7 +116,11 @@ for (let i = 0; i < 46; i++) {
 
 export default function Transaction() {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
-  // const [loading, setLoading] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+
+  const clickedButton = () => {
+    setOpenModal(!openModal);
+  };
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
     console.log("selectedRowKeys changed: ", newSelectedRowKeys);
@@ -149,16 +149,17 @@ export default function Transaction() {
           </div>
         </div>
         <div className="flex items-center gap-5">
-          <Link to="">
+          <Link to="transaction-history">
             <button className="btn min-w-max w-28 btn-blue md:bg-[var(--blue100)] text-[var(--white100)]">
               Transaction history
             </button>
           </Link>
-          <Link to="">
-            <button className="btn min-w-max w-28 btn-blue md:bg-[var(--blue100)] text-[var(--white100)]">
-              Generate Invoice
-            </button>
-          </Link>
+          <button
+            className="btn min-w-max w-28 btn-blue md:bg-[var(--blue100)] text-[var(--white100)]"
+            onClick={clickedButton}
+          >
+            Generate Invoice
+          </button>
         </div>
       </Headers>
 
@@ -182,19 +183,18 @@ export default function Transaction() {
               <div>
                 {hasSelected ? `Selected ${selectedRowKeys.length} items` : ""}
               </div>
-              <Link to="" className="link">
-                <Table
-                  className="whitespace-nowrap text-xs font-normal border"
-                  rowClassName="tablerow"
-                  rowSelection={rowSelection}
-                  columns={columns}
-                  dataSource={data}
-                />
-              </Link>
+              <Table
+                className="whitespace-nowrap text-xs font-normal border"
+                rowClassName="tablerow"
+                rowSelection={rowSelection}
+                columns={columns}
+                dataSource={data}
+              />
             </TableDisplay>
           </div>
         </Card>
       </TableBox>
+      <div>{openModal ? <MonthSelection /> : null}</div>
     </TransactionsContainer>
   );
 }

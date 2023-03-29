@@ -83,6 +83,7 @@ const TransactionDetail = lazy(
   () => import("../views/transactions/transactionDetails")
 );
 const Invoice = lazy(() => import("../views/transactions/invoice"));
+// const MonthSelection = lazy(() => import("../views/transactions/monthSelection"));
 
 export const router = createBrowserRouter([
   {
@@ -302,6 +303,10 @@ export const router = createBrowserRouter([
         path: "transactions/invoice",
         element: <Invoice />,
       },
+      // {
+      //   path: "transactions/month-selection",
+      //   element: <MonthSelection />,
+      // },
     ],
   },
   {

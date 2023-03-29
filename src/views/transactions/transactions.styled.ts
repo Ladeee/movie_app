@@ -32,6 +32,7 @@ export const Headers = styled.section`
 `;
 
 export const TransactionsContainer = styled.div`
+  position: relative;
   width: 100%;
 
   .table .ant-table-thead > tr > th {
@@ -150,6 +151,7 @@ export const TransactionDetailsContainer = styled.div`
 
   .history-btn {
     margin-top: 2.125rem;
+    margin-right: 10%;
 
     button {
       @media (max-width: ${sizes.mobileM}) {
@@ -294,3 +296,33 @@ export const JobDetails = styled.div`
 `;
 
 export const AgentInfo = styled.div``;
+
+// calendar
+export const CalendarContainer = styled.div`
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 8%;
+
+  .calendar {
+    width: 31.25rem;
+
+    @media (max-width: ${sizes.tabletL}) {
+      width: 60%;
+    }
+
+    @media (max-width: ${sizes.tablet}) {
+      width: 96%;
+    }
+  }
+
+  @media (max-width: ${sizes.tabletL}) {
+    left: 0;
+  }
+`;

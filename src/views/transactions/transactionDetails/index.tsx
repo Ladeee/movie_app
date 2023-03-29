@@ -16,7 +16,7 @@ export default function TransactionDetails() {
         </div>
         <div></div>
       </Headers>
-      <Card title={<p>VERIFICATION DETAILS</p>}>
+      <Card title={<p>VERIFICATION DETAILS</p>} style={{ marginBottom: "10%" }}>
         <Card
           className="history-card"
           title={

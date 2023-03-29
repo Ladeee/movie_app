@@ -60,7 +60,7 @@ export default function Invoice() {
         </HistoryBox>
 
         <JobDetails className="border border-solid border-gray-100">
-          <div className="header bg-black-50 flex items-center text-[var(--white50)] h-12 flex-1">
+          <div className="header flex items-center text-[var(--white50)] bg-black h-12 flex-1">
             <p className="numbers font-bold text-base">#</p>
             <p className="details font-bold text-base">Job Details</p>
             <p className="quantity font-bold text-base">Quantity</p>
@@ -119,7 +119,7 @@ export default function Invoice() {
             </div>
           </div>
 
-          <div className="header flex items-center bg-black-50 text-[var(--white50)] h-12 flex-1 font-bold text-base mt-6">
+          <div className="header flex items-center bg-black text-[var(--white50)] h-12 flex-1 font-bold text-base mt-6">
             Bank Details
           </div>
           <div className="account-row mt-6 flex items-center">

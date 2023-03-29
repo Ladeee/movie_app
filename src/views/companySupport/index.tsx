@@ -22,7 +22,7 @@ const Support = () => {
       render: (tag: any) => {
         return (
           <div className="w-10 h-10 rounded-full flex justify-center items-center overflow-hidden">
-            <img src={tag} className="w-full" />
+            <img src={tag} className="w-full" alt="tag" />
           </div>
         );
       },

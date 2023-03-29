@@ -34,7 +34,7 @@ export default function AuthLayout({
         <Welcome color={color} bottom={bottom}>
           <Contents>
             <Logo>
-              <img src={NesterLogo} alt="" />
+              <img src={NesterLogo} alt="nester logo" />
             </Logo>
             <Greetings>
               Welcome to <br /> Nester Verify

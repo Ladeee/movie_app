@@ -91,7 +91,9 @@ export default function Verifications() {
               >
                 <p>{name}</p>
                 <Image>
-                  {isActive === name ? <img src={Checkmark} alt="" /> : null}
+                  {isActive === name ? (
+                    <img src={Checkmark} alt="checkmark" />
+                  ) : null}
                 </Image>
               </button>
               <hr />
